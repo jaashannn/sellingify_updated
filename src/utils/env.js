@@ -9,5 +9,6 @@ export const getSaaSWebsite = () => {
   }
   
   return url;
+  console.log('SaaS Website URL:', url);
 };
 
