@@ -33,7 +33,7 @@ const Pricing = () => {
   const businessPlans = [
     {
       name: 'Basic',
-      setup: '$49',
+      setup: '$14.99',
       monthly: '$79',
       discount: '90% off (was $499)',
       bestFor: 'Start ups & local SMBs launching their first referral campaign',
@@ -51,7 +51,7 @@ const Pricing = () => {
     },
     {
       name: 'Standard',
-      setup: '$69',
+      setup: '$19.99',
       monthly: '$99',
       discount: '90% off (was $699)',
       bestFor: 'Growing teams managing multiple products or territories',
@@ -242,8 +242,13 @@ const Pricing = () => {
                 whileHover="hover"
               >
                 <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">One Time Setup: <span className="text-orange-400 font-bold">{plan.setup}</span></p>
-                <p className="text-3xl font-bold text-orange-400 mb-4">{plan.monthly}</p>
+                <div className="mb-4 p-4 bg-gradient-to-br from-orange-400/20 to-orange-300/10 dark:from-orange-400/30 dark:to-orange-300/20 rounded-lg border-2 border-orange-400/50">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">One Time Setup</p>
+                  <p className="text-4xl font-bold text-orange-400 mb-1">{plan.setup}</p>
+                  <p className="text-xs text-orange-300 font-semibold">90% off launch pricing</p>
+                </div>
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">{plan.monthly} <span className="text-gray-600 dark:text-gray-300">/month</span></p>
+                {plan.discount && <p className="text-md text-orange-300 mb-2 font-bold">{plan.discount}</p>}
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{plan.bestFor}</p>
               </motion.div>
             ))}
@@ -292,7 +297,7 @@ const Pricing = () => {
             </div>
             <p className="text-gray-600 dark:text-gray-300 mt-4 text-sm">
               *Monopoly Clause: When you choose Premium, no other competitor in your business category can sign up within the same city for as long as you maintain an active subscription.<br />
-              **Growth Guarantee: If zero customers convert in any consecutive 60 day window, we’ll credit you one month of Virtual Tech Masters’ Basic Ad Plan—50% off.
+              **Growth Guarantee: If zero customers convert in any consecutive 60 day window, we'll credit you one month of Virtual Tech Masters' Basic Ad Plan—90% off.
             </p>
           </div>
         </motion.section>
