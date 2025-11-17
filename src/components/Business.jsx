@@ -279,7 +279,7 @@ const Business = () => {
               { title: '3️⃣ Closing Deals and Paying Directly', description: 'Contact leads and close deals independently. Pay freelancers directly with no platform fees.' },
               { title: '4️⃣ Monitor and Scale', description: 'Track leads and conversions via your dashboard. Negotiate commissions privately and scale with flexible marketing campaigns.' },
               { title: '5️⃣ Lock in your territory', description: 'secure city-wide exclusivity and be the only business in your niche to receive leads from Reflo Hub.' },
-              { title: '6️⃣ Zero Risk', description: 'If zero customers convert in any consecutive 60 day window, we’ll credit you one month of Virtual Tech Masters’ Basic Ad Plan on 50% off' },
+              { title: '6️⃣ Zero Risk', description: 'If zero customers convert in any consecutive 60 day window, we\'ll credit you one month of Virtual Tech Masters\' Basic Ad Plan on 90% off' },
             ].map((item, index) => (
               <Card key={index} title={item.title} description={item.description} index={index} className="text-center" />
             ))}
@@ -313,20 +313,22 @@ const Business = () => {
               {
                 title: 'Business Basic',
                 description: 'Perfect for growing businesses',
-                price: '$79/month',
-                discount: '50% off (was $159)',
-                setup: 'One-time setup: $49',
-                setupDiscount: '90% off (was $449)',
+                price: '$79',
+                priceLabel: '/month',
+                discount: '90% off (was $799)',
+                setup: '$14.99',
+                setupDiscount: '90% off launch pricing',
                 features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
                 gradient: true,
               },
               {
                 title: 'Business Standard',
                 description: 'Ideal for high-growth businesses',
-                price: '$99/month',
-                discount: '50% off (was $199)',
-                setup: 'One-time setup: $69',
-                setupDiscount: '90% off (was $649)',
+                price: '$99',
+                priceLabel: '/month',
+                discount: '90% off (was $999)',
+                setup: '$19.99',
+                setupDiscount: '90% off launch pricing',
                 features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
                 gradient: true,
               },
@@ -358,20 +360,25 @@ const Business = () => {
                       <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
                       </svg>
-                      50% OFF
+                      90% OFF
                     </span>
                   )}
                 </div>
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{plan.description}</p>
-                  <div className="flex items-end mb-2">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    {/* <span className="text-gray-600 dark:text-gray-300 ml-1">/month </span> */}
-                  </div>
-                  <p className="text-md text-orange-300 mb-2 font-bold">{plan.discount}</p>
-                  <p className="text-xl text-gray-600 dark:text-gray-300 mb-4 font-bold">{plan.setup}</p>
-                  <p className="text-md text-orange-300 mb-2 font-bold">{plan.setupDiscount}</p>
+                  {plan.setup && (
+                    <div className="mb-4 p-4 bg-gradient-to-br from-orange-400/20 to-orange-300/10 dark:from-orange-400/30 dark:to-orange-300/20 rounded-lg border-2 border-orange-400/50 shadow-lg">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">One Time Setup</p>
+                      <p className="text-4xl font-bold text-orange-400 mb-1">{plan.setup}</p>
+                      {plan.setupDiscount && <p className="text-xs text-orange-300 font-semibold">{plan.setupDiscount}</p>}
+                    </div>
+                  )}
+                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-1">
+                    <span className="text-lg">{plan.price}</span>
+                    {plan.priceLabel && <span className="text-gray-600 dark:text-gray-300 ml-1">{plan.priceLabel}</span>}
+                  </p>
+                  {plan.discount && <p className="text-md text-orange-300 mb-2 font-bold">{plan.discount}</p>}
                   <div className="h-px bg-gray-200 dark:bg-white/10 my-4"></div>
                 </div>
                 <ul className="space-y-3 flex-1">

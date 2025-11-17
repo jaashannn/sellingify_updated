@@ -58,7 +58,7 @@ const FAQ = () => {
       questions: [
         {
           q: 'Which business membership plans are available?',
-          a: '<table class="w-full text-left"><thead><tr><th>Plan</th><th>Setup Fee</th><th>Monthly Fee</th><th>Included Leads</th><th>Free Ad Campaigns</th></tr></thead><tbody><tr><td>Basic</td><td>$399</td><td>$99/month</td><td>10 leads/month</td><td>5 ads/month</td></tr><tr><td>Premium</td><td>$599</td><td>$149/month</td><td>Unlimited</td><td>10 ads/month</td></tr></tbody></table>',
+          a: '<table class="w-full text-left"><thead><tr><th>Plan</th><th>Setup Fee</th><th>Monthly Fee</th><th>Included Leads</th><th>Free Ad Campaigns</th></tr></thead><tbody><tr><td>Basic</td><td>$14.99</td><td>$79/month</td><td>15 leads/month</td><td>5 ads/month</td></tr><tr><td>Standard</td><td>$19.99</td><td>$99/month</td><td>Unlimited</td><td>10 ads/month</td></tr><tr><td>Premium</td><td>Custom</td><td>Custom</td><td>Unlimited</td><td>25 ads/month</td></tr></tbody></table>',
         },
         {
           q: 'Can I purchase extra advertising campaigns?',

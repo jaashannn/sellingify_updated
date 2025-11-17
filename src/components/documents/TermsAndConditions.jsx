@@ -70,7 +70,7 @@ const TermsAndConditions = () => {
                   <td class="border border-gray-300 dark:border-gray-600 p-3">Monthly subscription with unlimited lead submissions</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">
                     <span class="text-green-600 dark:text-green-400 font-semibold">$9.99/month</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400 block">(was $14.99)</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 block">(was $19.98)</span>
                   </td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">Monthly</td>
                 </tr>
@@ -108,8 +108,8 @@ const TermsAndConditions = () => {
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Premium Pack</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">25 Credits</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$20.00</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.80 per credit</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$10.00</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.40 per credit</td>
                 </tr>
               </tbody>
             </table>
@@ -132,13 +132,13 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Basic</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$49</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$14.99</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$79/month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Standard</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$69</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$19.99</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$99/month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
                 </tr>
@@ -186,7 +186,7 @@ const TermsAndConditions = () => {
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Premium Pack</div>
                 <div class="text-sm text-gray-600 dark:text-gray-400">25 Credits</div>
-                <div class="text-green-600 dark:text-green-400 font-semibold">$20.00</div>
+                <div class="text-green-600 dark:text-green-400 font-semibold">$10.00</div>
               </div>
             </div>
           </div>
@@ -197,11 +197,13 @@ const TermsAndConditions = () => {
             <div class="space-y-3">
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Basic</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Setup: $249 + $79/month</div>
+                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $14.99</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Monthly: $79/month</div>
               </div>
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Standard</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Setup: $349 + $99/month</div>
+                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $19.99</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Monthly: $99/month</div>
               </div>
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Premium</div>
