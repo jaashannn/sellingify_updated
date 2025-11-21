@@ -29,8 +29,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Instagram, label: 'Instagram', url: 'https://www.instagram.com/reflohub/' },
-    { icon: Facebook, label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61578387472424' },
+    { icon: Instagram, label: 'Instagram', url: 'https://www.instagram.com/reflo_hub/' },
+    { icon: Facebook, label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61582886137664' },
     { icon: MessageCircle, label: 'TikTok', url: 'https://www.tiktok.com/@reflo_hub?is_from_webapp=1&sender_device=pc' },
   ];
 
