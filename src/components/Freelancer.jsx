@@ -506,7 +506,7 @@ const Freelancer = () => {
                 {[
                   { price: '$5', credits: '10 credits' },
                   { price: '$7', credits: '14 credits' },
-                  { price: '$20', credits: '25 credits' },
+                  { price: '$10', credits: '25 credits' },
                 ].map((item, i) => (
                   <div key={i} className="border border-orange-300 dark:bg-white/10 rounded-lg p-4">
                     <div className="text-xl font-bold mb-4">{item.price}</div>
