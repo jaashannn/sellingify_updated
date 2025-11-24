@@ -45,7 +45,7 @@ const FAQ = () => {
         },
         {
           q: 'Describe the Reflo Hub Credits.',
-          a: 'Freelancers use credits to submit leads. Five credits are given each month, and you can buy more at any time: <ul><li>10 credits: $5</li><li>14 credits: $7</li><li>25 credits: $20</li></ul>',
+          a: 'Freelancers use credits to submit leads. Five credits are given each month, and you can buy more at any time: <ul><li>10 credits: $5</li><li>14 credits: $7</li><li>25 credits: $10</li></ul>',
         },
         {
           q: 'How does a freelancer get paid?',
@@ -58,7 +58,7 @@ const FAQ = () => {
       questions: [
         {
           q: 'Which business membership plans are available?',
-          a: '<table class="w-full text-left"><thead><tr><th>Plan</th><th>Setup Fee</th><th>Monthly Fee</th><th>Included Leads</th><th>Free Ad Campaigns</th></tr></thead><tbody><tr><td>Basic</td><td>$14.99</td><td>$79/month</td><td>15 leads/month</td><td>5 ads/month</td></tr><tr><td>Standard</td><td>$19.99</td><td>$99/month</td><td>Unlimited</td><td>10 ads/month</td></tr><tr><td>Premium</td><td>Custom</td><td>Custom</td><td>Unlimited</td><td>25 ads/month</td></tr></tbody></table>',
+          a: '<table class="w-full text-left"><thead><tr><th>Plan</th><th>Setup Fee</th><th>Monthly Fee</th><th>Included Leads</th><th>Free Ad Campaigns</th></tr></thead><tbody><tr><td>Business Basic</td><td>$14.99</td><td>$79/month</td><td>15 leads/month</td><td>5 ads/month</td></tr><tr><td>Business Standard</td><td>$19.99</td><td>$99/month</td><td>Unlimited</td><td>10 ads/month</td></tr><tr><td>Business Premium</td><td>On call</td><td>Price on request</td><td>Unlimited</td><td>25 ads/month</td></tr></tbody></table>',
         },
         {
           q: 'Can I purchase extra advertising campaigns?',
