@@ -190,7 +190,7 @@ const Contact = () => {
                     href="mailto:Support@reflohub.com"
                     className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"
                   >
-                    Support@reflohub.com
+                    support@reflohub.com
                   </a>
                 </div>
                 
@@ -200,10 +200,10 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-medium">Phone</h3>
                   <a
-                    href="tel:18552200505"
+                    href="tel:+18552200505"
                     className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"
                   >
-                   (855) 220-0505 (toll free)
+                   (+1) 855 220-0505 (toll free)
                   </a>
                 </div>
                 

@@ -13,30 +13,34 @@ const Pricing = () => {
 
   const freelancerPlans = [
     {
-      name: 'Freelancer Core',
+      name: 'Freelancer Subscription',
       price: '$9.99 / month',
+      discount: '50% off (was $19.98)',
+      limitedTime: 'Limited Time Offer',
       features: [
-        '5 free Lead Credits each month',
-        'Instant payouts to PayPal, Stripe, or bank',
-        'Access to all industries & territories',
-        'Learning Hub courses + community leaderboard',
+        'Full dashboard access',
+        '5 submission credits each month',
+        'Access to premium businesses',
+        'Special partner opportunities',
       ],
+      studentDiscount: 'Additional 30% discount for students with valid ID',
     },
   ];
 
   const creditPacks = [
     { name: 'Starter Pack', price: '$5 one time', credits: '10 credits' },
     { name: 'Growth Pack', price: '$7 one time', credits: '14 credits' },
-    { name: 'Premium Pack', price: '$20 one time', credits: '25 credits' },
+    { name: 'Premium Pack', price: '$10 one time', credits: '25 credits' },
   ];
 
   const businessPlans = [
     {
-      name: 'Basic',
+      name: 'Business Basic',
       setup: '$14.99',
       monthly: '$79',
-      discount: '90% off (was $499)',
-      bestFor: 'Start ups & local SMBs launching their first referral campaign',
+      discount: '50% off (was $159)',
+      setupDiscount: '90% off launch pricing',
+      bestFor: 'Perfect for growing businesses',
       features: {
         leads: '15',
         campaignSlots: '5',
@@ -50,14 +54,15 @@ const Pricing = () => {
       },
     },
     {
-      name: 'Standard',
+      name: 'Business Standard',
       setup: '$19.99',
       monthly: '$99',
-      discount: '90% off (was $699)',
-      bestFor: 'Growing teams managing multiple products or territories',
+      discount: '50% off (was $199)',
+      setupDiscount: '90% off launch pricing',
+      bestFor: 'Ideal for high-growth businesses',
       features: {
         leads: 'Unlimited',
-        campaignSlots: '15',
+        campaignSlots: '10',
         referralFee: true,
         aiLead: true,
         apiCrm: true,
@@ -68,10 +73,10 @@ const Pricing = () => {
       },
     },
     {
-      name: 'Premium',
+      name: 'Business Premium',
       setup: 'On call',
-      monthly: 'On call',
-      bestFor: 'Market leaders who want exclusive category rights in their city*',
+      monthly: 'Price on request',
+      bestFor: 'Lock in your territory with exclusive leads',
       features: {
         leads: 'Unlimited',
         campaignSlots: '25',
@@ -192,15 +197,21 @@ const Pricing = () => {
                 whileHover="hover"
               >
                 <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-                <p className="text-3xl font-bold text-orange-400 mb-4">{plan.price}</p>
-                <p className="text-md text-orange-300 mb-2 font-bold">{plan.discount}</p>
-                <ul className="text-gray-600 dark:text-gray-300 space-y-2">
+                <p className="text-3xl font-bold text-orange-400 mb-2">{plan.price}</p>
+                {plan.discount && <p className="text-md text-sky-500 mb-2 font-bold">{plan.discount}</p>}
+                {plan.limitedTime && <p className="text-md text-orange-300 mb-4 font-bold">{plan.limitedTime}</p>}
+                <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-4">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2">
                       <ArrowRight className="w-4 h-4 text-sky-400" /> {feature}
                     </li>
                   ))}
                 </ul>
+                {plan.studentDiscount && (
+                  <p className="text-sm text-gray-500 dark:text-gray-400 font-bold mt-4">
+                    {plan.studentDiscount}
+                  </p>
+                )}
               </motion.div>
             ))}
           </div>
@@ -242,12 +253,17 @@ const Pricing = () => {
                 whileHover="hover"
               >
                 <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-                <div className="mb-4 p-4 bg-gradient-to-br from-orange-400/20 to-orange-300/10 dark:from-orange-400/30 dark:to-orange-300/20 rounded-lg border-2 border-orange-400/50">
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">One Time Setup</p>
-                  <p className="text-4xl font-bold text-orange-400 mb-1">{plan.setup}</p>
-                  <p className="text-xs text-orange-300 font-semibold">90% off launch pricing</p>
-                </div>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">{plan.monthly} <span className="text-gray-600 dark:text-gray-300">/month</span></p>
+                {plan.setup && plan.setup !== 'On call' && (
+                  <div className="mb-4 p-4 bg-gradient-to-br from-orange-400/20 to-orange-300/10 dark:from-orange-400/30 dark:to-orange-300/20 rounded-lg border-2 border-orange-400/50">
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">One Time Setup</p>
+                    <p className="text-4xl font-bold text-orange-400 mb-1">{plan.setup}</p>
+                    {plan.setupDiscount && <p className="text-xs text-orange-300 font-semibold">{plan.setupDiscount}</p>}
+                  </div>
+                )}
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
+                  {plan.monthly}
+                  {plan.monthly !== 'Price on request' && <span className="text-gray-600 dark:text-gray-300"> /month</span>}
+                </p>
                 {plan.discount && <p className="text-md text-orange-300 mb-2 font-bold">{plan.discount}</p>}
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{plan.bestFor}</p>
               </motion.div>
@@ -260,15 +276,15 @@ const Pricing = () => {
                 <thead>
                   <tr className="bg-gray-200/60 dark:bg-white/10">
                     <th className="p-4 text-gray-700 dark:text-gray-100">Features</th>
-                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Basic</th>
-                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Standard</th>
-                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Premium</th>
+                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Business Basic</th>
+                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Business Standard</th>
+                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Business Premium</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
                     { name: 'Leads per Month', key: 'leads' },
-                    { name: 'Campaign Slots', key: 'campaignSlots' },
+                    { name: 'Free Monthly Ads', key: 'campaignSlots' },
                     { name: 'Referral Fee Customization', key: 'referralFee' },
                     { name: 'AI Lead Verification', key: 'aiLead' },
                     { name: 'API & CRM Integrations', key: 'apiCrm' },
