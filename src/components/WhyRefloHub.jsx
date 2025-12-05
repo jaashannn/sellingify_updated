@@ -6,44 +6,44 @@ const WhyRefloHub = () => {
   const features = [
     {
       name: 'Commission Model',
-      refloHub: '❌ Zero Commissions',
-      traditional: '✅ Typically charge 10-20% per lead',
+      refloHub: '✅ Zero Commissions',
+      traditional: '❌ Typically charge 10-20% per lead',
       icon: <CreditCard className="w-6 h-6 text-sky-500" />,
     },
     {
       name: 'Business Listings',
-      refloHub: '🔒 2-3 Exclusive per Category/City',
-      traditional: '⚠️ Unlimited competition',
+      refloHub: '✅ 2-3 Exclusive per Category/City',
+      traditional: '❌ Unlimited competition',
       icon: <CheckCircle className="w-6 h-6 text-sky-500" />,
     },
     {
       name: 'Payment Method',
-      refloHub: '💳 Direct Business-to-Freelancer Payments',
-      traditional: '🏦 Platform-processed payments',
+      refloHub: '✅ Direct Business-to-Freelancer Payments',
+      traditional: '❌ Platform-processed payments',
       icon: <CreditCard className="w-6 h-6 text-sky-500" />,
     },
     {
       name: 'Global Reach',
-      refloHub: '🌍 Freelancers submit leads globally',
-      traditional: '📍 Usually limited by geography',
+      refloHub: '✅ Freelancers submit leads globally',
+      traditional: '❌ Usually limited by geography',
       icon: <Globe className="w-6 h-6 text-sky-500" />,
     },
     {
       name: 'Verification',
-      refloHub: '📸 Live Photo Verification for Trust & Safety',
-      traditional: '⚠️ Limited verification processes',
+      refloHub: '✅ Live Photo Verification for Trust & Safety',
+      traditional: '❌ Limited verification processes',
       icon: <Camera className="w-6 h-6 text-sky-500" />,
     },
     {
       name: 'Subscription Model',
-      refloHub: '🔥 Affordable Monthly SaaS Model',
-      traditional: '💸 High fees and unpredictable costs',
+      refloHub: '✅ Affordable Monthly SaaS Model',
+      traditional: '❌ High fees and unpredictable costs',
       icon: <Flame className="w-6 h-6 text-sky-500" />,
     },
     {
       name: 'Scalability',
-      refloHub: '🚀 Easily scale without local tax complications',
-      traditional: '⚖️ Complex international tax obligations',
+      refloHub: '✅ Easily scale without local tax complications',
+      traditional: '❌ Complex international tax obligations',
       icon: <Rocket className="w-6 h-6 text-sky-500" />,
     },
   ];
@@ -129,8 +129,8 @@ const WhyRefloHub = () => {
               <thead>
                 <tr className="bg-gradient-to-r from-sky-500/20 to-orange-400/20">
                   <th className="p-4 text-gray-900 dark:text-white font-semibold rounded-tl-2xl">Feature</th>
-                  <th className="p-4 text-gray-900 dark:text-white font-semibold">Reflo Hub</th>
-                  <th className="p-4 text-gray-900 dark:text-white font-semibold rounded-tr-2xl">Traditional Platforms</th>
+                  <th className="p-4 text-gray-900 dark:text-white font-semibold">Traditional Platforms</th>
+                  <th className="p-4 text-gray-900 dark:text-white font-semibold rounded-tr-2xl">Reflo Hub</th>
                 </tr>
               </thead>
               <tbody>
@@ -147,8 +147,8 @@ const WhyRefloHub = () => {
                       {feature.icon}
                       <span className="text-gray-900 dark:text-white font-medium">{feature.name}</span>
                     </td>
-                    <td className="p-4 text-gray-800 dark:text-gray-200">{feature.refloHub}</td>
                     <td className="p-4 text-gray-600 dark:text-gray-400">{feature.traditional}</td>
+                    <td className="p-4 text-gray-800 dark:text-gray-200">{feature.refloHub}</td>
                   </motion.tr>
                 ))}
               </tbody>
