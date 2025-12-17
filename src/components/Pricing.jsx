@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
@@ -11,27 +12,73 @@ const Pricing = () => {
     hover: { scale: 1.05, boxShadow: '0 0 30px rgba(255, 165, 0, 0.3)' },
   };
 
+  // helper: simple cookie reader
+  const getCookie = (name) => {
+    if (typeof document === 'undefined') return null;
+    const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : null;
+  };
+
   const freelancerPlans = [
     {
       name: 'Freelancer Subscription',
-      price: '$9.99 / month',
-      discount: '50% off (was $19.98)',
-      limitedTime: 'Limited Time Offer',
       features: [
         'Full dashboard access',
         '5 submission credits each month',
         'Access to premium businesses',
         'Special partner opportunities',
       ],
+      limitedTime: 'Limited Time Offer',
       studentDiscount: 'Additional 30% discount for students with valid ID',
     },
   ];
 
+  const FREELANCER_PRICING = {
+    IN: {
+      price: 'INR 499 / month',
+      discount: '50% off (was INR 998)',
+    },
+    US: {
+      price: '$9.99 / month',
+      discount: '50% off (was $19.98)',
+    },
+  };
+
+  const IS_LOCAL = window.location.hostname === 'localhost';
+
+  const [countryCode, setCountryCode] = useState('US');
+  useEffect(() => {
+    if (IS_LOCAL) {
+      setCountryCode('IN');
+      return;
+    }
+    const raw = (getCookie('country') || getCookie('cf_country') || getCookie('country_code') || 'US').toUpperCase();
+    setCountryCode(raw === 'IN' ? 'IN' : 'US');
+  }, []);
+
+  // Set price based on country
+  const freelancerPrice = FREELANCER_PRICING[countryCode] || FREELANCER_PRICING['US'];
+
   const creditPacks = [
-    { name: 'Starter Pack', price: '$5 one time', credits: '10 credits' },
-    { name: 'Growth Pack', price: '$7 one time', credits: '14 credits' },
-    { name: 'Premium Pack', price: '$10 one time', credits: '25 credits' },
+    { key: 'starter', name: 'Starter Pack', credits: '5 credits' },
+    { key: 'growth', name: 'Growth Pack', credits: '10 credits' },
+    { key: 'premium', name: 'Premium Pack', credits: '20 credits' },
   ];
+
+  const CREDIT_PRICING = {
+    IN: {
+      starter: 'INR 449',
+      growth: 'INR 899',
+      premium: 'INR 1299',
+    },
+    US: {
+      starter: '$5',
+      growth: '$7',
+      premium: '$10',
+    },
+  };
+
+  const creditPrices = CREDIT_PRICING[countryCode] || CREDIT_PRICING.US;
 
   const businessPlans = [
     {
@@ -197,8 +244,8 @@ const Pricing = () => {
                 whileHover="hover"
               >
                 <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-                <p className="text-3xl font-bold text-orange-400 mb-2">{plan.price}</p>
-                {plan.discount && <p className="text-md text-sky-500 mb-2 font-bold">{plan.discount}</p>}
+                <p className="text-3xl font-bold text-orange-400 mb-2">{freelancerPrice.price } </p>
+                {freelancerPrice.discount && <p className="text-md text-sky-500 mb-2 font-bold">{freelancerPrice.discount}</p>}
                 {plan.limitedTime && <p className="text-md text-orange-300 mb-4 font-bold">{plan.limitedTime}</p>}
                 <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-4">
                   {plan.features.map((feature, i) => (
@@ -218,20 +265,20 @@ const Pricing = () => {
           <div className="mt-8">
             <h4 className="text-xl font-semibold text-center mb-4">Need More Credits?</h4>
             <div className="grid md:grid-cols-3 gap-6">
-              {creditPacks.map((pack, index) => (
+              {creditPacks.map((pack) => (
                 <motion.div
-                  key={index}
+                  key={pack.key}
                   className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 text-center"
                   variants={cardVariants}
                   whileHover="hover"
                 >
                   <h5 className="text-lg font-semibold mb-2">{pack.name}</h5>
-                  <p className="text-orange-400 font-bold mb-2">{pack.price}</p>
+                  <p className="text-orange-400 font-bold mb-2">{creditPrices[pack.key]}</p>
                   <p className="text-gray-600 dark:text-gray-300">{pack.credits}</p>
                 </motion.div>
               ))}
             </div>
-            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">Paid credits roll over indefinitely. Monthly credits expire after 30 days. All prices in USD.</p>
+            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">Paid credits roll over indefinitely. Monthly credits expire after 30 days.</p>
           </div>
         </motion.section>
 
@@ -381,3 +428,4 @@ const Pricing = () => {
 };
 
 export default Pricing;
+
