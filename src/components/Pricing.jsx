@@ -281,7 +281,12 @@ const Pricing = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center mb-8">For Freelancers</h2>
+          {/* static centered chip for Freelancer Plans */}
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex items-center px-12 py-6 rounded-full text-white font-semibold text-2xl shadow-2xl bg-gradient-to-r from-sky-600 to-orange-400 dark:from-sky-500 dark:to-orange-300 ring-1 ring-white/10">
+              Freelancer Plans
+            </div>
+          </div>
 
           {/* Freelancer Launch banner (styled like Business banner for consistent dark-mode) */}
           {(freelancerLaunch.title || freelancerLaunch.subtitle) && (
@@ -413,7 +418,6 @@ const Pricing = () => {
           </div>
         </motion.section>
 
-        {/* Businesses — render based on pricing-in.json model (monthly packages + annual after-one-year + extras) */}
         <motion.section
           className="mb-20"
           id="business"
@@ -422,8 +426,14 @@ const Pricing = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center mb-4">For Businesses</h2>
-          <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">Scale Leads, Not Costs — choose a package that fits your city and growth stage</p>
+          {/* static centered chip for Business Plans */}
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex items-center px-14 py-7 rounded-full text-white font-bold text-2xl shadow-2xl bg-gradient-to-r from-sky-600 to-orange-400 dark:from-sky-500 dark:to-orange-300 ring-1 ring-white/10">
+              Business Plans
+            </div>
+          </div>
+
+          <p className="text-center text-xl text-gray-600 font-extrabold dark:text-gray-300 mb-8">Scale Leads, Not Costs — choose a package that fits your city and growth stage</p>
 
           {/* Business Launch banner (section specific) */}
           {(businessLaunch.title || businessLaunch.subtitle) && (
