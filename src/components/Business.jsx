@@ -94,6 +94,17 @@ const Business = () => {
     return [String(features)];
   };
 
+  // helper: format price using pricing.currency (INR / USD)
+  const formatPrice = (val) => {
+    if (val == null) return '—';
+    const cur = pricing?.currency || 'INR';
+    if (typeof val === 'number') {
+      if (cur === 'INR') return `₹${val.toLocaleString('en-IN')}`;
+      return `$${val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+    return String(val);
+  };
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -443,23 +454,33 @@ const Business = () => {
           >
             <h3 className="text-2xl font-semibold text-center mb-8">📢 Boost Visibility with Optional Ads</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { title: 'Province/State Ad', price: '$5/week', description: '1-week ad in your registered province/state.' },
-                { title: 'Additional Province/State', price: '$2/week', description: 'Add more provinces/states for targeted reach.' },
-                { title: 'Nationwide Ad', price: '$15/week', description: 'Reach all states/provinces for maximum exposure.' },
-              ].map((ad, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -5 }}
-                  className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300 dark:border-white/10 rounded-xl p-6 text-center"
-                >
-                  <div className="text-2xl font-bold mb-1">{ad.title}</div>
-                  <div className="text-xl font-semibold mb-2">{ad.price}</div>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">{ad.description}</p>
-                </motion.div>
-              ))}
+              {(
+                pricing?.additionalAdCampaigns?.length
+                  ? pricing.additionalAdCampaigns
+                  : [
+                      { key: 'province', label: 'Province/State Ad', price: 5, timeline: '1 week', description: '1-week ad in your registered province/state.' },
+                      { key: 'additional_province', label: 'Additional Province/State', price: 2, timeline: '1 week', description: 'Add more provinces/states for targeted reach.' },
+                      { key: 'nationwide', label: 'Nationwide Ad', price: 15, timeline: '1 week', description: 'Reach all states/provinces for maximum exposure.' },
+                    ]
+              ).map((ad, index) => {
+                const title = ad.label || ad.title || ad.name || `Ad ${index + 1}`;
+                const priceSuffix = ad.timeline && /week/i.test(ad.timeline) ? '/week' : '';
+                const priceText = `${formatPrice(ad.price)}${priceSuffix}`;
+                const description = ad.description || (ad.timeline ? `${ad.timeline} ad` : '');
+                return (
+                  <motion.div
+                    key={ad.key || ad.label || index}
+                    whileHover={{ y: -5 }}
+                    className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300 dark:border-white/10 rounded-xl p-6 text-center"
+                  >
+                    <div className="text-2xl font-bold mb-1">{title}</div>
+                    <div className="text-xl font-semibold mb-2">{priceText}</div>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{description}</p>
+                  </motion.div>
+                );
+              })}
             </div>
-            </motion.div>
+             </motion.div>
         </section>
 
 

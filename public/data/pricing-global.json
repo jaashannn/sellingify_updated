@@ -139,8 +139,8 @@
     }
   ],
   "additionalAdCampaigns": [
-    { "key": "province", "label": "One State / Province", "price": 4.99, "timeline": "1 week" },
-    { "key": "additional_province", "label": "Additional Per State", "price": 2.99, "timeline": "1 week" },
-    { "key": "nationwide", "label": "Nationwide AD", "price": 14.99, "timeline": "1 week" }
+    { "key": "province", "label": "One State / Province", "price": 3, "timeline": "1 week" },
+    { "key": "additional_province", "label": "Additional Per State", "price": 2, "timeline": "1 week" },
+    { "key": "nationwide", "label": "Nationwide AD", "price": 10, "timeline": "1 week" }
   ]
 }
