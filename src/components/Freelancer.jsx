@@ -2,24 +2,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles, Check, Shield, Globe, Star, BarChart, Coins, UserCheck, MessageSquare, CreditCard, TrendingUp,CheckCircle, Quote } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-// Reusable Card Component
-const Card = ({ title, description, icon: Icon, index, className = '' }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: index * 0.1 }}
-    viewport={{ once: true }}
-    className={`bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 ${className}`}
-  >
-    {Icon && <Icon className="w-6 h-6 text-orange-300 mb-4 mx-auto" aria-hidden="true" />}
-    <h3 className="text-xl font-semibold mb-3">{title}</h3>
-    <p className="text-gray-600 dark:text-gray-300">{description}</p>
-  </motion.div>
-);
+import React from 'react';
 
 const Freelancer = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [pricing, setPricing] = useState(null);
 
   const categories = [
     'Real Estate',
@@ -169,6 +156,38 @@ const Freelancer = () => {
     return () => clearInterval(timer);
   }, [freelancerTestimonials.length]);
 
+  useEffect(() => {
+    let mounted = true;
+    const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:');
+    (async () => {
+      const candidates = ['/data/pricing.json'];
+      if (isLocal) {
+        const params = new URLSearchParams(window.location.search);
+        const forced = (params.get('pricing') || '').toLowerCase(); // accepts ?pricing=IN or ?pricing=US
+        if (forced === 'in') {
+          candidates.push('/data/pricing-in.json');
+        } else if (forced === 'us' || forced === 'global') {
+          candidates.push('/data/pricing-global.json');
+        } else {
+          // default try INR then GLOBAL for local dev
+          candidates.push('/data/pricing-in.json', '/data/pricing-global.json');
+        }
+      }
+      for (const url of candidates) {
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) continue;
+          const data = await res.json();
+          if (mounted) setPricing(data);
+          break;
+        } catch (e) {
+          continue;
+        }
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
   return (
     <div ref={ref} className="relative min-h-screen overflow-hidden bg-white dark:bg-gray-950 text-gray-900 dark:text-white font-sans">
       {/* Animated Background */}
@@ -246,8 +265,8 @@ const Freelancer = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Simply refer leads from your network to earn money! No selling, no cold calling, no closing deals. Choose from 100+ high commision  categories like real estate, education, finance, healthcare, and more. 
-              <br /> 
+              Simply refer leads from your network to earn money! No selling, no cold calling, no closing deals. Choose from 100+ high commision  categories like real estate, education, finance, healthcare, and more.
+              <br />
             No middlemen. No cuts. Freelancers keep 100% of what they earn.
             </motion.p>
 
@@ -449,72 +468,50 @@ const Freelancer = () => {
             📦 <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Pricing</span> and Subscription
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300/50 rounded-xl p-8 text-center relative"
-            >
-              <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
-                <span className="inline-flex font-bold items-center gap-1 px-4 py-2 rounded-full text-xs bg-gradient-to-br from-sky-500/90 to-orange-300/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
-                  <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
-                  </svg>
-                  50% OFF
-                </span>
-              </div>
+          {/* pricing teaser: use pricing JSON when available, else fallback to static cards */}
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-4xl mx-auto">
+            {pricing ? (
+              <>
+                {/* Freelancer page launch banner (from pricing JSON) - moved above subscription card */}
+                {pricing?.meta?.launchOffer?.freelancer && (
+                  <motion.div
+                    className="mx-auto max-w-3xl mb-6 rounded-2xl border border-orange-300/25 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/5 dark:to-orange-900/10 p-6 shadow-md"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0"><Sparkles className="w-8 h-8 text-orange-400" /></div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-extrabold text-orange-600 mb-1">{pricing.meta.launchOffer.freelancer.title}</h3>
+                        <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-1">{pricing.meta.launchOffer.freelancer.subtitle}</p>
+                        {pricing.meta.launchOffer.freelancer.note && <p className="text-sm text-gray-500 dark:text-gray-400">{pricing.meta.launchOffer.freelancer.note}</p>}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
 
-              <h3 className="text-2xl font-bold mb-2">🌟 Freelancer Subscription</h3>
-              <div className="flex justify-center items-end mb-4">
-                <span className="text-4xl font-bold">$9.99</span>
-                <span className="text-lg text-gray-600 dark:text-gray-300 ml-1">/month</span>
-              </div>
-              <p className="text-md text-sky-500 mb-2 font-bold">(was $19.98) </p>
-              <p className="text-md text-orange-300 mb-6 font-bold">Limited Time Offer </p>
-
-
-              <ul className="space-y-3 mb-8 text-left">
-                {[
-                  'Full dashboard access',
-                  '5 submission credits each month',
-                  'Access to premium businesses',
-                  'Special partner opportunities',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center">
-                    <Check className="w-4 h-4 text-orange-300 mr-2" aria-hidden="true" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-
-              <p className="text-sm text-gray-500 font-bold dark:text-gray-400 mt-4">Additional <span className='text-sky-500 font-bold'>30%</span> discount for students with valid ID</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300 dark:border-white/10 rounded-xl p-8 text-center"
-            >
-              <h3 className="text-2xl font-bold mb-6">💰 Buy Extra Credits</h3>
-
-              <div className="space-y-4 mb-8">
-                {[
-                  { price: '$5', credits: '10 credits' },
-                  { price: '$7', credits: '14 credits' },
-                  { price: '$10', credits: '25 credits' },
-                ].map((item, i) => (
-                  <div key={i} className="border border-orange-300 dark:bg-white/10 rounded-lg p-4">
-                    <div className="text-xl font-bold mb-4">{item.price}</div>
-                    <div className="text-gray-600 dark:text-gray-300">{item.credits}</div>
+                {/* Freelancer summary card (subscription) */}
+                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300/50 rounded-xl p-8 text-center relative">
+                  <h3 className="text-2xl font-bold mb-2">🌟 {pricing.freelancerPlans?.[0]?.name || 'Freelancer Subscription'}</h3>
+                  <div className="flex flex-col items-center mb-4">
+                    <div className="text-3xl font-extrabold text-orange-500">{typeof pricing.freelancerPlans?.[0]?.setupFee === 'number' ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].setupFee}` : `$${pricing.freelancerPlans[0].setupFee.toFixed(2)}`) : (pricing.freelancerPlans?.[0]?.setupFee || '-')}</div>
+                    <div className="text-sm mt-2 text-green-700 dark:text-green-300 font-semibold">{pricing.freelancerPlans?.[0]?.freeMonths || '—'}</div>
                   </div>
-                ))}
-              </div>
-            </motion.div>
+                  <div className="text-base mb-4">
+                    <span className="text-gray-700 dark:text-gray-200 font-semibold">Subscription (after free months): </span>
+                    <span className="text-orange-500 font-bold">{pricing.freelancerPlans?.[0]?.monthlyPrice ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].monthlyPrice}` : `$${pricing.freelancerPlans[0].monthlyPrice.toFixed(2)}`) : '—'}</span>
+                    <span className="text-orange-500 font-bold ml-2">/month</span>
+                    <span className="text-gray-400 ml-2 line-through">{pricing.freelancerPlans?.[0]?.originalPrice ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].originalPrice}` : `$${pricing.freelancerPlans[0].originalPrice.toFixed(2)}`) : ''}</span>
+                  </div>
+                  <p className="text-sm text-sky-600 font-medium">{pricing.freelancerPlans?.[0]?.studentDiscountMsg}</p>
+                  <div className="mt-6">
+                    <a href="/pricing#freelancers" className="inline-block bg-orange-400 text-white px-6 py-2 rounded-full font-semibold">View full pricing</a>
+                  </div>
+                </motion.div>
+              </>
+            ) : (
+              <div className="text-center py-12">Loading pricing…</div>
+            )}
           </div>
         </section>
 
@@ -542,8 +539,8 @@ const Freelancer = () => {
               >
                 <CheckCircle className="w-5 h-5 text-sky-500" />
                 {category === 'And Many More' ? (
-                  <Link 
-                    to="/all-categories" 
+                  <Link
+                    to="/all-categories"
                     className="text-gray-900 dark:text-white hover:text-sky-500 transition-colors duration-200 cursor-pointer"
                   >
                     {category}
@@ -666,3 +663,18 @@ const Freelancer = () => {
 };
 
 export default Freelancer;
+
+// Reusable Card Component
+const Card = ({ title, description, icon: Icon, index, className = '' }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.1 }}
+    viewport={{ once: true }}
+    className={`bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 ${className}`}
+  >
+    {Icon && <Icon className="w-6 h-6 text-orange-300 mb-4 mx-auto" aria-hidden="true" />}
+    <h3 className="text-xl font-semibold mb-3">{title}</h3>
+    <p className="text-gray-600 dark:text-gray-300">{description}</p>
+  </motion.div>
+);

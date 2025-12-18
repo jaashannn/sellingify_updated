@@ -12,131 +12,132 @@ const Pricing = () => {
     hover: { scale: 1.05, boxShadow: '0 0 30px rgba(255, 165, 0, 0.3)' },
   };
 
-  // helper: simple cookie reader
-  const getCookie = (name) => {
-    if (typeof document === 'undefined') return null;
-    const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
-    return match ? decodeURIComponent(match[1]) : null;
-  };
+  const [pricing, setPricing] = useState(null);
 
-  const freelancerPlans = [
-    {
-      name: 'Freelancer Subscription',
-      features: [
-        'Full dashboard access',
-        '5 submission credits each month',
-        'Access to premium businesses',
-        'Special partner opportunities',
-      ],
-      limitedTime: 'Limited Time Offer',
-      studentDiscount: 'Additional 30% discount for students with valid ID',
-    },
-  ];
+  const Loading = () => <div className="text-center py-12">Loading pricing…</div>;
 
-  const FREELANCER_PRICING = {
-    IN: {
-      price: 'INR 499 / month',
-      discount: '50% off (was INR 998)',
-    },
-    US: {
-      price: '$9.99 / month',
-      discount: '50% off (was $19.98)',
-    },
-  };
-
-  const IS_LOCAL = window.location.hostname === 'localhost';
-
-  const [countryCode, setCountryCode] = useState('US');
   useEffect(() => {
-    if (IS_LOCAL) {
-      setCountryCode('IN');
-      return;
-    }
-    const raw = (getCookie('country') || getCookie('cf_country') || getCookie('country_code') || 'US').toUpperCase();
-    setCountryCode(raw === 'IN' ? 'IN' : 'US');
+    let mounted = true;
+
+    const isLocalDev = () => {
+      if (typeof window === 'undefined') return false;
+      const h = window.location.hostname;
+      return (
+        h === 'localhost' ||
+        h === '127.0.0.1' ||
+        window.location.protocol === 'file:'
+      );
+    };
+
+    (async () => {
+      const candidates = [];
+      // Primary fetch target (CloudFront shadow URL)
+      candidates.push('/data/pricing.json');
+
+      // If running locally, try local JSON files directly.
+      if (isLocalDev()) {
+        const params = new URLSearchParams(window.location.search);
+        const forced = (params.get('pricing') || '').toLowerCase(); // accepts ?pricing=IN or ?pricing=GLOBAL/US
+
+        if (forced === 'in') {
+          candidates.push('/data/pricing-in.json');
+        } else if (forced === 'global' || forced === 'us') {
+          candidates.push('/data/pricing-global.json');
+        } else {
+          // try INR then GLOBAL locally
+          candidates.push('/data/pricing-in.json', '/data/pricing-global.json');
+        }
+      }
+
+      let loaded = null;
+      for (const url of candidates) {
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) {
+            // try next candidate
+            continue;
+          }
+          const data = await res.json();
+          loaded = data;
+          break;
+        } catch (err) {
+          // network or parse error: try next candidate
+          continue;
+        }
+      }
+
+      if (mounted) {
+        if (loaded) {
+          setPricing(loaded);
+        } else {
+          console.warn('Pricing fetch failed for all candidates:', candidates);
+          // minimal placeholder (no detailed hardcoded prices) and hint for maintenance
+          setPricing({
+            freelancerPlans: [
+              {
+                name: 'Freelancer Subscription',
+                features: [],
+                limitedTime: null,
+                studentDiscount: null,
+                price: 'To be updated',
+                discount: null,
+              },
+            ],
+            creditTiers: [],
+            businessPlans: [
+              {
+                name: 'Business Basic',
+                setup: 'To be updated',
+                monthly: 'To be updated',
+                discount: null,
+                setupDiscount: null,
+                bestFor: null,
+                features: {},
+              },
+            ],
+            _note:
+              'Pricing data could not be loaded. Please update /data/pricing.json (pricing-in.json / pricing-global.json) in S3 and configure CloudFront rewrites.',
+          });
+        }
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
-  // Set price based on country
-  const freelancerPrice = FREELANCER_PRICING[countryCode] || FREELANCER_PRICING['US'];
+  // scroll to anchor if URL has a hash (supports /pricing#business and /pricing#freelancers)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const scrollToHashWithRetry = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const id = hash.replace('#', '');
+      let attempts = 0;
+      const tryScroll = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          // smooth scroll when element available
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+        attempts += 1;
+        if (attempts < 10) {
+          // retry after a short delay to allow animations/layout to finish
+          setTimeout(tryScroll, 120);
+        }
+      };
+      tryScroll();
+    };
+    // attempt on mount
+    scrollToHashWithRetry();
+    // listen for future hash changes
+    window.addEventListener('hashchange', scrollToHashWithRetry);
+    return () => window.removeEventListener('hashchange', scrollToHashWithRetry);
+  }, []);
 
-  const creditPacks = [
-    { key: 'starter', name: 'Starter Pack', credits: '5 credits' },
-    { key: 'growth', name: 'Growth Pack', credits: '10 credits' },
-    { key: 'premium', name: 'Premium Pack', credits: '20 credits' },
-  ];
-
-  const CREDIT_PRICING = {
-    IN: {
-      starter: 'INR 449',
-      growth: 'INR 899',
-      premium: 'INR 1299',
-    },
-    US: {
-      starter: '$5',
-      growth: '$7',
-      premium: '$10',
-    },
-  };
-
-  const creditPrices = CREDIT_PRICING[countryCode] || CREDIT_PRICING.US;
-
-  const businessPlans = [
-    {
-      name: 'Business Basic',
-      setup: '$14.99',
-      monthly: '$79',
-      discount: '50% off (was $159)',
-      setupDiscount: '90% off launch pricing',
-      bestFor: 'Perfect for growing businesses',
-      features: {
-        leads: '15',
-        campaignSlots: '5',
-        referralFee: true,
-        aiLead: true,
-        apiCrm: false,
-        customerSuccess: false,
-        cityMonopoly: false,
-        strategyCall: false,
-        growthGuarantee: true,
-      },
-    },
-    {
-      name: 'Business Standard',
-      setup: '$19.99',
-      monthly: '$99',
-      discount: '50% off (was $199)',
-      setupDiscount: '90% off launch pricing',
-      bestFor: 'Ideal for high-growth businesses',
-      features: {
-        leads: 'Unlimited',
-        campaignSlots: '10',
-        referralFee: true,
-        aiLead: true,
-        apiCrm: true,
-        customerSuccess: false,
-        cityMonopoly: false,
-        strategyCall: true,
-        growthGuarantee: true,
-      },
-    },
-    {
-      name: 'Business Premium',
-      setup: 'On call',
-      monthly: 'Price on request',
-      bestFor: 'Lock in your territory with exclusive leads',
-      features: {
-        leads: 'Unlimited',
-        campaignSlots: '25',
-        referralFee: true,
-        aiLead: true,
-        apiCrm: true,
-        customerSuccess: true,
-        cityMonopoly: true,
-        strategyCall: true,
-        growthGuarantee: true,
-      },
-    },
-  ];
+  if (!pricing) return <Loading />;
 
   const faqs = [
     {
@@ -160,6 +161,52 @@ const Pricing = () => {
       answer: 'We use official municipal boundaries (e.g., City of Toronto, City of Dubai). Suburbs and neighboring towns are separate territories.',
     },
   ];
+
+  // --- replaced: generic price formatter using pricing.currency (INR / USD) ---
+  const formatPrice = (val) => {
+    if (val == null) return '—';
+    const cur = pricing?.currency || 'INR';
+    if (typeof val === 'number') {
+      if (cur === 'INR') return `₹${val.toLocaleString('en-IN')}`;
+      // USD and others: show two decimals
+      return `$${val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+    return String(val);
+  };
+  // -------------------------------------------------------------------------------
+
+  // --- added: small startCase helper to format feature keys (fixes ReferenceError) ---
+  const startCase = (s = '') =>
+    String(s)
+      .replace(/[_-]/g, ' ')
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+
+  // --- added: parse numeric value from a price string like "₹699 / month" or "$9.99 / month" ---
+  const parseNumeric = (s) => {
+    if (s == null) return null;
+    if (typeof s === 'number') return s;
+    const m = String(s).match(/[\d,]+(?:\.\d+)?/);
+    return m ? Number(m[0].replace(/,/g, '')) : null;
+  };
+
+  // helper: lookup monthly price (after first year) from businessPackagesAfterOneYear by key
+  const getMonthlyAfterOneYear = (pkgKey) => {
+    const row = (pricing.businessPackagesAfterOneYear || []).find((r) => r.key === pkgKey);
+    return row ? formatPrice(row.monthlyPrice) : '—';
+  };
+  // --- new: extract configurable labels and launch offer from pricing.meta (with fallbacks) ---
+  const meta = pricing?.meta || {};
+  const businessLaunch = meta.launchOffer?.business || {};
+  const freelancerLaunch = meta.launchOffer?.freelancer || {};
+  const labels = meta.labels || {};
+  const LABEL_MONTHLY = labels.monthly || 'Monthly';
+  const LABEL_ANNUAL = labels.annual || 'Annual';
+  const LABEL_SAVINGS = labels.savings || 'Savings';
+  const LABEL_DISCOUNT = labels.discount || 'Discount';
+  // -------------------------------------------------------------------------------
 
   return (
     <section className="relative min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white overflow-hidden">
@@ -228,44 +275,116 @@ const Pricing = () => {
 
         <motion.section
           className="mb-20"
+          id="freelancers"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold text-center mb-8">For Freelancers</h2>
-          <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">Unlimited Earnings, One Low Subscription</p>
-          <div className="grid md:grid-cols-1 gap-6">
-            {freelancerPlans.map((plan, index) => (
-              <motion.div
-                key={index}
-                className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-8"
-                variants={cardVariants}
-                whileHover="hover"
-              >
-                <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-                <p className="text-3xl font-bold text-orange-400 mb-2">{freelancerPrice.price } </p>
-                {freelancerPrice.discount && <p className="text-md text-sky-500 mb-2 font-bold">{freelancerPrice.discount}</p>}
-                {plan.limitedTime && <p className="text-md text-orange-300 mb-4 font-bold">{plan.limitedTime}</p>}
-                <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-4">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <ArrowRight className="w-4 h-4 text-sky-400" /> {feature}
-                    </li>
-                  ))}
-                </ul>
-                {plan.studentDiscount && (
-                  <p className="text-sm text-gray-500 dark:text-gray-400 font-bold mt-4">
-                    {plan.studentDiscount}
+
+          {/* Freelancer Launch banner (styled like Business banner for consistent dark-mode) */}
+          {(freelancerLaunch.title || freelancerLaunch.subtitle) && (
+            <motion.div
+              className="mx-auto max-w-4xl mb-10 rounded-2xl border border-orange-300/30 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/5 dark:to-orange-900/10 p-8 shadow-lg"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="flex items-start gap-5">
+                <div className="flex-shrink-0">
+                  <Sparkles className="w-12 h-12 text-orange-400" />
+                </div>
+                <div>
+                  <h3 className="text-2xl md:text-2xl lg:text-2xl font-extrabold text-orange-600 mb-2">
+                    {freelancerLaunch.title || 'Launch Offer — 5 months FREE'}
+                  </h3>
+                  <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-snug mb-2 max-w-3xl">
+                    {freelancerLaunch.subtitle || 'Receive a full 5 months subscription free - Just pay the one-time setup fee.'}
                   </p>
-                )}
-              </motion.div>
-            ))}
+                  {freelancerLaunch.note && <p className="mt-1 text-sm md:text-base text-gray-500 dark:text-gray-400">{freelancerLaunch.note}</p>}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          <div className="grid md:grid-cols-1 gap-6">
+            {pricing.freelancerPlans.map((plan, index) => {
+              // numeric-aware formatting
+              const setupFeeStr = typeof plan.setupFee === 'number' ? formatPrice(plan.setupFee) : (plan.setupFee || plan.setup || '—');
+              const freeMonths = plan.freeMonths || '';
+              const monthlyStr = typeof plan.monthlyPrice === 'number' ? `${formatPrice(plan.monthlyPrice)}` : (plan.monthlyPrice || plan.price || '');
+              const discountLabel = plan.discount || '';
+              const originalPrice = typeof plan.originalPrice === 'number' ? formatPrice(plan.originalPrice) : null;
+              const studentMsg = plan.studentDiscountMsg || plan.studentDiscount || '';
+
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-gray-100/75 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 md:p-10"
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-extrabold mb-3">{plan.name}</h3>
+
+                      {/* Large setup card: big, prominent (increased label/helper fonts) */}
+                      <div className="w-full bg-white dark:bg-gray-900/60 rounded-2xl border-2 border-orange-300/50 p-8 md:p-10 shadow-xl">
+                        {/* improved visibility in dark mode */}
+                        <div className="text-sm md:text-xl font-semibold text-green-700 dark:text-green-300">One-time setup</div>
+
+                        <div className="flex flex-col items-start">
+                          <div className="text-3xl md:text-4xl font-semibold text-orange-500 leading-tight">{setupFeeStr}</div>
+
+                          {/* free months and helper text shown below amount (bigger font) */}
+                          <div className="mt-4">
+                            <div className="text-lg md:text-xl font-semibold text-green-700 dark:text-green-300">{freeMonths}</div>
+                            <div className="mt-2 text-sm md:text-base text-gray-700 dark:text-gray-300">
+                              Pay the setup fee now and enjoy the subscription free for the above duration.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Single-line subscription summary below the setup card (increased font) */}
+                      <div className="mt-4">
+                        <p className="text-base md:text-lg text-gray-700 dark:text-gray-200 font-semibold">
+                          Subscription (After Free Months):{' '}
+                          <span className="text-sky-600">{discountLabel || '—'}</span>{' '}
+                          -{' '}
+                          {originalPrice ? <span className="line-through text-gray-400 mr-2 text-lg">{originalPrice}</span> : null}
+                          <span className="text-orange-500 text-lg font-bold">{monthlyStr ? `${monthlyStr} /month` : '—'}</span>
+                        </p>
+                      </div>
+
+                      {/* compact features below setup */}
+                      <ul className="text-gray-600 dark:text-gray-300 space-y-2 mt-5 max-w-2xl">
+                        {(plan.features || []).map((feature, i) => (
+                          <li key={i} className="flex items-center gap-2">
+                            <ArrowRight className="w-4 h-4 text-sky-400" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Student messaging only */}
+                  {studentMsg && (
+                    <div className="mt-3 inline-block px-3 py-2 rounded-md bg-sky-50 dark:bg-sky-800/30 border border-sky-100 dark:border-sky-700">
+                      <strong className="text-sky-700 dark:text-sky-100">Student:</strong>{' '}
+                      <span className="ml-2 text-sm text-sky-700 dark:text-sky-100">{studentMsg}</span>
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
+
           <div className="mt-8">
             <h4 className="text-xl font-semibold text-center mb-4">Need More Credits?</h4>
             <div className="grid md:grid-cols-3 gap-6">
-              {creditPacks.map((pack) => (
+              {pricing.creditTiers.map((pack) => (
                 <motion.div
                   key={pack.key}
                   className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 text-center"
@@ -273,96 +392,211 @@ const Pricing = () => {
                   whileHover="hover"
                 >
                   <h5 className="text-lg font-semibold mb-2">{pack.name}</h5>
-                  <p className="text-orange-400 font-bold mb-2">{creditPrices[pack.key]}</p>
-                  <p className="text-gray-600 dark:text-gray-300">{pack.credits}</p>
+
+                  {/* increased price size and emphasis */}
+                  <p className="text-2xl md:text-3xl font-extrabold text-orange-400 mb-2">
+                    {typeof pack.price === 'number' ? formatPrice(pack.price) : pack.price}
+                  </p>
+
+                  {/* make credits count semi-bold */}
+                  <p className="text-gray-600 dark:text-gray-300 font-semibold">
+                    {pack.credits}
+                  </p>
                 </motion.div>
               ))}
             </div>
-            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">Paid credits roll over indefinitely. Monthly credits expire after 30 days.</p>
+
+            {/* use creditNotes from pricing JSON with fallback */}
+            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">
+              {pricing.creditNotes || 'Paid credits roll over indefinitely. Monthly subscription credits expire after 30 days.'}
+            </p>
           </div>
         </motion.section>
 
+        {/* Businesses — render based on pricing-in.json model (monthly packages + annual after-one-year + extras) */}
         <motion.section
           className="mb-20"
+          id="business"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center mb-8">For Businesses</h2>
-          <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">Scale Leads, Not Costs</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {businessPlans.map((plan, index) => (
+          <h2 className="text-3xl font-bold text-center mb-4">For Businesses</h2>
+          <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">Scale Leads, Not Costs — choose a package that fits your city and growth stage</p>
+
+          {/* Business Launch banner (section specific) */}
+          {(businessLaunch.title || businessLaunch.subtitle) && (
+            <motion.div className="mx-auto max-w-4xl mb-10 rounded-2xl border border-orange-300/30 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/5 dark:to-orange-900/10 p-8 shadow-lg"
+              initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="flex items-start gap-5">
+                <div className="flex-shrink-0"><Sparkles className="w-12 h-12 text-orange-400" /></div>
+                <div>
+                  <h3 className="text-2xl md:text-2xl lg:text-2xl font-extrabold text-orange-600 mb-2">
+                    {businessLaunch.title || 'Launch Offer — First 12 months free'}
+                  </h3>
+                  <p className="text-lg md:text-xl lg:text-1xl text-gray-700 dark:text-gray-300 leading-snug mb-2">
+                    {businessLaunch.subtitle || 'Pay only the one-time setup fee and get a full 12 months subscription free during our launch period.'}
+                  </p>
+                  {businessLaunch.note && <p className="mt-1 text-sm md:text-base text-gray-500 dark:text-gray-400">{businessLaunch.note}</p>}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Monthly Packages (show setup fee only; per requirements removed per-card launch text) */}
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {(pricing.businessPackages || []).map((pkg, idx) => (
               <motion.div
-                key={index}
-                className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-8"
+                key={pkg.key || idx}
+                className="bg-white/80 dark:bg-gray-900/70 border border-gray-200 dark:border-white/10 rounded-xl p-6 shadow-sm"
                 variants={cardVariants}
                 whileHover="hover"
               >
-                <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-                {plan.setup && plan.setup !== 'On call' && (
-                  <div className="mb-4 p-4 bg-gradient-to-br from-orange-400/20 to-orange-300/10 dark:from-orange-400/30 dark:to-orange-300/20 rounded-lg border-2 border-orange-400/50">
-                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">One Time Setup</p>
-                    <p className="text-4xl font-bold text-orange-400 mb-1">{plan.setup}</p>
-                    {plan.setupDiscount && <p className="text-xs text-orange-300 font-semibold">{plan.setupDiscount}</p>}
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold">{pkg.name}</h3>
+                  <div className="text-sm text-gray-500">{pkg.key?.toUpperCase()}</div>
+                </div>
+
+                <div className="mb-3 relative p-4 rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/10 dark:to-orange-900/5 border border-orange-200 dark:border-orange-700/30">
+                  {/* One-time setup label in green for visibility (matches freelancer styling) */}
+                  <p className="text-sm md:text-base font-semibold text-green-700 dark:text-green-300 mb-2">One-time setup</p>
+                  <div className="text-2xl font-bold text-orange-500">{formatPrice(pkg.oneTimeSetup)}</div>
+
+                  {/* Move the 12 months free message below the amount and style in green */}
+                  <div className="mt-3 text-sm md:text-base font-semibold text-green-700 dark:text-green-300">
+                    12 months FREE
                   </div>
-                )}
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                  {plan.monthly}
-                  {plan.monthly !== 'Price on request' && <span className="text-gray-600 dark:text-gray-300"> /month</span>}
-                </p>
-                {plan.discount && <p className="text-md text-orange-300 mb-2 font-bold">{plan.discount}</p>}
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{plan.bestFor}</p>
+
+                  {/* removed absolute badge in price box to avoid overlap with setup label */}
+                </div>
+
+                {/* show only Free ads/month info inside the plan card (other features moved to comparison table) */}
+                <div className="mb-3 mt-3">
+                  {typeof pkg.features?.freeAdsPerMonth !== 'undefined' && (
+                    <div className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-2">
+                      <strong className="text-gray-800 dark:text-gray-100">Free ads / month: </strong>
+                      <span className="text-orange-500 font-extrabold text-xl md:text-2xl">{pkg.features.freeAdsPerMonth}</span>
+                    </div>
+                  )}
+
+                  {/* For PREMIUM (inclusive) show a highlighted boxed badge below Free Ads (larger, accessible, dark-mode friendly).
+                      For non-inclusive, show monthly & annual badge prices as before. */}
+                  {pkg.verifiedBadge && pkg.verifiedBadge.inclusive ? (
+                    <div className="mt-3">
+                      <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-700 text-sky-700 dark:text-sky-200 font-semibold text-sm md:text-base shadow-sm">
+                        <span aria-hidden className="inline-block w-5 h-5 rounded-full bg-sky-600/10 text-sky-600 flex items-center justify-center">
+                          ✓
+                        </span>
+                        <span>Verified badge included</span>
+                      </div>
+                    </div>
+                  ) : pkg.verifiedBadge && !pkg.verifiedBadge.inclusive ? (
+                    <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mt-1">
+                      <strong className="text-gray-800 dark:text-gray-100">Verified badge:</strong>{' '}
+                      {pkg.verifiedBadge.monthly ? <span className="font-semibold">{formatPrice(pkg.verifiedBadge.monthly)}/mo</span> : ''}
+                      {pkg.verifiedBadge.monthly && pkg.verifiedBadge.annual ? ' · ' : ''}
+                      {pkg.verifiedBadge.annual ? <span className="font-semibold">{formatPrice(pkg.verifiedBadge.annual)}/yr</span> : ''}
+                    </div>
+                  ) : null}
+                </div>
+
+                {/* removed: initialMonthly, per-card launch note and CTA as requested */}
               </motion.div>
             ))}
           </div>
-          <div className="mt-8">
-            <h4 className="text-xl font-semibold text-center mb-4">Plan Features Breakdown</h4>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-gray-200/60 dark:bg-white/10">
-                    <th className="p-4 text-gray-700 dark:text-gray-100">Features</th>
-                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Business Basic</th>
-                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Business Standard</th>
-                    <th className="p-4 text-center text-gray-700 dark:text-gray-100">Business Premium</th>
+
+          {/* Pricing (applies after first year) table */}
+          <div className="mb-8">
+            <h4 className="text-xl md:text-2xl font-semibold text-center mb-3">Pricing (Applies After First Year)</h4>
+            <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-white/10">
+              <table className="w-full text-left table-auto border-collapse">
+                <thead className="bg-gray-50 dark:bg-gray-900/50">
+                  <tr>
+                    <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100">Plan</th>
+                    <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100 text-center">{LABEL_MONTHLY}</th>
+                    <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100 text-center">
+                      <div>{LABEL_ANNUAL}</div>
+                      <div className="text-sm text-gray-500 mt-1">Verified Badge Included</div>
+                    </th>
+                    <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100 text-center">Discount (Annual plans)</th>
+                    <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100 text-center">
+                      {LABEL_SAVINGS}
+                      <div className="text-sm text-gray-500">verified badge + annual plan discounts</div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    { name: 'Leads per Month', key: 'leads' },
-                    { name: 'Free Monthly Ads', key: 'campaignSlots' },
-                    { name: 'Referral Fee Customization', key: 'referralFee' },
-                    { name: 'AI Lead Verification', key: 'aiLead' },
-                    { name: 'API & CRM Integrations', key: 'apiCrm' },
-                    { name: 'Dedicated Customer Success Manager', key: 'customerSuccess' },
-                    { name: 'City Wide Category Monopoly*', key: 'cityMonopoly' },
-                    { name: 'Quarterly Strategy Call', key: 'strategyCall' },
-                    { name: 'No Risk Growth Guarantee**', key: 'growthGuarantee' },
-                  ].map((feature, i) => (
-                    <tr key={i} className="border-t border-gray-200 dark:border-white/10">
-                      <td className="p-4 text-gray-700 dark:text-gray-100">{feature.name}</td>
-                      {businessPlans.map((plan, j) => (
-                        <td key={j} className="p-4 text-center">
-                          {typeof plan.features[feature.key] === 'string' ? (
-                            plan.features[feature.key]
-                          ) : plan.features[feature.key] ? (
-                            <span className="text-sky-400">✔</span>
-                          ) : (
-                            '—'
-                          )}
+                  {(pricing.businessPackagesAfterOneYear || []).map((row, i) => {
+                    const monthlyCell = getMonthlyAfterOneYear(row.key);
+                    const annualPrice = row.annualPrice;
+                    const originalAnnual = row.originalAnnualPrice;
+                    const savings = row.savings ?? 0;
+                    const discountPercent = row.discountPercent ?? null;
+                    return (
+                      <tr key={row.key || i} className="border-t border-gray-100 dark:border-white/5">
+                        <td className="p-3 border border-gray-200 dark:border-white/10 text-base">{row.name}</td>
+                        <td className="p-3 border border-gray-200 dark:border-white/10 text-center text-base font-semibold">{monthlyCell}</td>
+                        <td className="p-3 border border-gray-200 dark:border-white/10 text-center text-base">
+                          {/* original + current on same line */}
+                          {originalAnnual ? <span className="line-through text-gray-400 mr-2 text-base">{formatPrice(originalAnnual)}</span> : null}
+                          <span className="font-semibold text-orange-500 text-base">{formatPrice(annualPrice)}</span>
                         </td>
-                      ))}
-                    </tr>
-                  ))}
+                        <td className="p-3 border border-gray-200 dark:border-white/10 text-center text-base">{discountPercent ? `${discountPercent}%` : '—'}</td>
+                        <td className="p-3 border border-gray-200 dark:border-white/10 text-center text-base text-green-600">
+                          {formatPrice(savings)}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mt-4 text-sm">
-              *Monopoly Clause: When you choose Premium, no other competitor in your business category can sign up within the same city for as long as you maintain an active subscription.<br />
-              **Growth Guarantee: If zero customers convert in any consecutive 60 day window, we'll credit you one month of Virtual Tech Masters' Basic Ad Plan—90% off.
-            </p>
           </div>
+
+          {/* Feature comparison table — reads features from businessPackages */}
+          <div className="mb-8">
+            <h4 className="text-lg md:text-xl font-semibold text-center mb-4">Feature Comparison</h4>
+            <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-white/10">
+              {/* build feature keys dynamically */}
+              {(() => {
+                const pkgs = pricing.businessPackages || [];
+                const featureKeys = Array.from(new Set(pkgs.flatMap(p => Object.keys(p.features || {}))));
+                return (
+                  <table className="w-full text-left table-auto border-collapse">
+                    <thead className="bg-gray-50 dark:bg-gray-900/50">
+                      <tr>
+                        <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100">Feature</th>
+                        {pkgs.map((p, i) => (
+                          <th key={p.key || i} className="p-3 border border-gray-200 dark:border-white/10 text-base text-center text-gray-700 dark:text-gray-100">{p.name}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {featureKeys.map((fk) => (
+                        <tr key={fk} className="border-t border-gray-100 dark:border-white/5">
+                          <td className="p-3 border border-gray-200 dark:border-white/10 capitalize text-base text-gray-700 dark:text-gray-100">{startCase(fk)}</td>
+                          {pkgs.map((p, j) => {
+                            const v = p.features?.[fk];
+                            return (
+                              <td key={j} className="p-3 border border-gray-200 dark:border-white/10 text-center">
+                                {typeof v === 'boolean' ? (v ? <span className="text-sky-400">✔</span> : '—') : (v ?? '—')}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                );
+              })()}
+            </div>
+          </div>
+
+           <p className="text-gray-600 dark:text-gray-300 mt-6 text-sm">
+             Pricing shown is indicative. For enterprise or multi-city packages please contact{' '}
+             <a href="mailto:sales@reflohub.com" className="text-orange-400 hover:underline">sales@reflohub.com</a>.
+           </p>
         </motion.section>
 
         <motion.section

@@ -1,7 +1,6 @@
-
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles, Check, Shield, Globe, Star, BarChart } from 'lucide-react';
-import { useRef } from 'react';
 import { getSaaSWebsite } from '../utils/env';
 
 // Reusable Card Component
@@ -38,6 +37,63 @@ const Button = ({ href, children, gradient = false, ariaLabel, className = '' })
 
 const Business = () => {
   const ref = useRef(null);
+  // ensure computed position is non-static for useScroll
+  // add explicit inline style below on the container div
+
+  const [pricing, setPricing] = useState(null);
+  useEffect(() => {
+    let mounted = true;
+    const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:');
+    (async () => {
+      const candidates = ['/data/pricing.json'];
+      if (isLocal) {
+        const params = new URLSearchParams(window.location.search);
+        const forced = (params.get('pricing') || '').toLowerCase();
+        if (forced === 'in') {
+          candidates.push('/data/pricing-in.json');
+        } else if (forced === 'us' || forced === 'global') {
+          candidates.push('/data/pricing-global.json');
+        } else {
+          candidates.push('/data/pricing-in.json', '/data/pricing-global.json');
+        }
+      }
+      for (const url of candidates) {
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) continue;
+          const data = await res.json();
+          if (mounted) setPricing(data);
+          break;
+        } catch (e) {
+          continue;
+        }
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
+  // --- helper: startCase for nicer labels ---
+  const startCase = (s = '') =>
+    String(s)
+      .replace(/[_-]/g, ' ')
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+
+  // --- helper: normalize plan.features to an array for safe mapping ---
+  const planFeaturesArray = (features) => {
+    if (!features) return [];
+    if (Array.isArray(features)) return features;
+    if (typeof features === 'object') {
+      return Object.entries(features).map(([k, v]) => {
+        if (typeof v === 'boolean') return v ? startCase(k) : `No ${startCase(k)}`;
+        return `${startCase(k)}: ${v}`;
+      });
+    }
+    return [String(features)];
+  };
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -47,7 +103,7 @@ const Business = () => {
   const opacityBg = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <div ref={ref} className="relative min-h-screen overflow-hidden bg-white dark:bg-gray-950 text-gray-900 dark:text-white font-sans">
+    <div ref={ref} style={{ position: 'relative' }} className="relative min-h-screen overflow-hidden bg-white dark:bg-gray-950 text-gray-900 dark:text-white font-sans">
       {/* Animated Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-gray-100 dark:from-gray-950 via-gray-200 dark:via-gray-900 to-gray-100 dark:to-gray-950"
@@ -256,7 +312,7 @@ const Business = () => {
             viewport={{ once: true }}
           >
             View All Categories on our <a href="/all-categories" className="text-orange-300 hover:underline" aria-label="View all categories">All Categories</a> page.
-            
+
           </motion.p>
         </section>
 
@@ -308,89 +364,73 @@ const Business = () => {
             Transparent, predictable pricing with no hidden fees. Choose your plan:
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: 'Business Basic',
-                description: 'Perfect for growing businesses',
-                price: '$79',
-                priceLabel: '/month',
-                discount: '50% off (was $159)',
-                setup: '$14.99',
-                setupDiscount: '90% off launch pricing',
-                features: ['15 Leads/Month', '5 Free Monthly Ads', 'Dashboard Analytics'],
-                gradient: true,
-              },
-              {
-                title: 'Business Standard',
-                description: 'Ideal for high-growth businesses',
-                price: '$99',
-                priceLabel: '/month',
-                discount: '50% off (was $199)',
-                setup: '$19.99',
-                setupDiscount: '90% off launch pricing',
-                features: ['Unlimited Leads', '10 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
-                gradient: true,
-              },
-              {
-                title: 'Business Premium',
-                description: 'Lock in your territory with exclusive leads',
-                price: 'Price on request',
-                features: ['Unlimited Leads', 'Exclusivity city-wide', '25 Free Monthly Ads', 'Priority Listing & Support', 'Advanced Analytics'],
-                gradient: true,
-              },
-            ].map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className={`bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border ${plan.gradient ? 'border-orange-300/50' : 'border-gray-200 dark:border-white/10'
-                  } rounded-xl p-8 flex flex-col relative`}
-              >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center pointer-events-none">
-                  {index === 2 ? (
-                    <span className="inline-flex font-bold items-center gap-1 px-4 py-2 rounded-full text-xs bg-gradient-to-br from-orange-300/90 to-sky-500/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
-                      On Request
-                    </span>
-                  ) : (
-                    <span className="inline-flex font-bold items-center gap-1 px-4 py-2 rounded-full text-xs bg-gradient-to-br from-sky-500/90 to-orange-300/90 text-white shadow-xl ring-2 ring-white dark:ring-gray-950 animate-bounce-slow">
-                      <svg className="w-4 h-4 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path d="M12 2v2m6.364 1.636l-1.414 1.414M22 12h-2m-1.636 6.364l-1.414-1.414M12 22v-2m-6.364-1.636l1.414-1.414M2 12h2m1.636-6.364l1.414 1.414" />
-                      </svg>
-                      90% OFF
-                    </span>
-                  )}
-                </div>
-                <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{plan.description}</p>
-                  {plan.setup && (
-                    <div className="mb-4 p-4 bg-gradient-to-br from-orange-400/20 to-orange-300/10 dark:from-orange-400/30 dark:to-orange-300/20 rounded-lg border-2 border-orange-400/50 shadow-lg">
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">One Time Setup</p>
-                      <p className="text-4xl font-bold text-orange-400 mb-1">{plan.setup}</p>
-                      {plan.setupDiscount && <p className="text-xs text-orange-300 font-semibold">{plan.setupDiscount}</p>}
+          {/* Launch Offer banner on Business page (from pricing.meta.launchOffer.business) */}
+          {pricing?.meta?.launchOffer?.business && (
+            <motion.div className="mx-auto max-w-3xl mb-6 rounded-2xl border border-orange-300/25 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/5 dark:to-orange-900/10 p-6 shadow-md"
+              initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+               <div className="flex items-start gap-4">
+                 <div className="flex-shrink-0"><Sparkles className="w-8 h-8 text-orange-400" /></div>
+                 <div>
+                   <h3 className="text-xl md:text-2xl font-extrabold text-orange-600 mb-1">
+                     {pricing.meta.launchOffer.business.title}
+                   </h3>
+                   <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-snug mb-1">
+                     {pricing.meta.launchOffer.business.subtitle}
+                   </p>
+                   {pricing.meta.launchOffer.business.note && <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{pricing.meta.launchOffer.business.note}</p>}
+                 </div>
+               </div>
+             </motion.div>
+           )}
+
+          {/* Single partitioned container for the three plans */}
+          <div className="max-w-6xl mx-auto mb-6">
+            <div className="rounded-xl border border-gray-200 dark:border-white/10 overflow-hidden">
+              <div className="flex flex-col md:flex-row md:divide-x md:divide-gray-200 dark:md:divide-white/10">
+                 {(pricing?.businessPackages || []).map((pkg, idx) => (
+                  <div key={pkg.key || idx} className="flex-1 p-6 md:p-8">
+                    <h3 className="text-xl font-semibold mb-2">{pkg.name}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{pkg.bestFor || pkg.description || ''}</p>
+
+                    <div className="mb-4 p-4 bg-gradient-to-br from-orange-400/20 to-orange-300/10 dark:from-orange-400/30 dark:to-orange-300/20 rounded-lg border-2 border-orange-400/50 shadow-sm">
+                      <p className="text-sm font-semibold text-green-700 dark:text-green-300 mb-1">One-time setup</p>
+                      <p className="text-3xl md:text-4xl font-bold text-orange-400 mb-1">{pricing?.currency === 'INR' ? `₹${pkg.oneTimeSetup}` : `$${pkg.oneTimeSetup}`}</p>
+                      <div className="mt-2 text-sm font-semibold text-green-700 dark:text-green-300">12 months FREE</div>
                     </div>
-                  )}
-                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-1">
-                    <span className="text-lg">{plan.price}</span>
-                    {plan.priceLabel && <span className="text-gray-600 dark:text-gray-300 ml-1">{plan.priceLabel}</span>}
-                  </p>
-                  {plan.discount && <p className="text-md text-orange-300 mb-2 font-bold">{plan.discount}</p>}
-                  <div className="h-px bg-gray-200 dark:bg-white/10 my-4"></div>
-                </div>
-                <ul className="space-y-3 flex-1">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center">
-                      <Check className="w-4 h-4 text-orange-300 mr-2" aria-hidden="true" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+
+                    <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2">
+                      <strong className="text-gray-800 dark:text-gray-100">Leads / month:</strong>{' '}
+                      <span className="font-semibold">{pkg.features?.leads ?? '—'}</span>
+                    </div>
+                    <div className="text-sm md:text-base text-gray-700 dark:text-gray-300">
+                      <strong className="text-gray-800 dark:text-gray-100">Free ads / month:</strong>{' '}
+                      <span className="font-semibold text-orange-500">{pkg.features?.freeAdsPerMonth ?? '—'}</span>
+                    </div>
+
+                    <div className="mt-4">
+                      {pkg.verifiedBadge && pkg.verifiedBadge.inclusive ? (
+                        <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-700 text-sky-700 dark:text-sky-200 font-semibold text-sm shadow-sm">
+                          <span aria-hidden className="inline-block w-5 h-5 rounded-full bg-sky-600/10 text-sky-600 flex items-center justify-center">✓</span>
+                          <span>Verified badge included</span>
+                        </div>
+                      ) : pkg.verifiedBadge ? (
+                        <div className="text-sm text-gray-700 dark:text-gray-300">
+                          <strong className="text-gray-800 dark:text-gray-100">Verified badge:</strong>{' '}
+                          {pkg.verifiedBadge.monthly ? <span className="font-semibold">{pricing?.currency === 'INR' ? `₹${pkg.verifiedBadge.monthly}` : `$${pkg.verifiedBadge.monthly}`}/mo</span> : ''}
+                          {pkg.verifiedBadge.monthly && pkg.verifiedBadge.annual ? ' · ' : ''}
+                          {pkg.verifiedBadge.annual ? <span className="font-semibold">{pricing?.currency === 'INR' ? `₹${pkg.verifiedBadge.annual}` : `$${pkg.verifiedBadge.annual}`}/yr</span> : ''}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                 ))}
+               </div>
+             </div>
+
+            {/* single CTA centered below partitioned box */}
+            <div className="mt-6 text-center">
+              <a href="/pricing#business" className="inline-block bg-orange-400 text-white px-8 py-3 rounded-full font-semibold">View full pricing</a>
+            </div>
           </div>
 
           {/* Optional Ads */}
@@ -419,8 +459,7 @@ const Business = () => {
                 </motion.div>
               ))}
             </div>
-            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">Basic Plan: 5 free ads/month | Standard Plan: 10 free ads/month | Premium Plan: 25 free ads/month</p>
-          </motion.div>
+            </motion.div>
         </section>
 
 
@@ -549,5 +588,4 @@ const Business = () => {
 };
 
 export default Business;
-
 
