@@ -389,6 +389,10 @@ const Business = () => {
                      {pricing.meta.launchOffer.business.subtitle}
                    </p>
                    {pricing.meta.launchOffer.business.note && <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{pricing.meta.launchOffer.business.note}</p>}
+
+                  <div className="mt-3">
+                    <a href="/get-started" className="text-orange-400 font-semibold hover:underline">Register Now</a>
+                  </div>
                  </div>
                </div>
              </motion.div>
@@ -404,9 +408,12 @@ const Business = () => {
                     <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{pkg.bestFor || pkg.description || ''}</p>
 
                     <div className="mb-4 p-4 bg-gradient-to-br from-orange-400/20 to-orange-300/10 dark:from-orange-400/30 dark:to-orange-300/20 rounded-lg border-2 border-orange-400/50 shadow-sm">
-                      <p className="text-sm font-semibold text-green-700 dark:text-green-300 mb-1">One-time setup</p>
-                      <p className="text-3xl md:text-4xl font-bold text-orange-400 mb-1">{pricing?.currency === 'INR' ? `₹${pkg.oneTimeSetup}` : `$${pkg.oneTimeSetup}`}</p>
-                      <div className="mt-2 text-sm font-semibold text-green-700 dark:text-green-300">12 months FREE</div>
+                      {/* highlight FREE first (larger, green, bold) */}
+                      <div className="text-xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-2">12 months FREE</div>
+
+                      {/* reduced price size and orange; One-time setup label below */}
+                      <div className="text-xl md:text-1xl text-orange-400 font-normal mb-1">{pricing?.currency === 'INR' ? `₹${pkg.oneTimeSetup}` : `$${pkg.oneTimeSetup}`}</div>
+                      <div className="text-xl md:text-1xl text-orange-400 font-normal">One-time setup</div>
                     </div>
 
                     <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2">
@@ -415,7 +422,7 @@ const Business = () => {
                     </div>
                     <div className="text-sm md:text-base text-gray-700 dark:text-gray-300">
                       <strong className="text-gray-800 dark:text-gray-100">Free ads / month:</strong>{' '}
-                      <span className="font-semibold text-orange-500">{pkg.features?.freeAdsPerMonth ?? '—'}</span>
+                      <span className="font-semibold">{pkg.features?.freeAdsPerMonth ?? '—'}</span>
                     </div>
 
                     <div className="mt-4">
@@ -445,7 +452,7 @@ const Business = () => {
           </div>
 
           {/* Optional Ads */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -475,13 +482,13 @@ const Business = () => {
                   >
                     <div className="text-2xl font-bold mb-1">{title}</div>
                     {/* use consistent emphasized price styling */}
-                    <div className="text-xl md:text-2xl font-extrabold text-orange-400 mb-2">{priceText}</div>
+                    {/* <div className="text-xl md:text-2xl font-extrabold text-orange-400 mb-2">{priceText}</div>
                     <p className="text-sm text-gray-600 dark:text-gray-300">{description}</p>
                   </motion.div>
                 );
               })}
             </div>
-             </motion.div>
+             </motion.div> */}
         </section>
 
 

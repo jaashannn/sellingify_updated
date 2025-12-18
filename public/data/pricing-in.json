@@ -55,16 +55,15 @@
         "annual": 11988
       },
       "features": {
-        "leads": "15",
-        "campaignSlots": "5",
+        "leads": "10",
+        "freeAdsPerMonth": 0,
         "referralFee": true,
         "aiLead": true,
         "apiCrm": false,
         "customerSuccess": false,
         "cityMonopoly": false,
         "strategyCall": false,
-        "growthGuarantee": true,
-        "freeAdsPerMonth": 0
+        "growthGuarantee": true
       }
     },
     {
@@ -77,15 +76,14 @@
       },
       "features": {
         "leads": "Unlimited",
-        "campaignSlots": "10",
+        "freeAdsPerMonth": 2,
         "referralFee": true,
         "aiLead": true,
         "apiCrm": true,
         "customerSuccess": false,
         "cityMonopoly": false,
         "strategyCall": true,
-        "growthGuarantee": true,
-        "freeAdsPerMonth": 2
+        "growthGuarantee": true
       }
     },
     {
@@ -97,15 +95,15 @@
       },
       "features": {
         "leads": "Unlimited",
-        "campaignSlots": "25",
+        "freeAdsPerMonth": 5,
         "referralFee": true,
         "aiLead": true,
         "apiCrm": true,
         "customerSuccess": true,
         "cityMonopoly": true,
         "strategyCall": true,
-        "growthGuarantee": true,
-        "freeAdsPerMonth": 5
+        "growthGuarantee": true
+
       }
     }
   ],

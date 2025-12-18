@@ -485,6 +485,10 @@ const Freelancer = () => {
                         <h3 className="text-xl md:text-2xl font-extrabold text-orange-600 mb-1">{pricing.meta.launchOffer.freelancer.title}</h3>
                         <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-1">{pricing.meta.launchOffer.freelancer.subtitle}</p>
                         {pricing.meta.launchOffer.freelancer.note && <p className="text-sm text-gray-500 dark:text-gray-400">{pricing.meta.launchOffer.freelancer.note}</p>}
+
+                        <div className="mt-3">
+                          <a href="/get-started" className="text-orange-400 font-semibold hover:underline">Register Now</a>
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -493,17 +497,17 @@ const Freelancer = () => {
                 {/* Freelancer summary card (subscription) */}
                 <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300/50 rounded-xl p-8 text-center relative">
                   <h3 className="text-2xl font-bold mb-2">🌟 {pricing.freelancerPlans?.[0]?.name || 'Freelancer Subscription'}</h3>
+                  {/* FREE message moved above and emphasized */}
                   <div className="flex flex-col items-center mb-4">
-                    <div className="text-3xl font-extrabold text-orange-500">{typeof pricing.freelancerPlans?.[0]?.setupFee === 'number' ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].setupFee}` : `$${pricing.freelancerPlans[0].setupFee.toFixed(2)}`) : (pricing.freelancerPlans?.[0]?.setupFee || '-')}</div>
-                    <div className="text-sm mt-2 text-green-700 dark:text-green-300 font-semibold">{pricing.freelancerPlans?.[0]?.freeMonths || '—'}</div>
+                    <div className="text-lg md:text-3xl font-bold text-green-700 dark:text-green-300">{pricing.freelancerPlans?.[0]?.freeMonths || '—'}</div>
+
+                    {/* reduced price size and non-bold; One-time setup label below the amount */}
+                    <div className="text-2xl md:text-1xl text-orange-500 font-normal mt-3">
+                      {typeof pricing.freelancerPlans?.[0]?.setupFee === 'number' ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].setupFee}` : `$${pricing.freelancerPlans[0].setupFee.toFixed(2)}`) : (pricing.freelancerPlans?.[0]?.setupFee || '-')}
+                    </div>
+                    <div className="text-sm text-orange-500 font-semibold mt-1">One-time setup</div>
                   </div>
-                  <div className="text-base mb-4">
-                    <span className="text-gray-700 dark:text-gray-200 font-semibold">Subscription (after free months): </span>
-                    <span className="text-orange-500 font-bold">{pricing.freelancerPlans?.[0]?.monthlyPrice ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].monthlyPrice}` : `$${pricing.freelancerPlans[0].monthlyPrice.toFixed(2)}`) : '—'}</span>
-                    <span className="text-orange-500 font-bold ml-2">/month</span>
-                    <span className="text-gray-400 ml-2 line-through">{pricing.freelancerPlans?.[0]?.originalPrice ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].originalPrice}` : `$${pricing.freelancerPlans[0].originalPrice.toFixed(2)}`) : ''}</span>
-                  </div>
-                  <p className="text-sm text-sky-600 font-medium">{pricing.freelancerPlans?.[0]?.studentDiscountMsg}</p>
+
                   <div className="mt-6">
                     <a href="/pricing#freelancers" className="inline-block bg-orange-400 text-white px-6 py-2 rounded-full font-semibold">View full pricing</a>
                   </div>

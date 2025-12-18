@@ -307,6 +307,11 @@ const Pricing = () => {
                     {freelancerLaunch.subtitle || 'Receive a full 5 months subscription free - Just pay the one-time setup fee.'}
                   </p>
                   {freelancerLaunch.note && <p className="mt-1 text-sm md:text-base text-gray-500 dark:text-gray-400">{freelancerLaunch.note}</p>}
+
+                  {/* Register CTA for launch banner */}
+                  <div className="mt-4">
+                    <a href="/get-started" className="text-orange-400 font-semibold hover:underline">Register Now</a>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -333,25 +338,20 @@ const Pricing = () => {
                     <div className="flex-1">
                       <h3 className="text-2xl font-extrabold mb-3">{plan.name}</h3>
 
-                      {/* Large setup card: big, prominent (increased label/helper fonts) */}
                       <div className="w-full bg-white dark:bg-gray-900/60 rounded-2xl border-2 border-orange-300/50 p-8 md:p-10 shadow-xl">
-                        {/* improved visibility in dark mode */}
-                        <div className="text-sm md:text-xl font-semibold text-green-700 dark:text-green-300">One-time setup</div>
+                        {/* highlight FREE first (bigger, green, bold) */}
+                        <div className="text-xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-3">{freeMonths}</div>
 
-                        <div className="flex flex-col items-start">
-                          <div className="text-3xl md:text-4xl font-semibold text-orange-500 leading-tight">{setupFeeStr}</div>
 
-                          {/* free months and helper text shown below amount (bigger font) */}
-                          <div className="mt-4">
-                            <div className="text-lg md:text-xl font-semibold text-green-700 dark:text-green-300">{freeMonths}</div>
-                            <div className="mt-2 text-sm md:text-base text-gray-700 dark:text-gray-300">
-                              Pay the setup fee now and enjoy the subscription free for the above duration.
-                            </div>
+                        <div className="mt-2">
+                          <div className="text-xl md:text-xl text-orange-500 font-normal leading-tight">{setupFeeStr}</div>
+                          <div className="text-xl md:text-xl text-orange-500 font-normal mt-1">One-time setup</div>
+                          <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-3">
+                          Pay the setup fee now and enjoy the subscription FREE for 5 Months
                           </div>
                         </div>
                       </div>
 
-                      {/* Single-line subscription summary below the setup card (increased font) */}
                       <div className="mt-4">
                         <p className="text-base md:text-lg text-gray-700 dark:text-gray-200 font-semibold">
                           Subscription (After Free Months):{' '}
@@ -398,8 +398,8 @@ const Pricing = () => {
                 >
                   <h5 className="text-lg font-semibold mb-2">{pack.name}</h5>
 
-                  {/* increased price size and emphasis */}
-                  <p className="text-2xl md:text-3xl font-extrabold text-orange-500 mb-2">
+                  {/* reduced price size, neutral color, non-bold */}
+                  <p className="text-lg md:text-xl font-normal text-black dark:text-white mb-2">
                     {typeof pack.price === 'number' ? formatPrice(pack.price) : pack.price}
                   </p>
 
@@ -449,12 +449,16 @@ const Pricing = () => {
                     {businessLaunch.subtitle || 'Pay only the one-time setup fee and get a full 12 months subscription free during our launch period.'}
                   </p>
                   {businessLaunch.note && <p className="mt-1 text-sm md:text-base text-gray-500 dark:text-gray-400">{businessLaunch.note}</p>}
+
+                  {/* Register CTA for launch banner */}
+                  <div className="mt-4">
+                    <a href="/get-started" className="text-orange-400 font-semibold hover:underline">Register Now</a>
+                  </div>
                 </div>
               </div>
             </motion.div>
           )}
 
-          {/* Monthly Packages (show setup fee only; per requirements removed per-card launch text) */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {(pricing.businessPackages || []).map((pkg, idx) => (
               <motion.div
@@ -469,29 +473,21 @@ const Pricing = () => {
                 </div>
 
                 <div className="mb-3 relative p-4 rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/10 dark:to-orange-900/5 border border-orange-200 dark:border-orange-700/30">
-                  {/* One-time setup label in green for visibility (matches freelancer styling) */}
-                  <p className="text-sm md:text-base font-semibold text-green-700 dark:text-green-300 mb-2">One-time setup</p>
-                  <div className="text-2xl font-bold text-orange-500">{formatPrice(pkg.oneTimeSetup)}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-3">12 months FREE</div>
 
-                  {/* Move the 12 months free message below the amount and style in green */}
-                  <div className="mt-3 text-sm md:text-base font-semibold text-green-700 dark:text-green-300">
-                    12 months FREE
-                  </div>
+                  <div className="text-xl md:text-xl text-orange-500 font-normal mb-1">{formatPrice(pkg.oneTimeSetup)}</div>
+                  <div className="text-xl md:text-xl text-orange-500 font-normal">One-time setup</div>
 
-                  {/* removed absolute badge in price box to avoid overlap with setup label */}
                 </div>
 
-                {/* show only Free ads/month info inside the plan card (other features moved to comparison table) */}
                 <div className="mb-3 mt-3">
                   {typeof pkg.features?.freeAdsPerMonth !== 'undefined' && (
                     <div className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-2">
                       <strong className="text-gray-800 dark:text-gray-100">Free ads / month: </strong>
-                      <span className="text-orange-500 font-extrabold text-xl md:text-2xl">{pkg.features.freeAdsPerMonth}</span>
+                      <span className="text-gray-700 dark:text-gray-300 font-normal text-sm md:text-base">{pkg.features.freeAdsPerMonth}</span>
                     </div>
                   )}
 
-                  {/* For PREMIUM (inclusive) show a highlighted boxed badge below Free Ads (larger, accessible, dark-mode friendly).
-                      For non-inclusive, show monthly & annual badge prices as before. */}
                   {pkg.verifiedBadge && pkg.verifiedBadge.inclusive ? (
                     <div className="mt-3">
                       <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-700 text-sky-700 dark:text-sky-200 font-semibold text-sm md:text-base shadow-sm">
@@ -511,7 +507,7 @@ const Pricing = () => {
                   ) : null}
                 </div>
 
-                {/* removed: initialMonthly, per-card launch note and CTA as requested */}
+
               </motion.div>
             ))}
           </div>
@@ -555,7 +551,7 @@ const Pricing = () => {
                           <span className="font-semibold text-orange-500 text-base">{formatPrice(annualPrice)}</span>
                         </td>
                         <td className="p-3 border border-gray-200 dark:border-white/10 text-center text-base">{discountPercent ? `${discountPercent}%` : '—'}</td>
-                        <td className="p-3 border border-gray-200 dark:border-white/10 text-center text-base text-green-600">
+                        <td className="p-3 border border-gray-200 dark:border-white/10 text-center text-base text-green-600 font-semibold">
                           {formatPrice(savings)}
                         </td>
                       </tr>
@@ -568,7 +564,7 @@ const Pricing = () => {
 
           {/* Feature comparison table — reads features from businessPackages */}
           <div className="mb-8">
-            <h4 className="text-lg md:text-2xl font-semibold text-center mb-4">Feature Comparison</h4>
+            <h4 className="text-lg md:text-2xl font-semibold text-center mb-4">Plans Feature Comparison</h4>
             <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-white/10">
               {/* build feature keys dynamically */}
               {(() => {
