@@ -394,7 +394,7 @@ const Pricing = () => {
                   <h5 className="text-lg font-semibold mb-2">{pack.name}</h5>
 
                   {/* increased price size and emphasis */}
-                  <p className="text-2xl md:text-3xl font-extrabold text-orange-400 mb-2">
+                  <p className="text-2xl md:text-3xl font-extrabold text-orange-500 mb-2">
                     {typeof pack.price === 'number' ? formatPrice(pack.price) : pack.price}
                   </p>
 
@@ -517,12 +517,14 @@ const Pricing = () => {
                     <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100 text-center">{LABEL_MONTHLY}</th>
                     <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100 text-center">
                       <div>{LABEL_ANNUAL}</div>
-                      <div className="text-sm text-gray-500 mt-1">Verified Badge Included</div>
+                      {/* highlighted in blueish tone for better visibility */}
+                      <div className="text-sm mt-1 font-semibold text-sky-700 dark:text-sky-200">Verified Badge Included</div>
                     </th>
                     <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100 text-center">Discount (Annual plans)</th>
                     <th className="p-3 border border-gray-200 dark:border-white/10 text-base text-gray-700 dark:text-gray-100 text-center">
                       {LABEL_SAVINGS}
-                      <div className="text-sm text-gray-500">verified badge + annual plan discounts</div>
+                      {/* savings subtext more visible in blue tone */}
+                      <div className="text-sm text-sky-600 dark:text-sky-300">verified badge + annual plan discounts</div>
                     </th>
                   </tr>
                 </thead>
@@ -556,7 +558,7 @@ const Pricing = () => {
 
           {/* Feature comparison table — reads features from businessPackages */}
           <div className="mb-8">
-            <h4 className="text-lg md:text-xl font-semibold text-center mb-4">Feature Comparison</h4>
+            <h4 className="text-lg md:text-2xl font-semibold text-center mb-4">Feature Comparison</h4>
             <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-white/10">
               {/* build feature keys dynamically */}
               {(() => {

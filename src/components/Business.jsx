@@ -474,7 +474,8 @@ const Business = () => {
                     className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300 dark:border-white/10 rounded-xl p-6 text-center"
                   >
                     <div className="text-2xl font-bold mb-1">{title}</div>
-                    <div className="text-xl font-semibold mb-2">{priceText}</div>
+                    {/* use consistent emphasized price styling */}
+                    <div className="text-xl md:text-2xl font-extrabold text-orange-400 mb-2">{priceText}</div>
                     <p className="text-sm text-gray-600 dark:text-gray-300">{description}</p>
                   </motion.div>
                 );
