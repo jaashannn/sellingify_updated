@@ -497,15 +497,12 @@ const Freelancer = () => {
                 {/* Freelancer summary card (subscription) */}
                 <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300/50 rounded-xl p-8 text-center relative">
                   <h3 className="text-2xl font-bold mb-2">🌟 {pricing.freelancerPlans?.[0]?.name || 'Freelancer Subscription'}</h3>
-                  {/* FREE message moved above and emphasized */}
                   <div className="flex flex-col items-center mb-4">
                     <div className="text-lg md:text-3xl font-bold text-green-700 dark:text-green-300">{pricing.freelancerPlans?.[0]?.freeMonths || '—'}</div>
-
-                    {/* reduced price size and non-bold; One-time setup label below the amount */}
-                    <div className="text-2xl md:text-1xl text-orange-500 font-normal mt-3">
+                    <div className="text-xl md:text-xl text-orange-500 font-normal mt-3">One-time setup</div>
+                    <div className="text-2xl md:text-xl text-orange-500 font-normal mt-1">
                       {typeof pricing.freelancerPlans?.[0]?.setupFee === 'number' ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].setupFee}` : `$${pricing.freelancerPlans[0].setupFee.toFixed(2)}`) : (pricing.freelancerPlans?.[0]?.setupFee || '-')}
                     </div>
-                    <div className="text-sm text-orange-500 font-semibold mt-1">One-time setup</div>
                   </div>
 
                   <div className="mt-6">

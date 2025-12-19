@@ -412,8 +412,8 @@ const Business = () => {
                       <div className="text-xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-2">12 months FREE</div>
 
                       {/* reduced price size and orange; One-time setup label below */}
-                      <div className="text-xl md:text-1xl text-orange-400 font-normal mb-1">{pricing?.currency === 'INR' ? `₹${pkg.oneTimeSetup}` : `$${pkg.oneTimeSetup}`}</div>
-                      <div className="text-xl md:text-1xl text-orange-400 font-normal">One-time setup</div>
+                      <div className="text-xl md:text-1xl text-orange-500 font-normal">One-time setup</div>
+                      <div className="text-xl md:text-1xl text-orange-500 font-normal mb-1">{pricing?.currency === 'INR' ? `₹${pkg.oneTimeSetup}` : `$${pkg.oneTimeSetup}`}</div>
                     </div>
 
                     <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2">
@@ -439,6 +439,19 @@ const Business = () => {
                           {pkg.verifiedBadge.annual ? <span className="font-semibold">{pricing?.currency === 'INR' ? `₹${pkg.verifiedBadge.annual}` : `$${pkg.verifiedBadge.annual}`}/yr</span> : ''}
                         </div>
                       ) : null}
+
+                      {(() => {
+                        const after = pricing?.businessPackagesAfterOneYear?.find((r) => r.key === pkg.key);
+                        if (!after) return null;
+                        return (
+                          <div className="mt-3 text-sm text-gray-700 dark:text-gray-300">
+                            <strong className="text-gray-800 dark:text-gray-100">Fees after 1 year:</strong>{' '}
+                            <span className="font-semibold">{formatPrice(after.monthlyPrice)}/mo</span>
+                            {' · '}
+                            <span className="font-semibold">{formatPrice(after.annualPrice)}/yr</span>
+                          </div>
+                        );
+                      })()}
                     </div>
                   </div>
                  ))}

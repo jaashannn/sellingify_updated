@@ -344,9 +344,9 @@ const Pricing = () => {
 
 
                         <div className="mt-2">
-                          <div className="text-xl md:text-xl text-orange-500 font-normal leading-tight">{setupFeeStr}</div>
                           <div className="text-xl md:text-xl text-orange-500 font-normal mt-1">One-time setup</div>
-                          <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-3">
+                          <div className="text-xl md:text-xl text-orange-500 font-normal leading-tight">{setupFeeStr}</div>
+                          <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mt-3">
                           Pay the setup fee now and enjoy the subscription FREE for 5 Months
                           </div>
                         </div>
@@ -475,8 +475,8 @@ const Pricing = () => {
                 <div className="mb-3 relative p-4 rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/10 dark:to-orange-900/5 border border-orange-200 dark:border-orange-700/30">
                   <div className="text-2xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-3">12 months FREE</div>
 
-                  <div className="text-xl md:text-xl text-orange-500 font-normal mb-1">{formatPrice(pkg.oneTimeSetup)}</div>
                   <div className="text-xl md:text-xl text-orange-500 font-normal">One-time setup</div>
+                  <div className="text-xl md:text-xl text-orange-500 font-normal mb-1">{formatPrice(pkg.oneTimeSetup)}</div>
 
                 </div>
 
