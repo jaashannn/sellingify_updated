@@ -28,6 +28,10 @@ const FreelancerRegistrationConsent = () => {
           <li>Receive 3 lead submission credits each month with your subscription. Additional credits can be purchased via your dashboard.</li>
           <li>Understand that credits are required to submit leads to businesses. Each lead submission deducts 1 credit from your balance.</li>
         </ul>
+        <div class="bg-orange-100 dark:bg-orange-900/30 border-l-4 border-orange-400 dark:border-orange-300 p-4 my-4 rounded-r">
+          <p class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Pricing Currency Note:</p>
+          <p class="text-orange-700 dark:text-orange-300"><strong>INR pricing is only available for Indian users.</strong> <strong>USD pricing applies to all global users outside of India.</strong></p>
+        </div>
         <p>Reflo Hub reserves the right to update the monthly fee or credit pricing as needed, with at least 15 days' notice provided through email or platform notification.</p>
       `,
     },

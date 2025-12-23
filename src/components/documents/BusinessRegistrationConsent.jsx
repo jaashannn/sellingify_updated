@@ -26,7 +26,12 @@ const BusinessRegistrationConsent = () => {
           <li><strong>One-Time Setup Fee:</strong> The platform charges a one-time setup fee as per the selected plan (Basic: $79 USD / ₹2,999 INR, Standard: $149 USD / ₹3,999 INR, Premium: $399 USD / ₹9,999 INR).</li>
           <li><strong>Launch Offer - 12 Months FREE:</strong> As part of our launch offer, you will receive 12 months of subscription FREE after paying the one-time setup fee. During this free period, you will have full access to all features and services included in your selected plan.</li>
           <li><strong>Monthly/Annual Subscription Fee (After First Year):</strong> After the 12-month free period, you agree to pay a recurring monthly or annual subscription fee for continued access to platform features, leads, and services. Monthly fees are: Basic: $29 USD (₹999 INR), Standard: $49 USD (₹1,999 INR), Premium: $149 USD (₹3,999 INR). Annual plans offer additional savings with discounts of 15-20%.</li>
+          <li><strong>Advertising Access Timeline:</strong> Advertising access will be made available after a minimum period of two months from the commencement of your subscription. This timeline is designed to ensure proper onboarding, system readiness, and optimal use of advertising features.</li>
         </ul>
+        <div class="bg-orange-100 dark:bg-orange-900/30 border-l-4 border-orange-400 dark:border-orange-300 p-4 my-4 rounded-r">
+          <p class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Pricing Currency Note:</p>
+          <p class="text-orange-700 dark:text-orange-300"><strong>INR pricing is only available for Indian users.</strong> <strong>USD pricing applies to all global users outside of India.</strong></p>
+        </div>
         <p>Reflo Hub reserves the right to revise the registration or subscription fees at any time. Any fee updates will be communicated via email and/or platform notifications at least 15 days in advance. Continued use of the platform after such changes constitutes acceptance of the new fee structure.</p>
       `,
     },

@@ -56,6 +56,7 @@ const Feature = () => {
             <ul class="list-disc pl-5 space-y-2">
               <li>Choose from 100+ high-commission industries or add your own niche.</li>
               <li>Local or global—your network, your rules.</li>
+              <li>As a launch offer, we are providing a 5-month subscription free of charge. </li>
             </ul>
           </li>
           <li>

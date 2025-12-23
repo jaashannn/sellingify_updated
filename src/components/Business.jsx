@@ -387,7 +387,7 @@ const Business = () => {
                    </h3>
                    <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-snug mb-1">
                      {pricing.meta.launchOffer.business.subtitle}
-                   </p>
+                   </p> 
                    {pricing.meta.launchOffer.business.note && <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{pricing.meta.launchOffer.business.note}</p>}
 
                   <div className="mt-3">
