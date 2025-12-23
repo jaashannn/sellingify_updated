@@ -12,7 +12,7 @@ const Pricing = () => {
     hover: { scale: 1.05, boxShadow: '0 0 30px rgba(255, 165, 0, 0.3)' },
   };
 
-  const [pricing, setPricing] = useState(null);
+  const [pricing, setPricing] = useState(null); 
 
   const Loading = () => <div className="text-center py-12">Loading pricing…</div>;
 
@@ -344,17 +344,18 @@ const Pricing = () => {
 
 
                         <div className="mt-2">
-                          <div className="text-xl md:text-xl text-orange-500 font-normal mt-1">One-time setup</div>
-                          <div className="text-xl md:text-xl text-orange-500 font-normal leading-tight">{setupFeeStr}</div>
-                          <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mt-3">
-                          Pay the setup fee now and enjoy the subscription FREE for 5 Months
+                          <div className="text-xl lg:text-2xl text-orange-500 font-normal mt-1">One-time setup</div>
+                          <div className="text-xl md:text-xl text-orange-400 font-normal leading-tight">{setupFeeStr}</div>
+                          
+                          <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-3">
+                          Pay the setup fee now and enjoy the FREE subscription for 5 Months
                           </div>
                         </div>
                       </div>
 
                       <div className="mt-4">
                         <p className="text-base md:text-lg text-gray-700 dark:text-gray-200 font-semibold">
-                          Subscription (After Free Months):{' '}
+                          Subscription (After Five Free Months):{' '}
                           <span className="text-sky-600">{discountLabel || '—'}</span>{' '}
                           -{' '}
                           {originalPrice ? <span className="line-through text-gray-400 mr-2 text-lg">{originalPrice}</span> : null}
@@ -474,9 +475,9 @@ const Pricing = () => {
 
                 <div className="mb-3 relative p-4 rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/10 dark:to-orange-900/5 border border-orange-200 dark:border-orange-700/30">
                   <div className="text-2xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-3">12 months FREE</div>
-
-                  <div className="text-xl md:text-xl text-orange-500 font-normal">One-time setup</div>
+                  <div className="text-xl md:text-2xl text-orange-500 font-normal">One-time setup</div>
                   <div className="text-xl md:text-xl text-orange-500 font-normal mb-1">{formatPrice(pkg.oneTimeSetup)}</div>
+                 
 
                 </div>
 

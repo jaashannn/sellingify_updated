@@ -346,7 +346,7 @@ const Business = () => {
               { title: '3️⃣ Closing Deals and Paying Directly', description: 'Contact leads and close deals independently. Pay freelancers directly with no platform fees.' },
               { title: '4️⃣ Monitor and Scale', description: 'Track leads and conversions via your dashboard. Negotiate commissions privately and scale with flexible marketing campaigns.' },
               { title: '5️⃣ Lock in your territory', description: 'secure city-wide exclusivity and be the only business in your niche to receive leads from Reflo Hub.' },
-              { title: '6️⃣ Zero Risk', description: 'If zero customers convert in any consecutive 60 day window, we\'ll credit you one month of Virtual Tech Masters\' Basic Ad Plan on 90% off' },
+              { title: '6️⃣ One Year Free', description: 'We are giving you one year free for business. Start your journey with Reflo Hub at no cost for the first 12 months and experience the power of quality leads.' },
             ].map((item, index) => (
               <Card key={index} title={item.title} description={item.description} index={index} className="text-center" />
             ))}
@@ -412,8 +412,8 @@ const Business = () => {
                       <div className="text-xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-2">12 months FREE</div>
 
                       {/* reduced price size and orange; One-time setup label below */}
-                      <div className="text-xl md:text-1xl text-orange-500 font-normal">One-time setup</div>
-                      <div className="text-xl md:text-1xl text-orange-500 font-normal mb-1">{pricing?.currency === 'INR' ? `₹${pkg.oneTimeSetup}` : `$${pkg.oneTimeSetup}`}</div>
+                      <div className="text-xl md:text-2xl text-orange-400 font-normal">One-time setup</div>
+                      <div className="text-xl md:text-1xl text-orange-400 font-normal mb-1">{pricing?.currency === 'INR' ? `₹${pkg.oneTimeSetup}` : `$${pkg.oneTimeSetup}`}</div>
                     </div>
 
                     <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2">
@@ -439,19 +439,6 @@ const Business = () => {
                           {pkg.verifiedBadge.annual ? <span className="font-semibold">{pricing?.currency === 'INR' ? `₹${pkg.verifiedBadge.annual}` : `$${pkg.verifiedBadge.annual}`}/yr</span> : ''}
                         </div>
                       ) : null}
-
-                      {(() => {
-                        const after = pricing?.businessPackagesAfterOneYear?.find((r) => r.key === pkg.key);
-                        if (!after) return null;
-                        return (
-                          <div className="mt-3 text-sm text-gray-700 dark:text-gray-300">
-                            <strong className="text-gray-800 dark:text-gray-100">Fees after 1 year:</strong>{' '}
-                            <span className="font-semibold">{formatPrice(after.monthlyPrice)}/mo</span>
-                            {' · '}
-                            <span className="font-semibold">{formatPrice(after.annualPrice)}/yr</span>
-                          </div>
-                        );
-                      })()}
                     </div>
                   </div>
                  ))}

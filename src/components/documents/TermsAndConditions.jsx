@@ -67,12 +67,12 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Pro Referrer</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">Monthly subscription with unlimited lead submissions</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time setup fee $6.99, then 5 months FREE. After free period: $9.99/month with 3 lead submission credits per month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">
-                    <span class="text-green-600 dark:text-green-400 font-semibold">$9.99/month</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400 block">(was $19.98)</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">$6.99 setup + 5 months FREE</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 block">Then $9.99/month (was $19.98)</span>
                   </td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">Monthly</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
                 </tr>
               </tbody>
             </table>
@@ -95,21 +95,21 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Starter Pack</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">10 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">5 Credits</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$5.00</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.50 per credit</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$1.00 per credit</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Growth Pack</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">14 Credits</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$7.00</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.50 per credit</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">10 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$10.00</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$1.00 per credit</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Premium Pack</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">25 Credits</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$10.00</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.40 per credit</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">20 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$15.00</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.75 per credit</td>
                 </tr>
               </tbody>
             </table>
@@ -124,29 +124,29 @@ const TermsAndConditions = () => {
               <thead>
                 <tr class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30">
                   <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Plan</th>
-                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Setup Fee</th>
-                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Monthly Fee</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">One-Time Setup</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">First Year</th>
                   <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Billing</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Basic</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$14.99</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$79/month</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$79 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time setup only</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Standard</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$19.99</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$99/month</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$149 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time setup only</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Premium</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">Custom</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">Custom</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">Price on call</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$399 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time setup only</td>
                 </tr>
               </tbody>
             </table>
@@ -163,8 +163,8 @@ const TermsAndConditions = () => {
             <div class="space-y-3">
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Pro Referrer</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Monthly subscription</div>
-                <div class="text-green-600 dark:text-green-400 font-semibold">$9.99/month</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">$6.99 setup + 5 months FREE</div>
+                <div class="text-green-600 dark:text-green-400 font-semibold">Then $9.99/month</div>
               </div>
             </div>
           </div>
@@ -175,18 +175,18 @@ const TermsAndConditions = () => {
             <div class="space-y-3">
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Starter Pack</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">10 Credits</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">5 Credits</div>
                 <div class="text-green-600 dark:text-green-400 font-semibold">$5.00</div>
               </div>
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Growth Pack</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">14 Credits</div>
-                <div class="text-green-600 dark:text-green-400 font-semibold">$7.00</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">10 Credits</div>
+                <div class="text-green-600 dark:text-green-400 font-semibold">$10.00</div>
               </div>
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Premium Pack</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">25 Credits</div>
-                <div class="text-green-600 dark:text-green-400 font-semibold">$10.00</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">20 Credits</div>
+                <div class="text-green-600 dark:text-green-400 font-semibold">$15.00</div>
               </div>
             </div>
           </div>
@@ -197,17 +197,18 @@ const TermsAndConditions = () => {
             <div class="space-y-3">
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Basic</div>
-                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $14.99</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Monthly: $79/month</div>
+                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $79</div>
+                <div class="text-sm text-green-600 dark:text-green-400 font-semibold">12 months FREE</div>
               </div>
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Standard</div>
-                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $19.99</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Monthly: $99/month</div>
+                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $149</div>
+                <div class="text-sm text-green-600 dark:text-green-400 font-semibold">12 months FREE</div>
               </div>
               <div class="bg-white dark:bg-gray-900 rounded p-3">
                 <div class="font-medium">Premium</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Custom pricing</div>
+                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $399</div>
+                <div class="text-sm text-green-600 dark:text-green-400 font-semibold">12 months FREE</div>
               </div>
             </div>
           </div>

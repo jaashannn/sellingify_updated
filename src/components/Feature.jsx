@@ -41,7 +41,7 @@ const Feature = () => {
           <li>
             <h4 class="font-semibold">5. No Risk Growth Guarantee</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>If you receive zero customers in a quarter, we cover one month of basic ad services via our partner Virtual Tech Masters—on us.</li>
+              <li>We will cover the cost of your 12-month subscription; you are only required to pay the one-time setup fee.</li>
             </ul>
           </li>
         </ul>
@@ -54,14 +54,14 @@ const Feature = () => {
           <li>
             <h4 class="font-semibold">1. Unlimited Niches & Territories</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>Choose from 50+ high-commission industries or add your own niche.</li>
+              <li>Choose from 100+ high-commission industries or add your own niche.</li>
               <li>Local or global—your network, your rules.</li>
             </ul>
           </li>
           <li>
             <h4 class="font-semibold">2. Credit-Based Lead Submission</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>5 free lead submissions/month with your $9.99 subscription.</li>
+              <li>3 lead submission credits each month with your subscription.</li>
               <li>Buy extra credits à la carte or unlock bonuses for top performance.</li>
             </ul>
           </li>

@@ -23,8 +23,9 @@ const BusinessRegistrationConsent = () => {
       content: `
         <p>You understand and accept the following fee obligations:</p>
         <ul class="list-disc pl-5 space-y-2">
-          <li><strong>One-Time Registration Fee:</strong> The platform charges a setup fee as per the selected plan.</li>
-          <li><strong>Monthly Subscription Fee:</strong> You agree to pay a recurring monthly fee for continued access to platform features, leads, and services.</li>
+          <li><strong>One-Time Setup Fee:</strong> The platform charges a one-time setup fee as per the selected plan (Basic: $79 USD / ₹2,999 INR, Standard: $149 USD / ₹3,999 INR, Premium: $399 USD / ₹9,999 INR).</li>
+          <li><strong>Launch Offer - 12 Months FREE:</strong> As part of our launch offer, you will receive 12 months of subscription FREE after paying the one-time setup fee. During this free period, you will have full access to all features and services included in your selected plan.</li>
+          <li><strong>Monthly/Annual Subscription Fee (After First Year):</strong> After the 12-month free period, you agree to pay a recurring monthly or annual subscription fee for continued access to platform features, leads, and services. Monthly fees are: Basic: $29 USD (₹999 INR), Standard: $49 USD (₹1,999 INR), Premium: $149 USD (₹3,999 INR). Annual plans offer additional savings with discounts of 15-20%.</li>
         </ul>
         <p>Reflo Hub reserves the right to revise the registration or subscription fees at any time. Any fee updates will be communicated via email and/or platform notifications at least 15 days in advance. Continued use of the platform after such changes constitutes acceptance of the new fee structure.</p>
       `,

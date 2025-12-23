@@ -41,11 +41,11 @@ const FAQ = () => {
       questions: [
         {
           q: 'How much does Reflo Hub charge freelancers?',
-          a: 'The basic monthly subscription fee for freelancers is $14.99, which includes dashboard access and five credits for each lead submitted.',
+          a: 'Freelancers pay a one-time setup fee of $6.99 USD (₹499 INR) and receive 5 months FREE subscription. After the free period, the monthly subscription is $9.99 USD (₹699 INR), which includes dashboard access and 3 lead submission credits each month. Students get an additional 30% discount on subscription fees.',
         },
         {
           q: 'Describe the Reflo Hub Credits.',
-          a: 'Freelancers use credits to submit leads. Five credits are given each month, and you can buy more at any time: <ul><li>10 credits: $5</li><li>14 credits: $7</li><li>25 credits: $10</li></ul>',
+          a: 'Freelancers use credits to submit leads. Three credits are included each month with your subscription, and you can buy more at any time: <ul><li>5 credits: $5 USD (₹449 INR)</li><li>10 credits: $10 USD (₹899 INR)</li><li>20 credits: $15 USD (₹1,299 INR)</li></ul>',
         },
         {
           q: 'How does a freelancer get paid?',
@@ -58,7 +58,7 @@ const FAQ = () => {
       questions: [
         {
           q: 'Which business membership plans are available?',
-          a: '<table class="w-full text-left"><thead><tr><th>Plan</th><th>Setup Fee</th><th>Monthly Fee</th><th>Included Leads</th><th>Free Ad Campaigns</th></tr></thead><tbody><tr><td>Business Basic</td><td>$14.99</td><td>$79/month</td><td>15 leads/month</td><td>5 ads/month</td></tr><tr><td>Business Standard</td><td>$19.99</td><td>$99/month</td><td>Unlimited</td><td>10 ads/month</td></tr><tr><td>Business Premium</td><td>On call</td><td>Price on request</td><td>Unlimited</td><td>25 ads/month</td></tr></tbody></table>',
+          a: '<table class="w-full text-left"><thead><tr><th>Plan</th><th>One-Time Setup</th><th>First Year</th><th>Included Leads</th><th>Free Ads/Month</th></tr></thead><tbody><tr><td>Business Basic</td><td>$79 USD (₹2,999 INR)</td><td>12 months FREE</td><td>10 leads/month</td><td>0 ads/month</td></tr><tr><td>Business Standard</td><td>$149 USD (₹3,999 INR)</td><td>12 months FREE</td><td>Unlimited</td><td>2 ads/month</td></tr><tr><td>Business Premium</td><td>$399 USD (₹9,999 INR)</td><td>12 months FREE</td><td>Unlimited</td><td>5 ads/month</td></tr></tbody></table><p class="mt-2 text-sm">After the first year, monthly fees apply. See our pricing page for details.</p>',
         },
         {
           q: 'Can I purchase extra advertising campaigns?',
