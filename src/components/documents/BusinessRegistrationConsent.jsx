@@ -46,6 +46,24 @@ const BusinessRegistrationConsent = () => {
       `,
     },
     {
+      title: 'Lead Capacity, Upgrade & Replacement Policy',
+      content: `
+        <p>We operate on a city-based limited-slot model with a maximum of two (2) businesses per category per city. Where both available slots are occupied by businesses on the Basic Plan, the combined total number of leads that can be accepted and serviced by those two businesses will be limited to 20 leads in total.</p>
+        <p>Because additional freelancers will continue submitting leads in that category and city, any leads beyond this capacity will go unserved and be deemed wasted, resulting in loss of potential revenue for freelancers and businesses and degradation of platform quality.</p>
+        <p>Accordingly, in such situations:</p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Businesses may be requested to upgrade to the Standard or Premium Plan to increase lead-handling capacity; or</li>
+          <li>At minimum, one of the two Basic Plan businesses must upgrade to Standard or Premium to prevent continued wastage of leads.</li>
+        </ul>
+        <p>If both businesses decline to upgrade and refuse to change plans, Reflo Hub reserves the right to:</p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Suspend or terminate the accounts of both Basic Plan businesses in that category and city; and</li>
+          <li>Replace them with new businesses able to service the demand, in order to protect freelancer earnings, business outcomes, and overall platform efficiency.</li>
+        </ul>
+        <p>By signing this consent, you acknowledge and agree to this policy, including upgrade requests and possible replacement in the event of persistent lead wastage due to Basic Plan capacity limits.</p>
+      `,
+    },
+    {
       title: 'Freelancer Commission Payment Clause',
       content: `
         <p>By registering on Reflo Hub, the business acknowledges and agrees to release the agreed-upon referral commission to the freelancer within fifteen (15) days after the successful closing of a referred deal and receipt of payment from the client. Failure to remit the commission within the stated timeframe may result in account suspension or permanent ban from Reflo Hub. Additionally, continued non-compliance or intentional withholding of payment may lead to legal action and the recovery of the due amount through applicable laws and authorities. Reflo Hub reserves the right to investigate disputes and take corrective actions, including restricting access to the platform or pursuing legal remedies, to protect the interests of its verified freelancers.</p>
