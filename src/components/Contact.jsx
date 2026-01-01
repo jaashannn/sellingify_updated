@@ -216,7 +216,7 @@ const Contact = () => {
                   <h3 className="text-lg font-medium">Follow Us</h3>
                   <div className="flex gap-4">
                     <a
-                      href="https://www.instagram.com/reflohub/"
+                      href="https://www.instagram.com/reflo_hub?igsh=eW1ldm5mdzV3dTE4"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"
@@ -224,7 +224,7 @@ const Contact = () => {
                       <Instagram className="w-6 h-6" />
                     </a>
                     <a
-                      href="https://www.facebook.com/profile.php?id=61578387472424"
+                      href="https://www.facebook.com/officialreflohub"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200"

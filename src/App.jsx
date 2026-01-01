@@ -34,6 +34,7 @@ import AllCategoryPage from './components/ui/AllCategoryPage';
 import Pricing from './components/Pricing';
 import ScrollToTop from './components/ui/ScrollToTop';
 import Login from './components/Login';
+import ChatBot from './components/chatbot/ChatBot';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -327,6 +328,7 @@ function App() {
             },
           }}
         />
+        <ChatBot />
       </div>
     </Router>
   );

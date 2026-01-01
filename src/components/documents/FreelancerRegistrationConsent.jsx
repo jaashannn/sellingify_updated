@@ -23,10 +23,15 @@ const FreelancerRegistrationConsent = () => {
       content: `
         <p>As a freelancer, you agree to:</p>
         <ul class="list-disc pl-5 space-y-2">
-          <li>Pay a monthly subscription fee of $9.99 USD for access to your dashboard and lead tools.</li>
-          <li>Receive 5 credits per month to submit leads. Additional credits can be purchased via your dashboard.</li>
+          <li>Pay a one-time setup fee of $6.99 USD (₹499 INR) and receive 5 months FREE subscription.</li>
+          <li>After the free period, pay a monthly subscription fee of $9.99 USD (₹699 INR) for access to your dashboard and lead tools.</li>
+          <li>Receive 3 lead submission credits each month with your subscription. Additional credits can be purchased via your dashboard.</li>
           <li>Understand that credits are required to submit leads to businesses. Each lead submission deducts 1 credit from your balance.</li>
         </ul>
+        <div class="bg-orange-100 dark:bg-orange-900/30 border-l-4 border-orange-400 dark:border-orange-300 p-4 my-4 rounded-r">
+          <p class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Pricing Currency Note:</p>
+          <p class="text-orange-700 dark:text-orange-300"><strong>INR pricing is only available for Indian users.</strong> <strong>USD pricing applies to all global users outside of India.</strong></p>
+        </div>
         <p>Reflo Hub reserves the right to update the monthly fee or credit pricing as needed, with at least 15 days' notice provided through email or platform notification.</p>
       `,
     },

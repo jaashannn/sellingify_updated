@@ -49,11 +49,16 @@ const TermsAndConditions = () => {
     {
       title: 'Subscription Fees, Credit Packs & Payment Terms',
       content: `
-        <h4 class="font-semibold text-lg mb-4 text-orange-400">4.1 Subscription Plans & Pricing</h4>
+        <div class="bg-orange-100 dark:bg-orange-900/30 border-l-4 border-orange-400 dark:border-orange-300 p-4 my-4 rounded-r">
+          <p class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Pricing Currency Note:</p>
+          <p class="text-orange-700 dark:text-orange-300"><strong>INR pricing is only available for Indian users.</strong> <strong>USD pricing applies to all global users outside of India.</strong></p>
+        </div>
+
+        <h4 class="font-semibold text-lg mb-4 text-orange-400">4.1 Global Plans (USD Pricing)</h4>
         
-        <!-- Freelancer Plans -->
+        <!-- Global Freelancer Plans -->
         <div class="mb-8">
-          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Freelancer Plans</h5>
+          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Global Freelancer Plans</h5>
           <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
               <thead>
@@ -67,21 +72,21 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Pro Referrer</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">Monthly subscription with unlimited lead submissions</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time setup fee $6.99, then 5 months FREE. After free period: $9.99/month with 3 lead submission credits per month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">
-                    <span class="text-green-600 dark:text-green-400 font-semibold">$9.99/month</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400 block">(was $19.98)</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">$6.99 setup + 5 months FREE</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 block">Then $9.99/month (was $19.98)</span>
                   </td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">Monthly</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Credit Packs -->
+        <!-- Global Credit Packs -->
         <div class="mb-8">
-          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Credit Packs (One-time Purchase)</h5>
+          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Global Credit Packs (One-time Purchase)</h5>
           <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
               <thead>
@@ -95,121 +100,165 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Starter Pack</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">10 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">5 Credits</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$5.00</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.50 per credit</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$1.00 per credit</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Growth Pack</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">14 Credits</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$7.00</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.50 per credit</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">10 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$10.00</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$1.00 per credit</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Premium Pack</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">25 Credits</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$10.00</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.40 per credit</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">20 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">$15.00</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">$0.75 per credit</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Business Plans -->
+        <!-- Global Business Plans -->
         <div class="mb-8">
-          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Business Plans (Global)</h5>
+          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Global Business Plans</h5>
           <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
               <thead>
                 <tr class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30">
                   <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Plan</th>
-                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Setup Fee</th>
-                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Monthly Fee</th>
-                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Billing</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">One-Time Setup</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">First Year</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">After First Year (Monthly)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Basic</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$14.99</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$79/month</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$79 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">$29 USD/month</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Standard</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$19.99</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$99/month</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$149 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">$49 USD/month</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Premium</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">Custom</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">Custom</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">Price on call</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$399 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">$149 USD/month</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Mobile-friendly card view for small screens -->
-        <div class="block md:hidden space-y-4">
-          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Mobile View</h5>
-          
-          <!-- Freelancer Plans Mobile -->
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h6 class="font-semibold text-orange-400 mb-3">Freelancer Plans</h6>
-            <div class="space-y-3">
-              <div class="bg-white dark:bg-gray-900 rounded p-3">
-                <div class="font-medium">Pro Referrer</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Monthly subscription</div>
-                <div class="text-green-600 dark:text-green-400 font-semibold">$9.99/month</div>
-              </div>
-            </div>
+        <h4 class="font-semibold text-lg mb-4 mt-8 text-orange-400">4.2 Indian Plans (INR Pricing)</h4>
+        
+        <!-- Indian Freelancer Plans -->
+        <div class="mb-8">
+          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Indian Freelancer Plans</h5>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-gradient-to-r from-orange-100 to-sky-100 dark:from-orange-900/30 dark:to-sky-900/30">
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Plan Type</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Description</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Price (INR)</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Billing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Pro Referrer</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time setup fee ₹499, then 5 months FREE. After free period: ₹699/month with 3 lead submission credits per month</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">
+                    <span class="text-green-600 dark:text-green-400 font-semibold">₹499 setup + 5 months FREE</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 block">Then ₹699/month (was ₹1,398)</span>
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+        </div>
 
-          <!-- Credit Packs Mobile -->
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h6 class="font-semibold text-sky-400 mb-3">Credit Packs</h6>
-            <div class="space-y-3">
-              <div class="bg-white dark:bg-gray-900 rounded p-3">
-                <div class="font-medium">Starter Pack</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">10 Credits</div>
-                <div class="text-green-600 dark:text-green-400 font-semibold">$5.00</div>
-              </div>
-              <div class="bg-white dark:bg-gray-900 rounded p-3">
-                <div class="font-medium">Growth Pack</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">14 Credits</div>
-                <div class="text-green-600 dark:text-green-400 font-semibold">$7.00</div>
-              </div>
-              <div class="bg-white dark:bg-gray-900 rounded p-3">
-                <div class="font-medium">Premium Pack</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">25 Credits</div>
-                <div class="text-green-600 dark:text-green-400 font-semibold">$10.00</div>
-              </div>
-            </div>
+        <!-- Indian Credit Packs -->
+        <div class="mb-8">
+          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Indian Credit Packs (One-time Purchase)</h5>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-gradient-to-r from-sky-100 to-orange-100 dark:from-sky-900/30 dark:to-orange-900/30">
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Pack Name</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Credits</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Price (INR)</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Starter Pack</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">5 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">₹449</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">₹89.80 per credit</td>
+                </tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Growth Pack</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">10 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">₹899</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">₹89.90 per credit</td>
+                </tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Premium Pack</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">20 Credits</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">₹1,299</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-gray-600 dark:text-gray-400">₹64.95 per credit</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+        </div>
 
-          <!-- Business Plans Mobile -->
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h6 class="font-semibold text-purple-400 mb-3">Business Plans</h6>
-            <div class="space-y-3">
-              <div class="bg-white dark:bg-gray-900 rounded p-3">
-                <div class="font-medium">Basic</div>
-                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $14.99</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Monthly: $79/month</div>
-              </div>
-              <div class="bg-white dark:bg-gray-900 rounded p-3">
-                <div class="font-medium">Standard</div>
-                <div class="text-sm text-orange-400 font-semibold mb-1">Setup: $19.99</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Monthly: $99/month</div>
-              </div>
-              <div class="bg-white dark:bg-gray-900 rounded p-3">
-                <div class="font-medium">Premium</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Custom pricing</div>
-              </div>
-            </div>
+        <!-- Indian Business Plans -->
+        <div class="mb-8">
+          <h5 class="font-semibold text-base mb-4 text-gray-800 dark:text-gray-200">Indian Business Plans</h5>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30">
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Plan</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">One-Time Setup</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">First Year</th>
+                  <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">After First Year (Monthly)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Basic</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">₹2,999 INR</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">₹999 INR/month</td>
+                </tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Standard</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">₹3,999 INR</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">₹1,999 INR/month</td>
+                </tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Premium</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">₹9,999 INR</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">₹3,999 INR/month</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -217,12 +266,12 @@ const TermsAndConditions = () => {
           <p class="text-sm"><strong>Tax Notice:</strong> All fees are exclusive of taxes unless stated otherwise. Applicable taxes (e.g., VAT, GST/HST, UAE VAT) are charged based on your billing address.</p>
         </div>
 
-        <h4 class="font-semibold text-lg mb-4 text-orange-400">4.2 Billing & Renewals</h4>
+        <h4 class="font-semibold text-lg mb-4 text-orange-400">4.3 Billing & Renewals</h4>
         <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 mb-6">
           <p class="text-sm">Subscriptions renew automatically at the end of each billing cycle unless cancelled before renewal. You authorise Reflo Hub to charge your payment method on file. Failed payments may result in account suspension.</p>
         </div>
 
-        <h4 class="font-semibold text-lg mb-4 text-orange-400">4.3 Upgrades, Downgrades & Cancellations</h4>
+        <h4 class="font-semibold text-lg mb-4 text-orange-400">4.4 Upgrades, Downgrades & Cancellations</h4>
         <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
           <p class="text-sm">You may change plans in your dashboard. Upgrades apply immediately with a pro-rated charge; downgrades apply at the next billing cycle. Setup fees are non-refundable. Monthly fees are non-refundable once charged, except as required by law.</p>
         </div>

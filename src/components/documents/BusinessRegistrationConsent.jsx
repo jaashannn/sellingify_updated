@@ -23,9 +23,15 @@ const BusinessRegistrationConsent = () => {
       content: `
         <p>You understand and accept the following fee obligations:</p>
         <ul class="list-disc pl-5 space-y-2">
-          <li><strong>One-Time Registration Fee:</strong> The platform charges a setup fee as per the selected plan.</li>
-          <li><strong>Monthly Subscription Fee:</strong> You agree to pay a recurring monthly fee for continued access to platform features, leads, and services.</li>
+          <li><strong>One-Time Setup Fee:</strong> The platform charges a one-time setup fee as per the selected plan (Basic: $79 USD / ₹2,999 INR, Standard: $149 USD / ₹3,999 INR, Premium: $399 USD / ₹9,999 INR).</li>
+          <li><strong>Launch Offer - 12 Months FREE:</strong> As part of our launch offer, you will receive 12 months of subscription FREE after paying the one-time setup fee. During this free period, you will have full access to all features and services included in your selected plan.</li>
+          <li><strong>Monthly/Annual Subscription Fee (After First Year):</strong> After the 12-month free period, you agree to pay a recurring monthly or annual subscription fee for continued access to platform features, leads, and services. Monthly fees are: Basic: $29 USD (₹999 INR), Standard: $49 USD (₹1,999 INR), Premium: $149 USD (₹3,999 INR). Annual plans offer additional savings with discounts of 15-20%.</li>
+          <li><strong>Advertising Access Timeline:</strong> Advertising access will be made available after a minimum period of two months from the commencement of your subscription. This timeline is designed to ensure proper onboarding, system readiness, and optimal use of advertising features.</li>
         </ul>
+        <div class="bg-orange-100 dark:bg-orange-900/30 border-l-4 border-orange-400 dark:border-orange-300 p-4 my-4 rounded-r">
+          <p class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Pricing Currency Note:</p>
+          <p class="text-orange-700 dark:text-orange-300"><strong>INR pricing is only available for Indian users.</strong> <strong>USD pricing applies to all global users outside of India.</strong></p>
+        </div>
         <p>Reflo Hub reserves the right to revise the registration or subscription fees at any time. Any fee updates will be communicated via email and/or platform notifications at least 15 days in advance. Continued use of the platform after such changes constitutes acceptance of the new fee structure.</p>
       `,
     },
@@ -37,6 +43,24 @@ const BusinessRegistrationConsent = () => {
           <li>Engage professionally with leads submitted by freelancers</li>
           <li>Make direct payments to freelancers for successful leads as per their mutual agreement</li>
         </ul>
+      `,
+    },
+    {
+      title: 'Lead Capacity, Upgrade & Replacement Policy',
+      content: `
+        <p>We operate on a city-based limited-slot model with a maximum of two (2) businesses per category per city. Where both available slots are occupied by businesses on the Basic Plan, the combined total number of leads that can be accepted and serviced by those two businesses will be limited to 20 leads in total.</p>
+        <p>Because additional freelancers will continue submitting leads in that category and city, any leads beyond this capacity will go unserved and be deemed wasted, resulting in loss of potential revenue for freelancers and businesses and degradation of platform quality.</p>
+        <p>Accordingly, in such situations:</p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Businesses may be requested to upgrade to the Standard or Premium Plan to increase lead-handling capacity; or</li>
+          <li>At minimum, one of the two Basic Plan businesses must upgrade to Standard or Premium to prevent continued wastage of leads.</li>
+        </ul>
+        <p>If both businesses decline to upgrade and refuse to change plans, Reflo Hub reserves the right to:</p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Suspend or terminate the accounts of both Basic Plan businesses in that category and city; and</li>
+          <li>Replace them with new businesses able to service the demand, in order to protect freelancer earnings, business outcomes, and overall platform efficiency.</li>
+        </ul>
+        <p>By signing this consent, you acknowledge and agree to this policy, including upgrade requests and possible replacement in the event of persistent lead wastage due to Basic Plan capacity limits.</p>
       `,
     },
     {

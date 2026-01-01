@@ -34,7 +34,7 @@ const BackToTop = () => {
           }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 
+          className="fixed bottom-8 left-8 z-50 w-12 h-12 
             bg-gradient-to-r from-sky-500 to-orange-400 
             text-white dark:text-white 
             rounded-full flex items-center justify-center 
