@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, Mail, MapPin, Instagram, Linkedin, Facebook,Phone, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
+import { getSaaSWebsite } from '../utils/env';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -79,9 +80,50 @@ const Contact = () => {
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent mb-4 drop-shadow-[0_0_20px_rgba(255,165,0,0.3)]">
             Contact Reflo Hub
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Have questions or ready to connect? Reach out to us and let’s build something extraordinary together.
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+            Have questions or ready to connect? Reach out to us and let's build something extraordinary together.
           </p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: '0 0 40px rgba(255, 165, 0, 0.4)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center">
+                  Join as Freelancer
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.button>
+            </a>
+
+            <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 0 40px rgba(30, 64, 175, 0.3)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group px-8 py-4 bg-gradient-to-r from-orange-300 to-sky-500 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/20 text-white dark:text-white rounded-xl font-semibold text-lg hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300"
+              >
+                <span className="flex items-center">
+                  Join as Business
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+              </motion.button>
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* Contact Section */}
@@ -244,6 +286,57 @@ const Contact = () => {
               </div>
             </div>
           </motion.div>
+        </motion.section>
+
+        {/* Join CTA Section */}
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="py-24 text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Join Reflo Hub</span>?
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
+            Choose your path and start your journey with Reflo Hub today.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: '0 0 40px rgba(255, 165, 0, 0.4)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center">
+                  Join as Freelancer
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.button>
+            </a>
+
+            <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 0 40px rgba(30, 64, 175, 0.3)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group px-8 py-4 bg-gradient-to-r from-orange-300 to-sky-500 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/20 text-white dark:text-white rounded-xl font-semibold text-lg hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300"
+              >
+                <span className="flex items-center">
+                  Join as Business
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+              </motion.button>
+            </a>
+          </div>
         </motion.section>
       </div>
     </section>

@@ -129,8 +129,8 @@ const WhyRefloHub = () => {
               <thead>
                 <tr className="bg-gradient-to-r from-sky-500/20 to-orange-400/20">
                   <th className="p-4 text-gray-900 dark:text-white font-semibold rounded-tl-2xl">Feature</th>
-                  <th className="p-4 text-gray-900 dark:text-white font-semibold">Traditional Platforms</th>
-                  <th className="p-4 text-gray-900 dark:text-white font-semibold rounded-tr-2xl">Reflo Hub</th>
+                  <th className="p-4 text-gray-900 dark:text-white font-semibold">Reflo Hub</th>
+                  <th className="p-4 text-gray-900 dark:text-white font-semibold rounded-tr-2xl">Traditional Platforms</th>
                 </tr>
               </thead>
               <tbody>
@@ -147,8 +147,8 @@ const WhyRefloHub = () => {
                       {feature.icon}
                       <span className="text-gray-900 dark:text-white font-medium">{feature.name}</span>
                     </td>
-                    <td className="p-4 text-gray-600 dark:text-gray-400">{feature.traditional}</td>
                     <td className="p-4 text-gray-800 dark:text-gray-200">{feature.refloHub}</td>
+                    <td className="p-4 text-gray-600 dark:text-gray-400">{feature.traditional}</td>
                   </motion.tr>
                 ))}
               </tbody>

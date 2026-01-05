@@ -346,12 +346,12 @@ const ChatBot = () => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <motion.path
-                      d="M2 8 C6 4, 18 4, 22 8"
+                      d="M2 4 C6 8, 18 8, 22 4"
                       stroke="white"
                       strokeWidth="2.5"
                       strokeLinecap="round"
                       animate={{
-                        d: ["M2 8 C6 4, 18 4, 22 8", "M2 9 C6 5, 18 5, 22 9", "M2 8 C6 4, 18 4, 22 8"]
+                        d: ["M2 4 C6 8, 18 8, 22 4", "M2 4.5 C6 8.5, 18 8.5, 22 4.5", "M2 4 C6 8, 18 8, 22 4"]
                       }}
                       transition={{
                         duration: 3,
@@ -519,7 +519,7 @@ const ChatBot = () => {
                       fill="none"
                     >
                       <path
-                        d="M2 6 C4 4, 12 4, 14 6"
+                        d="M2 3 C4 7, 12 7, 14 3"
                         stroke="white"
                         strokeWidth="1.5"
                         strokeLinecap="round"

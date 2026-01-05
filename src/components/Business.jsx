@@ -175,28 +175,105 @@ const Business = () => {
               {/* <span className="text-sm text-gray-700 dark:text-gray-100">Last Updated: July 01, 2025</span> */}
             </motion.div>
 
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-10"
             >
-              🚀 Business <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Reflo Hub</span>: Quality Leads, Made Easy
-            </motion.h1>
+              <motion.h1
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <span className="block mb-2">🏆 Dominate Your City.</span>
+                <span className="block mb-4">
+                  <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Lock Out</span> your Competitors.
+                </span>
+              </motion.h1>
+              
+              <motion.p
+                className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-200 mb-6 font-semibold"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                Get exclusive access to ready-to-buy customers via{' '}
+                <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent font-bold">Reflo Hub</span>.
+              </motion.p>
 
-            <motion.p
-              className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10"
+              <motion.div
+                className="bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border-l-4 border-orange-400 rounded-lg p-4 md:p-6 mb-6 max-w-4xl mx-auto"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 font-medium mb-2">
+                  <span className="font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent">Only 2-3 businesses</span> per category per city
+                </p>
+                <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 font-medium">
+                  <span className="font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent">Premium plan = ONLY 1 business</span> per city
+                </p>
+              </motion.div>
+
+              <motion.p
+                className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">
+                  ⚡ Secure your slot before someone else takes your city.
+                </span>
+              </motion.p>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Utilize Reflo Hub to grow your business faster. Access high-quality referral leads from freelancers worldwide. Limited to 2-3 businesses per category per city. Sign up now to secure your spot!
-            </motion.p>
+              <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: '0 0 40px rgba(255, 165, 0, 0.4)'
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center">
+                    Join as Freelancer
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </motion.button>
+              </a>
+
+              <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    boxShadow: '0 0 40px rgba(30, 64, 175, 0.3)'
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group px-8 py-4 bg-gradient-to-r from-orange-300 to-sky-500 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/20 text-white dark:text-white rounded-xl font-semibold text-lg hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300"
+                >
+                  <span className="flex items-center">
+                    Join as Business
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                </motion.button>
+              </a>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-wrap justify-center gap-4 mt-8"
             >
               {[
@@ -390,8 +467,22 @@ const Business = () => {
                    </p> 
                    {pricing.meta.launchOffer.business.note && <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{pricing.meta.launchOffer.business.note}</p>}
 
-                  <div className="mt-3">
-                    <a href="/get-started" className="text-orange-400 font-semibold hover:underline">Register Now</a>
+                  <div className="mt-4 flex justify-center">
+                    <motion.a
+                      href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}
+                      whileHover={{
+                        scale: 1.05,
+                        boxShadow: '0 0 40px rgba(255, 165, 0, 0.4)'
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group relative inline-flex px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                    >
+                      <span className="relative z-10 flex items-center">
+                        Register Now
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-orange-300 to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </motion.a>
                   </div>
                  </div>
                </div>
@@ -595,6 +686,59 @@ const Business = () => {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-300 to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.a>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Join CTA Section */}
+        <section className="py-24 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Join Reflo Hub</span>?
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-10">
+              Choose your path and start your journey with Reflo Hub today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: '0 0 40px rgba(255, 165, 0, 0.4)'
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center">
+                    Join as Freelancer
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </motion.button>
+              </a>
+
+              <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    boxShadow: '0 0 40px rgba(30, 64, 175, 0.3)'
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group px-8 py-4 bg-gradient-to-r from-orange-300 to-sky-500 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/20 text-white dark:text-white rounded-xl font-semibold text-lg hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300"
+                >
+                  <span className="flex items-center">
+                    Join as Business
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                </motion.button>
+              </a>
             </div>
           </motion.div>
         </section>
