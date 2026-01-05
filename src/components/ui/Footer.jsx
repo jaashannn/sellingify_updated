@@ -200,7 +200,7 @@ const Footer = () => {
             transition={{ duration: 0.8 }}
             className="text-gray-600 dark:text-gray-300 text-center md:text-left mb-4 md:mb-0 hover:text-sky-500 transition-colors duration-200"
           >
-            Copyright © 2025 RefloHub. All rights reserved.
+            Copyright © 2026 RefloHub. All rights reserved.
           </motion.a>
           <motion.p
             initial={{ opacity: 0 }}
