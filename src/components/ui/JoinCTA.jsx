@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Users, TrendingUp } from 'lucide-react';
+import { getSaaSWebsite } from '../../utils/env';
 
 const JoinCTA = () => {
   return (
@@ -95,6 +96,48 @@ const JoinCTA = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Join Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12"
+          >
+            <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: '0 0 40px rgba(255, 165, 0, 0.4)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center">
+                  Join as Freelancer
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.button>
+            </a>
+
+            <a href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 0 40px rgba(30, 64, 175, 0.3)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="group px-8 py-4 bg-gradient-to-r from-orange-300 to-sky-500 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/20 text-white dark:text-white rounded-xl font-semibold text-lg hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300"
+              >
+                <span className="flex items-center">
+                  Join as Business
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+              </motion.button>
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>
