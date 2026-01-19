@@ -11,37 +11,74 @@ const Feature = () => {
       content: `
         <ul class="space-y-4">
           <li>
-            <h4 class="font-semibold">1. Pay for Success Model</h4>
-            <ul class mecanismos de listas-disc pl-5 space-y-2">
-              <li>Zero Upfront Ads — Pay referral fees after a lead converts.</li>
-              <li>Guaranteed ROI — Every dollar spent is tied to closed business.</li>
+            <h4 class="font-semibold">1. Pay-for-Results… but with Real Protection</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>You don't pay for ads. You pay freelancers only when a deal closes.</li>
+              <li>You keep a Security Wallet on Reflo Hub.</li>
+              <li>No wallet required until your first two leads are received.</li>
+              <li>After that, AI calculates your minimum balance based on: number of active leads, average commission size, your past payment behavior, and your conversion rate.</li>
+              <li>If you're converting leads well, your required balance goes up. If you're slow or risky, the system tightens your access to new leads.</li>
+              <li>More leads = more responsibility. Better behavior = smoother flow.</li>
             </ul>
           </li>
           <li>
-            <h4 class="font-semibold">2. Smart Lead Verification</h4>
+            <h4 class="font-semibold">2. Blurred Leads Until You Prove Payment</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>AI screening & human review guard against spam and duplicates.</li>
-              <li>Optional phone/email validation and CRM match checks.</li>
+              <li>You'll still receive leads fast — but here's the guardrail:</li>
+              <li>If your wallet is low or you haven't cleared past payments, new leads appear blurred.</li>
+              <li>You can: top up your wallet to unlock them, or upload proof that you've paid previous freelancers.</li>
+              <li>This protects freelancers without slowing honest businesses. No drama. Just accountability.</li>
             </ul>
           </li>
           <li>
-            <h4 class="font-semibold">3. Dynamic Referral Fee Controls</h4>
+            <h4 class="font-semibold">3. AI Risk Scoring Instead of Guesswork</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>Set tiered payouts by product, region, or deal size.</li>
-              <li>Update fees in real-time—freelancers see changes instantly.</li>
+              <li>Every business gets a risk score based on: how fast you pay freelancers, how many leads you convert, how often freelancers flag you, how often you dispute leads, and your wallet history.</li>
+              <li>Low risk = smoother experience. High risk = stricter controls.</li>
+              <li>You earn trust. We don't just give it.</li>
             </ul>
           </li>
           <li>
-            <h4 class="font-semibold">4. Real-Time Performance Dashboard</h4>
+            <h4 class="font-semibold">4. Two-Way Ratings (Real Reputation System)</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>Track inbound leads, conversion funnel, and cost per acquisition.</li>
-              <li>Export CSV/PDF or connect via API to your own BI tools.</li>
+              <li>Businesses can rate freelancers on lead quality: Ready-to-buy, Warm, Weak, Trash.</li>
+              <li>Freelancers can rate businesses on: Paid on time, Delayed payment, Difficult behavior, Fair and professional.</li>
+              <li>Bad actors get filtered out. Good players rise to the top.</li>
+              <li>No more fake promises hiding behind shiny dashboards.</li>
             </ul>
           </li>
           <li>
-            <h4 class="font-semibold">5. No Risk Growth Guarantee</h4>
+            <h4 class="font-semibold">5. Smart Lead Verification (Still There, but Better)</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>We will cover the cost of your 12-month subscription; you are only required to pay the one-time setup fee.</li>
+              <li>Every lead passes through: AI screening, duplicate checks, pattern analysis, and manual review when needed.</li>
+              <li>If a lead is fake, you don't lose money.</li>
+              <li>If a freelancer abuses the system, they get banned.</li>
+              <li>You're protected — not just "promised protection."</li>
+            </ul>
+          </li>
+          <li>
+            <h4 class="font-semibold">6. Dynamic Referral Fees (Your Control)</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>You can still set: different commissions by product, different payouts by city, and different rates by deal size.</li>
+              <li>Freelancers see changes instantly in their dashboard.</li>
+              <li>No back-and-forth drama.</li>
+            </ul>
+          </li>
+          <li>
+            <h4 class="font-semibold">7. Real-Time Performance Dashboard</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>You get: leads in progress, converted deals, pending commissions, wallet balance, risk score, and freelancer ratings.</li>
+              <li>You don't need spreadsheets. The system tells you where you stand.</li>
+            </ul>
+          </li>
+          <li>
+            <h4 class="font-semibold">8. 1-Year Free Subscription (Same Promise)</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>You still pay: only a one-time setup fee, then 12 months free.</li>
+              <li>After that, your normal monthly plan applies.</li>
+              <li>The wallet is not a fee. It's a security reserve — your own money, not ours.</li>
+              <li>If you leave Reflo Hub: you can withdraw unused wallet balance, but funds linked to active leads stay frozen until resolved.</li>
+              <li>Fair and clean.</li>
             </ul>
           </li>
         </ul>
@@ -52,39 +89,73 @@ const Feature = () => {
       content: `
         <ul class="space-y-4">
           <li>
-            <h4 class="font-semibold">1. Unlimited Niches & Territories</h4>
+            <h4 class="font-semibold">1. You Keep 100% of Your Commission</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>Choose from 100+ high-commission industries or add your own niche.</li>
-              <li>Local or global—your network, your rules.</li>
-              <li>As a launch offer, we are providing a 5-month subscription free of charge. </li>
+              <li>This remains your biggest promise.</li>
+              <li>Reflo Hub does not take a percentage from your earnings.</li>
+              <li>Businesses pay you directly.</li>
+              <li>Your only cost is: one-time setup fee, 5 months free, then a small monthly subscription.</li>
+              <li>No commission cuts. Period.</li>
             </ul>
           </li>
           <li>
-            <h4 class="font-semibold">2. Credit-Based Lead Submission</h4>
+            <h4 class="font-semibold">2. 5 Months Free + Monthly After</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>3 lead submission credits each month with your subscription.</li>
-              <li>Buy extra credits à la carte or unlock bonuses for top performance.</li>
+              <li>You pay: one-time setup fee, 5 months FREE, then monthly subscription.</li>
+              <li>This stays exactly as before.</li>
+              <li>No hidden charges. No surprise deductions.</li>
             </ul>
           </li>
           <li>
-            <h4 class="font-semibold">3. Smart Referral Links & QR Codes</h4>
+            <h4 class="font-semibold">3. Credit-Based Lead Submission</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>One-click share to email, socials, or print.</li>
-              <li>Built-in tracking pixel shows when your prospect engages.</li>
+              <li>You get: 3 credits per month included, option to buy more credits anytime.</li>
+              <li>One lead = one credit.</li>
+              <li>If your lead is rejected for being fake or spam, you may lose that credit.</li>
+              <li>If it's rejected due to system error, we refund it.</li>
             </ul>
           </li>
           <li>
-            <h4 class="font-semibold">4. Transparent Commission Tracker</h4>
+            <h4 class="font-semibold">4. Security Wallet Protects You (Your New Advantage)</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>Live feed of lead status, deal size, and payout schedule.</li>
-              <li>Instant payout to Stripe, PayPal, or bank transfer when deals close.</li>
+              <li>This is the big win for freelancers.</li>
+              <li>Because businesses must maintain a wallet: If a business disappears, delays, or commits fraud, Reflo Hub can compensate you partially or fully from their wallet.</li>
+              <li>Not a perfect guarantee — but far better than before.</li>
+              <li>Before = you were helpless. Now = you have real protection.</li>
             </ul>
           </li>
           <li>
-            <h4 class="font-semibold">5. Learning Hub & Community</h4>
+            <h4 class="font-semibold">5. Lead Status Transparency</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>Courses on prospecting, negotiation, and niche marketing.</li>
-              <li>Peer forums, leaderboards, and monthly referral challenges.</li>
+              <li>You can see in real time: lead submitted, lead viewed, business contacted client, deal in progress, deal closed, payment pending, payment received.</li>
+              <li>No more guessing.</li>
+            </ul>
+          </li>
+          <li>
+            <h4 class="font-semibold">6. Smart Referral Links & QR Codes</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Same as before, but cleaner: share links on WhatsApp, Instagram, Facebook, email.</li>
+              <li>Track engagement inside your dashboard.</li>
+              <li>See which leads actually moved forward.</li>
+              <li>You work smarter, not harder.</li>
+            </ul>
+          </li>
+          <li>
+            <h4 class="font-semibold">7. Two-Way Ratings Protect Good Freelancers</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>If you consistently send quality leads: your score goes up, businesses trust you more, you get priority visibility.</li>
+              <li>If you spam: your account gets restricted, eventually banned.</li>
+              <li>The system rewards real effort.</li>
+            </ul>
+          </li>
+          <li>
+            <h4 class="font-semibold">8. Dispute Center (Real Process, Not Drama)</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>If a business refuses to pay, you can file a dispute.</li>
+              <li>Reflo Hub will review: chat logs, timestamps, proof of payment, wallet status.</li>
+              <li>If the business is guilty: they can be banned, wallet funds may be used to compensate freelancers.</li>
+              <li>If you're guilty: you can also be banned.</li>
+              <li>Fair both ways.</li>
             </ul>
           </li>
         </ul>
@@ -94,9 +165,9 @@ const Feature = () => {
       title: 'Marketplace & Matching Engine',
       content: `
         <ul class="list-disc pl-5 space-y-2">
-          <li>AI MatchScore™ ranks every lead against business criteria for fit and intent.</li>
-          <li>Two-way ratings build reputation and surface top performers.</li>
-          <li>Dispute Center with built-in mediation and escrow system.</li>
+          <li>Reflo Hub still uses AI matching — but now it also considers: business risk score, freelancer quality score, wallet status, and dispute history.</li>
+          <li>Better matches. Less chaos.</li>
+          <li>And yes — two-way ratings matter here.</li>
         </ul>
       `,
     },
@@ -104,9 +175,9 @@ const Feature = () => {
       title: 'Security & Compliance',
       content: `
         <ul class="list-disc pl-5 space-y-2">
-          <li>End-to-end encryption (TLS 1.3) and SOC 2 compliant infrastructure.</li>
-          <li>Live photo KYC for all users to deter fraud.</li>
-          <li>GDPR, CCPA, and PIPEDA ready—with regional data residency options.</li>
+          <li>We still run on secure infrastructure with encryption.</li>
+          <li>But now we also add: live KYC for everyone, behavioral monitoring, wallet safeguards, fraud detection, and dispute tracking.</li>
+          <li>GDPR, CCPA, PIPEDA compliant — updated for your new model.</li>
         </ul>
       `,
     },
@@ -114,9 +185,8 @@ const Feature = () => {
       title: 'Analytics & Insights',
       content: `
         <ul class="list-disc pl-5 space-y-2">
-          <li>Conversion heatmaps and deal velocity charts.</li>
-          <li>Custom funnels and cohort analysis.</li>
-          <li>Automated weekly email digest summarizing ROI and trends.</li>
+          <li>You get: conversion heatmaps, lead velocity, wallet trends, freelancer performance, risk warnings, and weekly ROI summary.</li>
+          <li>You see problems before they explode.</li>
         </ul>
       `,
     },
@@ -124,9 +194,8 @@ const Feature = () => {
       title: 'Mobile & Accessibility',
       content: `
         <ul class="list-disc pl-5 space-y-2">
-          <li>Responsive PWA: install from any browser—no app store needed.</li>
-          <li>WCAG 2.1 AA compliant interface.</li>
-          <li>Multilingual UI (English, more coming).</li>
+          <li>Same promise: works on mobile, no app required, responsive design, multilingual support coming.</li>
+          <li>Not hype — just usable.</li>
         </ul>
       `,
     },
@@ -134,9 +203,8 @@ const Feature = () => {
       title: 'Scale & Reliability',
       content: `
         <ul class="list-disc pl-5 space-y-2">
-          <li>Cloud-native on AWS with auto-scaling and multi-AZ redundancy.</li>
-          <li>99.9% SLA uptime backed by real-time status page.</li>
-          <li>Daily encrypted backups and 30-day point-in-time recovery.</li>
+          <li>Still cloud-based, scalable, and reliable.</li>
+          <li>No shortcuts here.</li>
         </ul>
       `,
     },
@@ -144,9 +212,9 @@ const Feature = () => {
       title: 'Support & Success',
       content: `
         <ul class="list-disc pl-5 space-y-2">
-          <li>24/7 live chat with 2-minute average first response.</li>
-          <li>Dedicated Customer Success Manager for Premium plans.</li>
-          <li>Extensive knowledge base, video tutorials, and community webinars.</li>
+          <li>You still get: live chat, knowledge base, tutorials, and Premium businesses get a dedicated success manager.</li>
+          <li>But now support also handles: disputes, wallet issues, and fraud reviews.</li>
+          <li>Real support, not canned replies.</li>
         </ul>
       `,
     },

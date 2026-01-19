@@ -191,17 +191,17 @@ const Business = () => {
                 <span className="block mb-4">
                   <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Lock Out</span> your Competitors.
                 </span>
-              </motion.h1>
-              
-              <motion.p
+            </motion.h1>
+
+            <motion.p
                 className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-200 mb-6 font-semibold"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
                 Get exclusive access to ready-to-buy customers via{' '}
                 <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent font-bold">Reflo Hub</span>.
-              </motion.p>
+            </motion.p>
 
               <motion.div
                 className="bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border-l-4 border-orange-400 rounded-lg p-4 md:p-6 mb-6 max-w-4xl mx-auto"

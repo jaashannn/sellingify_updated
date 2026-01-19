@@ -7,135 +7,271 @@ const FreelancerRegistrationConsent = () => {
 
   const consentSections = [
     {
-      title: 'Agreement to Terms',
+      title: '1) Agreement to Terms',
       content: `
-        <p>By signing up, you ("the Freelancer") agree to:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Reflo Hub’s Terms & Conditions</li>
+        <p class="mb-3">By completing registration, you agree to be bound by:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Reflo Hub Terms & Conditions</li>
           <li>Privacy Policy</li>
-          <li>This Freelancer Consent Agreement</li>
+          <li>This Freelancer Registration Consent Form</li>
         </ul>
-        <p>You confirm that the information you provide is accurate and that you will use the platform honestly and responsibly.</p>
+        <p>You confirm that all information you provide is truthful, accurate, and complete.</p>
       `,
     },
     {
-      title: 'Subscription and Credit Policy',
+      title: '2) Subscription, Credits & Pricing (Confirmed)',
       content: `
-        <p>As a freelancer, you agree to:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Pay a one-time setup fee of $6.99 USD (₹499 INR) and receive 5 months FREE subscription.</li>
-          <li>After the free period, pay a monthly subscription fee of $9.99 USD (₹699 INR) for access to your dashboard and lead tools.</li>
-          <li>Receive 3 lead submission credits each month with your subscription. Additional credits can be purchased via your dashboard.</li>
-          <li>Understand that credits are required to submit leads to businesses. Each lead submission deducts 1 credit from your balance.</li>
-        </ul>
         <div class="bg-orange-100 dark:bg-orange-900/30 border-l-4 border-orange-400 dark:border-orange-300 p-4 my-4 rounded-r">
-          <p class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Pricing Currency Note:</p>
+          <p class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Pricing Currency Note</p>
           <p class="text-orange-700 dark:text-orange-300"><strong>INR pricing is only available for Indian users.</strong> <strong>USD pricing applies to all global users outside of India.</strong></p>
         </div>
-        <p>Reflo Hub reserves the right to update the monthly fee or credit pricing as needed, with at least 15 days' notice provided through email or platform notification.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.1 Setup Fee + Free Period</h4>
+        <p class="mb-3">You agree to:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Pay a one-time setup fee of $6.99 USD (or ₹499 INR)</li>
+          <li>Receive 5 months FREE subscription after paying the setup fee</li>
+        </ul>
+        <p class="mb-4">Setup fees are non-refundable, except as required by law.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.2 Monthly Subscription (After Free Period)</h4>
+        <p class="mb-3">After the 5-month free period ends, you agree to pay:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>$9.99 USD/month (or ₹699 INR/month)</li>
+        </ul>
+        <p class="mb-4">to continue access to your dashboard, referral tools, and subscription benefits.</p>
+        <p class="mb-4">Monthly fees are non-refundable once charged, except as required by law.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.3 Monthly Credits Included</h4>
+        <p class="mb-3">Your subscription includes:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>3 lead submission credits per month</li>
+        </ul>
+        <p class="mb-3">You may purchase additional credits (credit packs) inside your dashboard.</p>
+        <p class="mb-3">You understand:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>1 lead submission = 1 credit deduction</li>
+          <li>Credits have no cash value and are non-transferable</li>
+          <li>Unused credits may expire or reset per platform rules shown in your dashboard</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.4 Updates to Fees or Credits</h4>
+        <p class="mb-4">Reflo Hub may update subscription fees or credit pricing with at least 15 days' notice via email or in-app notification. Continued use after changes takes effect means you accept the updates.</p>
       `,
     },
     {
-      title: 'Your Role as a Lead Referrer',
+      title: "3) Your Role as a Lead Referrer (What You Do / Don't Do)",
       content: `
-        <p>You understand and agree that:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Your responsibility is to find and refer potential clients to businesses listed on the platform using the lead submission dashboard.</li>
-          <li>You are not required to sell, negotiate, or handle business operations – your role is limited to referral generation.</li>
-          <li>You may refer leads from any location or country, regardless of your physical location.</li>
+        <p class="mb-3">You agree and understand that:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Your role is to refer potential customers (leads) to businesses listed on Reflo Hub</li>
+          <li>You are not required to sell, negotiate, close deals, or manage business operations</li>
+          <li>You may submit leads from any location or country, regardless of where you live</li>
+          <li>You must submit leads ethically and with permission-based information (no scraping, harvesting, or fake data)</li>
         </ul>
       `,
     },
     {
-      title: 'Direct Payment from Businesses',
+      title: '4) Lead Quality Standards (Strict Rules)',
       content: `
-        <p>Once a business receives and converts your submitted lead into a client:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>The business will pay you directly, based on the mutually agreed commission (negotiated off-platform via internal chat).</li>
-          <li>Reflo Hub does not act as a payment intermediary and does not process or withhold any commissions.</li>
-          <li>You are responsible for managing your income and taxes in accordance with the laws of your country.</li>
+        <p class="mb-3">You agree that the following are prohibited:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Fake names, fake phone numbers, or made-up customer data</li>
+          <li>Scraped/harvested databases or purchased lead lists</li>
+          <li>Repeated duplicate submissions</li>
+          <li>Misleading or manipulated lead details</li>
+          <li>Spam submissions to "test" businesses</li>
+          <li>Submitting personal data of a minor without verifiable parental consent</li>
+        </ul>
+        <p class="mb-4">Reflo Hub may use AI and manual review to validate lead quality. Leads may be rejected if they fail platform standards.</p>
+        <p class="mb-3">If a lead is rejected, Reflo Hub may (at its discretion):</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>refund the credit, or</li>
+          <li>deny refund if fraud or abuse is suspected</li>
         </ul>
       `,
     },
     {
-      title: 'Anti-Circumvention Clause',
+      title: '5) Direct Payment + "100% Commission" Promise',
       content: `
-        <p>To protect the integrity of the platform:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>You must not approach any business listed on Reflo Hub directly to deal outside the platform.</li>
+        <p class="mb-3">You acknowledge and agree:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Businesses pay freelancers directly for successful conversions</li>
+          <li>Reflo Hub does not deduct any commission percentage from your referral earnings</li>
+          <li>Any referral fee amount is decided between you and the business through approved communication channels (e.g., in-app chat)</li>
         </ul>
-        <p>If found guilty of attempting to bypass the system, you will face:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Immediate and permanent ban from the platform</li>
-          <li>Forfeiture of access to any pending leads or earnings</li>
-          <li>Possible legal action in cases of serious misconduct</li>
-        </ul>
-        <p>This policy also applies to businesses found guilty of bypassing freelancers.</p>
-      `,
-    },
-    {
-      title: 'Dispute Handling',
-      content: `
-        <p>If a dispute arises with a business regarding commission:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>You can submit a complaint through the platform’s Help Center with supporting screenshots or communication logs.</li>
-          <li>Reflo Hub may intervene to review and mediate, but cannot enforce payments between you and businesses.</li>
-        </ul>
-        <p>Frequent disputes may result in a performance review or temporary suspension.</p>
-      `,
-    },
-    {
-      title: 'Identity & Photo Verification',
-      content: `
-        <p>As part of your registration, you agree to:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Complete KYC (Know Your Customer) process</li>
-          <li>Submit a live photo verification through Reflo Hub’s secure tool</li>
-          <li>Provide accurate identification and payment details</li>
-        </ul>
-        <p>Failure to verify identity will result in your registration being declined.</p>
-      `,
-    },
-    {
-      title: 'Termination of Account',
-      content: `
-        <p>Your account may be suspended or terminated for:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Submitting fake or irrelevant leads</li>
-          <li>Circumventing the platform’s policies</li>
-          <li>Receiving repeated negative feedback from businesses</li>
-          <li>Using the platform for spam or fraud</li>
-        </ul>
-        <p>Termination will result in the loss of remaining credits, and you will not be eligible for a refund of subscription fees.</p>
-      `,
-    },
-    {
-      title: 'Consent to Communication',
-      content: `
-        <p>By registering, you agree to receive:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Transactional and operational emails</li>
-          <li>System notifications and updates</li>
-          <li>Occasional marketing messages (with the option to opt-out)</li>
-        </ul>
-        <p>You can manage your notification preferences in your dashboard settings.</p>
-      `,
-    },
-    {
-      title: 'Acknowledgment',
-      content: `
-        <p>By checking the box and clicking "I Agree":</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>You confirm that you have read and understood all of the above policies.</li>
-          <li>You consent to abide by Reflo Hub’s platform rules and standards.</li>
-          <li>You understand that failure to comply may result in account termination and legal consequences.</li>
+        <p class="mb-3">You are responsible for your own:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>income reporting</li>
+          <li>tax filings</li>
+          <li>legal compliance in your country</li>
         </ul>
       `,
     },
     {
-      title: 'Contact Information',
+      title: '6) Business Security Wallet (Important Clarification)',
       content: `
-        <p>For questions, contact our support team at:</p>
+        <p class="mb-4">You acknowledge that Reflo Hub uses a Business Security Wallet system as a safety feature for freelancer protection.</p>
+        <p class="mb-3">This wallet:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>is maintained by the business, not you</li>
+          <li>may be used by Reflo Hub in limited cases to compensate freelancers if a business is found guilty in disputes or fraud investigations</li>
+          <li>is not a guarantee of full recovery in every case</li>
+        </ul>
+      `,
+    },
+    {
+      title: '7) Ratings System & Quality/Risk Scoring',
+      content: `
+        <p class="mb-4">To maintain platform quality and safety:</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.1 Business Rates Freelancer (Lead Quality Ratings)</h4>
+        <p class="mb-3">Businesses may rate your lead quality, including tags such as:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>good lead / ready to buy</li>
+          <li>warm lead</li>
+          <li>low-quality / irrelevant / suspected spam</li>
+        </ul>
+        <p class="mb-3">These ratings may affect:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>your quality score</li>
+          <li>lead limits</li>
+          <li>account visibility</li>
+          <li>account status (including restrictions)</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.2 Freelancer Rates Business (Payment & Conduct Ratings)</h4>
+        <p class="mb-3">You may rate businesses for:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>paying on time</li>
+          <li>delaying payments</li>
+          <li>refusing to pay</li>
+          <li>bad behavior toward leads</li>
+          <li>bypass attempts</li>
+        </ul>
+        <p class="mb-4">False, retaliatory, or abusive ratings are prohibited and may result in enforcement action.</p>
+      `,
+    },
+    {
+      title: '8) Anti-Circumvention (Zero Tolerance)',
+      content: `
+        <p class="mb-3">To protect platform integrity:</p>
+        <p class="mb-3">You must not approach businesses listed on Reflo Hub to deal outside the platform in order to:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>hide conversions</li>
+          <li>bypass platform safety rules</li>
+          <li>avoid disputes logging</li>
+          <li>manipulate referral payments</li>
+        </ul>
+        <p class="mb-3">If Reflo Hub determines you attempted to bypass the system, you may face:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>immediate and permanent ban</li>
+          <li>loss of access to your account and remaining credits</li>
+          <li>possible legal action in serious cases</li>
+        </ul>
+        <p class="mb-4">This policy also applies to businesses.</p>
+      `,
+    },
+    {
+      title: '9) Dispute Handling (How You Protect Yourself)',
+      content: `
+        <p class="mb-3">If a dispute arises regarding commission payment or business behavior:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>You may submit a dispute through Reflo Hub's Dispute Centre / Help Centre</li>
+          <li>You must provide supporting evidence such as:</li>
+        </ul>
+        <ul class="list-disc pl-10 space-y-2 mb-4">
+          <li>screenshots</li>
+          <li>chat logs</li>
+          <li>call logs</li>
+          <li>invoices / proof</li>
+          <li>any other relevant documents</li>
+        </ul>
+        <p class="mb-3">Reflo Hub's dispute team may:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>review platform logs and timestamps</li>
+          <li>request additional evidence</li>
+          <li>issue a binding platform decision</li>
+          <li>take enforcement action (including bans)</li>
+        </ul>
+        <p class="mb-4">You acknowledge that Reflo Hub may not be able to recover 100% of unpaid commissions in every case, but will attempt best-effort recovery through the platform's available controls (including the Business Security Wallet where applicable).</p>
+      `,
+    },
+    {
+      title: '10) Fraud Policy (Immediate Lifetime Ban)',
+      content: `
+        <p class="mb-4">Reflo Hub has a strict fraud policy.</p>
+        <p class="mb-3">If Reflo Hub determines you committed fraud (even on a first incident), you may be permanently banned. Fraud includes, without limitation:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>fake leads</li>
+          <li>lead manipulation</li>
+          <li>collusion with businesses</li>
+          <li>fake disputes or fake evidence</li>
+          <li>abuse of ratings</li>
+          <li>any activity intended to deceive or exploit the platform</li>
+        </ul>
+        <p class="mb-4">If both business and freelancer are found guilty in the same event, Reflo Hub may ban both and may decline payouts or recovery.</p>
+      `,
+    },
+    {
+      title: '11) Identity & Live Photo Verification (KYC)',
+      content: `
+        <p class="mb-3">You agree to complete verification requirements, including:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>live photo verification</li>
+          <li>valid identity documents if requested</li>
+          <li>accurate payment details</li>
+        </ul>
+        <p>If you fail verification, your registration may be declined or restricted.</p>
+      `,
+    },
+    {
+      title: '12) Suspension / Termination',
+      content: `
+        <p class="mb-3">Your account may be restricted, suspended, or terminated for:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>submitting fake or low-quality leads repeatedly</li>
+          <li>circumventing platform rules</li>
+          <li>repeated negative ratings/flags from businesses</li>
+          <li>spam or abusive conduct</li>
+          <li>fraud or misconduct</li>
+        </ul>
+        <p class="mb-3">If terminated:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>remaining credits may be forfeited</li>
+          <li>subscription fees are not refundable (except where required by law)</li>
+        </ul>
+      `,
+    },
+    {
+      title: '13) Consent to Communication',
+      content: `
+        <p class="mb-3">By registering, you consent to receive:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>transactional emails</li>
+          <li>system alerts and updates</li>
+          <li>policy notices</li>
+          <li>occasional promotional messages (you may opt out where applicable)</li>
+        </ul>
+        <p>You may manage notification preferences in account settings.</p>
+      `,
+    },
+    {
+      title: '14) Acknowledgment & Agreement',
+      content: `
+        <p class="mb-3">By checking the box and clicking "I Agree," you confirm that:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>you have read and understood this Consent Form</li>
+          <li>you agree to follow Reflo Hub's platform rules</li>
+          <li>violations may result in permanent removal and possible legal consequences</li>
+        </ul>
+      `,
+    },
+    {
+      title: '15) Contact',
+      content: `
+        <p class="mb-3">For questions or support, contact:</p>
+        <p class="mb-2"><strong>Reflo Hub Support</strong></p>
         <p><strong>Email:</strong> <a href="mailto:support@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">support@reflohub.com</a></p>
       `,
     },
@@ -200,9 +336,19 @@ const FreelancerRegistrationConsent = () => {
           </p>
         </motion.div>
 
+        {/* Company Details Header */}
+        <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto mb-8">
+          <div className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-lg border border-gray-200 dark:border-orange-300/40 rounded-lg p-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Company:</strong> Reflo Hub FZ LLC</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Address:</strong> IFZA Business Park (DDP), PO Box 342001, Dubai, United Arab Emirates</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Email:</strong> <a href="mailto:support@reflohub.com" className="text-orange-400 dark:text-orange-300 hover:underline">support@reflohub.com</a> | <a href="mailto:privacy@reflohub.com" className="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a></p>
+            <p className="text-gray-600 dark:text-gray-300 mb-4"><strong>Tel:</strong> 1-855-220-0505</p>
+            <p className="text-gray-600 dark:text-gray-300">By signing up on Reflo Hub, you ("Freelancer", "you", "your") confirm that you are authorized to register yourself, that the information you provide is accurate, and that you agree to be legally bound by this Freelancer Registration Consent Form.</p>
+          </div>
+        </motion.div>
+
         {/* Consent Sections */}
         <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto">
-          <p className="text-gray-500 dark:text-gray-400 mb-6">Effective Date: 2025-07-01</p>
           {consentSections.map((section, index) => (
             <div
               key={index}

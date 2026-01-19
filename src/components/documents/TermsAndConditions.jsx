@@ -7,43 +7,36 @@ const TermsAndConditions = () => {
 
   const termsSections = [
     {
-      title: 'Company Details',
-      content: `
-        <p><strong>Reflo Hub FZ LLC</strong></p>
-        <p>IFZA Business Park, (DDP)</p>
-        <p>PO Box 342001, Dubai, United Arab Emirates</p>
-        <p><strong>Email:</strong> <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a></p>
-        <p><strong>Tel:</strong> 1-855-220-0505</p>
-        <p>Reflo Hub is incorporated as a private limited company under the Dubai Integrated Economic Zones Implementing Regulations 2023. We do not maintain an establishment or appointed representative in the EU/EEA, Canada, or the United States.</p>
-      `,
-    },
-    {
-      title: 'Definitions',
+      title: '1. DEFINITIONS',
       content: `
         <ul class="space-y-2">
-          <li><strong>Freelancer:</strong> A User who submits leads to Businesses via the Services in exchange for referral fees.</li>
-          <li><strong>Business:</strong> A User who lists products or services and pays referral fees to Freelancers when leads convert.</li>
-          <li><strong>Lead:</strong> Contact information or other qualifying data relating to a prospective customer submitted through the platform.</li>
-          <li><strong>Credit:</strong> A virtual credit used by Freelancers to submit one Lead. Credits have no monetary value outside the platform and are non-transferable.</li>
-          <li><strong>Subscription:</strong> A recurring paid plan (e.g., Freelancer Pro Referrer, Basic, Standard, Premium) or credit pack purchase.</li>
-          <li><strong>Premium Exclusivity:</strong> The feature that grants a Business exclusive access to a selected category within a 50 km radius of a chosen city. Availability is first come, first served and subject to Reflo Hub approval.</li>
+          <li><strong>"Freelancer":</strong> A User who submits Leads to Businesses through the Services in exchange for referral fees paid by Businesses.</li>
+          <li><strong>"Business":</strong> A User who receives Leads, communicates with prospects, and pays referral fees to Freelancers when referred deals convert.</li>
+          <li><strong>"Lead":</strong> Contact information or qualifying data relating to a prospective customer submitted through the platform.</li>
+          <li><strong>"Credit":</strong> A virtual credit used by Freelancers to submit one Lead. Credits have no monetary value outside the platform and are non-transferable.</li>
+          <li><strong>"Subscription":</strong> A recurring paid plan (e.g., Freelancer Pro Referrer, Business Basic/Standard/Premium) or a Credit pack purchase.</li>
+          <li><strong>"Premium Exclusivity":</strong> The feature granting a Business exclusive access to a selected category within a radius of a chosen city, first-come-first-served and subject to Reflo Hub approval.</li>
+          <li><strong>"Security Wallet":</strong> A Business-controlled wallet within the Services used for platform security, risk management, and (in limited cases) compensation to Freelancers as described in Section 7.</li>
+          <li><strong>"Risk Score / Risk Tier":</strong> Reflo Hub's internal rating used to determine visibility controls, wallet thresholds, and enforcement actions.</li>
+          <li><strong>"Fraud":</strong> Any intentional deception or manipulation including fake leads, harvested data, fake payment proof, lead theft, collusion, bypassing platform controls, or any conduct that Reflo Hub determines is fraudulent.</li>
         </ul>
       `,
     },
     {
-      title: 'Eligibility',
+      title: '2. ELIGIBILITY',
       content: `
-        <p>You must be at least 18 years old and have the legal capacity to enter into contracts. You warrant that all information you provide is truthful, accurate, and complete. Reflo Hub may deny or terminate accounts at its sole discretion.</p>
+        <p>You must be at least 18 years old and have legal capacity to enter into contracts. You represent that all account and payment information you provide is accurate, current, and complete. Reflo Hub may approve, deny, suspend, or terminate accounts at its sole discretion.</p>
       `,
     },
     {
-      title: 'Account Registration & Security',
+      title: '3. ACCOUNT REGISTRATION & SECURITY',
       content: `
-        <ul class="list-disc pl-5 space-y-2">
-          <li>You are responsible for maintaining the confidentiality of your login credentials and for all activities occurring under your account.</li>
-          <li>Notify us immediately of any unauthorised use or security breach.</li>
-          <li>You may create only one Freelancer account and/or one Business account per legal entity unless expressly authorised by Reflo Hub.</li>
-        </ul>
+        <ol class="list-decimal pl-5 space-y-2">
+          <li>You are responsible for safeguarding your login credentials and all activity under your account.</li>
+          <li>Notify us immediately of any unauthorized use or breach.</li>
+          <li>Unless expressly authorized by Reflo Hub, you may maintain only one Freelancer account and/or one Business account per legal entity.</li>
+          <li>Reflo Hub may require identity verification, business verification, or additional documentation at any time.</li>
+        </ol>
       `,
     },
     {
@@ -262,133 +255,274 @@ const TermsAndConditions = () => {
           </div>
         </div>
 
-        <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
-          <p class="text-sm"><strong>Tax Notice:</strong> All fees are exclusive of taxes unless stated otherwise. Applicable taxes (e.g., VAT, GST/HST, UAE VAT) are charged based on your billing address.</p>
-        </div>
+        <p class="mb-4"><strong>Tax Notice:</strong> All fees are exclusive of taxes unless stated otherwise. Applicable taxes (e.g., VAT, GST/HST, UAE VAT) may be charged based on your billing address.</p>
 
         <h4 class="font-semibold text-lg mb-4 text-orange-400">4.3 Billing & Renewals</h4>
-        <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 mb-6">
-          <p class="text-sm">Subscriptions renew automatically at the end of each billing cycle unless cancelled before renewal. You authorise Reflo Hub to charge your payment method on file. Failed payments may result in account suspension.</p>
-        </div>
+        <p class="mb-4">Subscriptions renew automatically unless cancelled before renewal. You authorize Reflo Hub to charge your payment method on file. Failed payments may result in suspension or restricted access.</p>
 
         <h4 class="font-semibold text-lg mb-4 text-orange-400">4.4 Upgrades, Downgrades & Cancellations</h4>
-        <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-          <p class="text-sm">You may change plans in your dashboard. Upgrades apply immediately with a pro-rated charge; downgrades apply at the next billing cycle. Setup fees are non-refundable. Monthly fees are non-refundable once charged, except as required by law.</p>
-        </div>
+        <p class="mb-4">Upgrades apply immediately with pro-rated charges; downgrades apply at the next billing cycle. Setup fees are non-refundable. Monthly fees are non-refundable once charged, except as required by law.</p>
       `,
     },
     {
-      title: 'Lead Submission & Referral Fees',
+      title: '5. LEAD SUBMISSION, QUALITY, AND PLATFORM CONTROLS',
       content: `
-        <ul class="list-disc pl-5 space-y-2">
-          <li><strong>Lead Quality:</strong> Freelancers must submit accurate, permission-based data. Providing false or harvested information is prohibited.</li>
-          <li><strong>Validation:</strong> Reflo Hub applies AI and manual checks. Leads failing quality standards are rejected; the Credit is refunded.</li>
-          <li><strong>Conversion & Payout:</strong> When a Business marks a Lead “Converted,” the referral fee set by the Business becomes payable to the Freelancer. Payouts are processed via Stripe Connect, PayPal, or bank transfer, subject to a minimum balance and applicable processing fees.</li>
-          <li><strong>Disputes:</strong> If a Business disputes a lead’s validity, both parties must attempt resolution via Reflo Hub’s in-app Dispute Centre. Our decision is final.</li>
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">5.1 Lead Quality (Freelancer Obligations)</h4>
+        <p class="mb-3">Freelancers must submit accurate, permission-based information. The following are prohibited:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Purchased/harvested databases</li>
+          <li>Fake numbers, fake names, or fabricated leads</li>
+          <li>Submitting minors' personal data without verifiable parental consent</li>
+          <li>Repeated duplicate submissions</li>
+        </ul>
+        <p class="mb-4">Reflo Hub may use AI and/or manual review to validate leads. Leads failing quality standards may be rejected and the Credit refunded at Reflo Hub's discretion.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">5.2 Lead Visibility Controls (Business)</h4>
+        <p class="mb-3">Reflo Hub may restrict or blur lead details (e.g., customer name/phone) for security, compliance, or risk reasons including:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>unpaid or unresolved prior lead obligations</li>
+          <li>disputes</li>
+          <li>insufficient Security Wallet balance after activation (Section 7)</li>
+          <li>suspected fraud or policy violations</li>
+        </ul>
+        <p class="mb-4">Businesses may be required to (a) submit proof of payment for previous leads and/or (b) top up their Security Wallet to unlock full lead details.</p>
+      `,
+    },
+    {
+      title: '6. REFERRAL FEES & "100% COMMISSION" STRUCTURE',
+      content: `
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">6.1 Direct Payment Model</h4>
+        <p class="mb-4">Businesses pay referral fees directly to Freelancers. Reflo Hub does not deduct a percentage from Freelancer referral earnings under this model.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">6.2 Business Payment Deadline</h4>
+        <p class="mb-3">By using Reflo Hub, the Business acknowledges and agrees to release the agreed referral commission to the Freelancer within fifteen (15) days after:</p>
+        <ol class="list-decimal pl-6 space-y-2 mb-4">
+          <li>successful closing of the referred deal, and</li>
+          <li>receipt of payment from the client.</li>
+        </ol>
+        <p class="mb-4">Failure to pay within the stated timeframe may result in restricted access, suspension, or permanent ban.</p>
+        <p class="mb-4">Reflo Hub may investigate disputes and take corrective actions to protect Users, including restricting access, applying penalties, or initiating legal remedies where appropriate.</p>
+      `,
+    },
+    {
+      title: '7. BUSINESS SECURITY WALLET (DYNAMIC RISK SYSTEM)',
+      content: `
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.1 Purpose</h4>
+        <p class="mb-4">The Security Wallet is a platform security tool used for risk management, dispute handling, and (in limited circumstances) partial compensation to Freelancers. It is not an insurance product and does not guarantee full recovery in all cases.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.2 Activation Rule (2 Leads + 1 Paid Conversion Trigger)</h4>
+        <p class="mb-3">A Business is not required to maintain a Security Wallet balance until BOTH conditions are met:</p>
+        <ol class="list-decimal pl-6 space-y-2 mb-4">
+          <li>the Business has received at least two (2) leads, and</li>
+          <li>the Business has converted at least one (1) lead into a paid client.</li>
+        </ol>
+        <p class="mb-4">After this point, Reflo Hub may require the Business to maintain a minimum Security Wallet balance determined by its Risk Score.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.3 Dynamic Wallet Minimums</h4>
+        <p class="mb-3">Reflo Hub may adjust the required Security Wallet balance based on:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>active lead volume</li>
+          <li>conversion volume</li>
+          <li>average referral fee exposure</li>
+          <li>dispute history</li>
+          <li>ratings and flags by counterparties</li>
+          <li>fraud indicators and compliance risk</li>
+        </ul>
+        <p class="mb-3">Minimum baseline ranges (after activation):</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>India: typically ₹2,500 to ₹10,000 (risk-based)</li>
+          <li>Global: typically $100 to $200 (risk-based)</li>
+        </ul>
+        <p class="mb-4">These ranges may be modified by Reflo Hub at any time to protect platform safety.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.4 Lead Release Rule (Blur/Unlock Mechanism)</h4>
+        <p class="mb-3">If a Business does not meet wallet and/or payment-proof requirements, Reflo Hub may:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>blur new lead details, or</li>
+          <li>restrict access to new leads, until the Business either:</li>
+        </ul>
+        <ol class="list-decimal pl-6 space-y-2 mb-4">
+          <li>provides acceptable proof that previous freelancer payments are cleared, and/or</li>
+          <li>tops up the Security Wallet to meet the required minimum.</li>
+        </ol>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.5 Wallet Funding & Fees</h4>
+        <p class="mb-4">Security Wallet top-ups may be processed via Stripe, PayPal, or other providers. Processing fees may apply and are non-refundable.</p>
+      `,
+    },
+    {
+      title: '8. RATINGS, FLAGS & RISK ANALYSIS',
+      content: `
+        <p class="mb-4">Reflo Hub maintains a bidirectional rating system to improve safety and lead quality:</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">8.1 Business Rates Freelancer</h4>
+        <p class="mb-4">Businesses may rate lead quality (e.g., hot/warm/trash) and provide feedback. Excessive low-quality submissions may lead to Freelancer restrictions or bans.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">8.2 Freelancer Rates Business</h4>
+        <p class="mb-4">Freelancers may rate Business behavior (e.g., good payer/slow payer/risky) and may flag issues such as delayed commission, poor conduct, or refusal to cooperate.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">8.3 Use of Ratings</h4>
+        <p class="mb-3">Ratings and flags may affect:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Risk Score / wallet thresholds</li>
+          <li>lead access and visibility</li>
+          <li>search ranking</li>
+          <li>verification badges</li>
+          <li>enforcement actions</li>
+        </ul>
+        <p class="mb-4">Reflo Hub may remove abusive, false, or retaliatory ratings at its sole discretion.</p>
+      `,
+    },
+    {
+      title: '9. DISPUTES & INVESTIGATIONS',
+      content: `
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">9.1 Dispute Centre</h4>
+        <p class="mb-4">Users must attempt dispute resolution through Reflo Hub's in-app Dispute Centre when applicable. Reflo Hub may request documentation, proof of payment, messages, call logs, invoices, or other evidence.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">9.2 Dispute Team Authority</h4>
+        <p class="mb-3">Reflo Hub's dispute team may investigate and issue binding decisions. Reflo Hub may impose consequences including:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>restricted access to leads</li>
+          <li>wallet enforcement</li>
+          <li>payout of available wallet funds</li>
+          <li>suspension or permanent ban</li>
+        </ul>
+        <p class="mb-4">Reflo Hub's decisions are final to the maximum extent permitted by law.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">9.3 Evidence & Response Time</h4>
+        <p class="mb-4">Reflo Hub may require responses within a specified time window (including 48 hours). Failure to respond may be treated as non-cooperation and may weigh against the non-responding party.</p>
+      `,
+    },
+    {
+      title: '10. FRAUD, PENALTIES & ZERO-TOLERANCE BANS',
+      content: `
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">10.1 Zero Tolerance</h4>
+        <p class="mb-4">If Reflo Hub determines that a Business or Freelancer has committed fraud, the account may be permanently banned on the first confirmed incident.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">10.2 Wallet Compensation and Penalties</h4>
+        <p class="mb-3">If a Business is found guilty and Security Wallet funds exist:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Reflo Hub may compensate affected freelancers from available wallet funds (attempting best-effort recovery).</li>
+          <li>If the wallet balance exceeds the amount required to compensate affected freelancers, Reflo Hub may retain the remaining funds as a penalty.</li>
+        </ul>
+        <p class="mb-3"><strong>Example:</strong></p>
+        <p class="mb-3">If Freelancer is owed $200 and wallet contains $500:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>$200 may be paid to Freelancer</li>
+          <li>$300 may be retained as penalty</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">10.3 Multiple Affected Freelancers (Equal Split Rule)</h4>
+        <p class="mb-4">If multiple freelancers are affected and the wallet balance is insufficient to cover all amounts owed, Reflo Hub may distribute available wallet funds in equal portions among affected freelancers, unless Reflo Hub decides another fair distribution method based on evidence.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">10.4 Mutual Fault</h4>
+        <p class="mb-4">If Reflo Hub determines that both parties are guilty of fraud or misconduct in relation to the same event, Reflo Hub may ban both accounts and may decline any recovery or payout.</p>
+      `,
+    },
+    {
+      title: '11. USER OBLIGATIONS & PROHIBITED CONDUCT',
+      content: `
+        <p class="mb-3">You agree not to:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>violate applicable laws (privacy/anti-spam included)</li>
+          <li>upload malware or run phishing attempts</li>
+          <li>reverse engineer the Services</li>
+          <li>use bots/automation to overload the platform</li>
+          <li>manipulate referrals, ratings, disputes, or wallet rules</li>
+          <li>submit fake leads, fake proof, or harvested data</li>
+          <li>harass other users</li>
         </ul>
       `,
     },
     {
-      title: 'Freelancer Commission Payment Clause',
+      title: '12. INTELLECTUAL PROPERTY',
       content: `
-        <p>By registering on Reflo Hub, the business acknowledges and agrees to release the agreed-upon referral commission to the freelancer within fifteen (15) days after the successful closing of a referred deal and receipt of payment from the client. Failure to remit the commission within the stated timeframe may result in account suspension or permanent ban from Reflo Hub. Additionally, continued non-compliance or intentional withholding of payment may lead to legal action and the recovery of the due amount through applicable laws and authorities. Reflo Hub reserves the right to investigate disputes and take corrective actions, including restricting access to the platform or pursuing legal remedies, to protect the interests of its verified freelancers.</p>
-     
+        <p>The Services, content, branding, and software are owned by Reflo Hub or its licensors and protected by UAE and international IP laws. You receive a limited, revocable license to use the Services in accordance with these Terms.</p>
       `,
     },
     {
-      title: 'User Obligations & Prohibited Conduct',
+      title: '13. USER CONTENT LICENSE',
       content: `
-        <p>You agree not to:</p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Violate any applicable law, regulation, or third-party right (including privacy and anti-spam laws).</li>
-          <li>Upload viruses, malware, or engage in phishing or other malicious activity.</li>
-          <li>Reverse engineer, decompile, or attempt to derive the source code of the Services.</li>
-          <li>Use bots, scripts, or automated means to access or overload the platform.</li>
-          <li>Abuse referral systems or attempt to manipulate payouts.</li>
-          <li>Submit personal data of a minor without verifiable parental consent.</li>
+        <p>You retain ownership of content you submit ("User Content"). You grant Reflo Hub a worldwide, royalty-free, sublicensable license to use it solely to operate, improve, and enforce the Services.</p>
+      `,
+    },
+    {
+      title: '14. PRIVACY & DATA PROTECTION',
+      content: `
+        <p>Reflo Hub processes personal data under its Privacy Policy, GDPR Compliance Statement, CCPA Notice, PIPEDA Statement, and Cookie Policy. By using the Services, you consent to processing as described therein.</p>
+      `,
+    },
+    {
+      title: '15. WARRANTIES & DISCLAIMERS',
+      content: `
+        <p>The Services are provided "as is" and "as available." Reflo Hub disclaims warranties to the maximum extent permitted by law. Reflo Hub does not guarantee lead conversion, continuous availability, or error-free operation.</p>
+      `,
+    },
+    {
+      title: '16. LIMITATION OF LIABILITY',
+      content: `
+        <p class="mb-3">To the fullest extent permitted by law, Reflo Hub shall not be liable for indirect or consequential damages. Reflo Hub's total liability shall not exceed the greater of:</p>
+        <p class="mb-3">(a) USD 100, or</p>
+        <p class="mb-4">(b) total Subscription fees paid by you in the 12 months preceding the claim.</p>
+      `,
+    },
+    {
+      title: '17. INDEMNIFICATION',
+      content: `
+        <p>You agree to indemnify and hold harmless Reflo Hub from claims arising from your misuse of Services, violation of Terms, or infringement of third-party rights.</p>
+      `,
+    },
+    {
+      title: '18. SUSPENSION & TERMINATION',
+      content: `
+        <p class="mb-3">Reflo Hub may suspend or terminate your account for:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>violation of these Terms</li>
+          <li>non-payment of fees</li>
+          <li>fraud or harmful conduct</li>
+          <li>risk to platform integrity</li>
+        </ul>
+        <p>Upon termination, all licenses cease and Reflo Hub may delete or retain records as required for compliance and enforcement.</p>
+      `,
+    },
+    {
+      title: '19. GOVERNING LAW & DISPUTE RESOLUTION',
+      content: `
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">19.1 Governing Law</h4>
+        <p class="mb-4">These Terms are governed by the laws of the Dubai International Financial Centre (DIFC).</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">19.2 Arbitration</h4>
+        <p class="mb-4">Disputes shall be finally resolved by arbitration under the DIFC-LCIA Arbitration Rules, seated in the DIFC, Dubai, with one arbitrator and English as the language.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">19.3 Injunctive Relief</h4>
+        <p class="mb-4">Either party may seek urgent injunctive relief in any competent court to protect IP or confidential information.</p>
+      `,
+    },
+    {
+      title: '20. CHANGES TO THESE TERMS',
+      content: `
+        <p>Reflo Hub may update these Terms. Material changes will be notified via email or in-app notice at least 14 days before they take effect. Continued use after the effective date constitutes acceptance.</p>
+      `,
+    },
+    {
+      title: '21. OTHER LEGAL TERMS',
+      content: `
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Entire Agreement:</strong> These Terms supersede prior agreements.</li>
+          <li><strong>Severability:</strong> Unenforceable provisions do not affect the rest.</li>
+          <li><strong>Assignment:</strong> You may not assign without consent; Reflo Hub may assign freely.</li>
+          <li><strong>Force Majeure:</strong> No liability for events beyond reasonable control.</li>
+          <li><strong>No Waiver:</strong> Failure to enforce once is not a waiver.</li>
         </ul>
       `,
     },
     {
-      title: 'Intellectual Property',
+      title: '22. CONTACT',
       content: `
-        <p>The Services, including all content, logos, trademarks, and software code, are owned by Reflo Hub or its licensors and are protected by UAE and international intellectual property laws. Subject to these Terms, Reflo Hub grants you a limited, non-exclusive, non-transferable, revocable licence to access and use the Services for your internal business purposes.</p>
-      `,
-    },
-    {
-      title: 'User Content Licence',
-      content: `
-        <p>You retain ownership of Leads and any content you submit (“User Content”). You grant Reflo Hub a worldwide, royalty-free, sublicensable licence to use, reproduce, distribute, and display User Content solely for operating and improving the Services.</p>
-      `,
-    },
-    {
-      title: 'Privacy & Data Protection',
-      content: `
-        <p>Reflo Hub processes personal data in accordance with our Privacy Policy, GDPR Compliance Statement, CCPA Notice, PIPEDA Statement, and Cookie Policy. By using the Services, you consent to such processing.</p>
-      `,
-    },
-    {
-      title: 'Warranties & Disclaimers',
-      content: `
-        <p>The Services are provided “as is” and “as available.” To the maximum extent permitted by law, Reflo Hub disclaims all warranties, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee that the Services will be uninterrupted, error-free, or free of harmful components, or that any Lead will convert.</p>
-      `,
-    },
-    {
-      title: 'Limitation of Liability',
-      content: `
-        <p>To the fullest extent permitted by law, Reflo Hub, its directors, employees, and suppliers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, or goodwill. Reflo Hub’s aggregate liability under these Terms shall not exceed the greater of (a) USD 100 or (b) the total Subscription fees paid by you to Reflo Hub in the 12 months preceding the claim.</p>
-      `,
-    },
-    {
-      title: 'Indemnification',
-      content: `
-        <p>You agree to indemnify and hold harmless Reflo Hub and its affiliates from any claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from: (a) your misuse of the Services; (b) your violation of these Terms; or (c) your infringement of any third-party right.</p>
-      `,
-    },
-    {
-      title: 'Suspension & Termination',
-      content: `
-        <p>Reflo Hub may suspend or terminate your account immediately upon notice if you breach these Terms, fail to pay fees, or engage in conduct that harms Reflo Hub or other Users. Upon termination, all licences cease, outstanding balances become due, and User Content may be deleted.</p>
-      `,
-    },
-    {
-      title: 'Governing Law & Dispute Resolution',
-      content: `
-        <h4 class="font-semibold">14.1 Governing Law</h4>
-        <p>These Terms and any dispute arising hereunder shall be governed by the laws of the Dubai International Financial Centre (DIFC), without regard to conflict of law provisions.</p>
-        <h4 class="font-semibold mt-4">14.2 Arbitration</h4>
-        <p>Any dispute, controversy, or claim arising out of or relating to these Terms shall be referred to and finally resolved by arbitration under the DIFC-LCIA Arbitration Rules. The seat of arbitration shall be the DIFC, Dubai. The tribunal shall consist of one arbitrator. The language of arbitration shall be English.</p>
-        <h4 class="font-semibold mt-4">14.3 Injunctive Relief</h4>
-        <p>Nothing in this section prevents either party from seeking urgent injunctive relief in any competent court to protect intellectual property or confidential information.</p>
-      `,
-    },
-    {
-      title: 'Changes to the Terms',
-      content: `
-        <p>We may update these Terms from time to time. Material changes will be notified via email or in-app notice at least 14 days before they take effect. Continued use of the Services after the effective date constitutes acceptance of the revised Terms.</p>
-      `,
-    },
-    {
-      title: 'Other Legal Terms',
-      content: `
-        <ul class="list-disc pl-5 space-y-2">
-          <li><strong>Entire Agreement:</strong> These Terms constitute the entire agreement between you and Reflo Hub and supersede any prior agreements.</li>
-          <li><strong>Severability:</strong> If any provision is held unenforceable, the remaining provisions remain in full force.</li>
-          <li><strong>Assignment:</strong> You may not assign or transfer your rights under these Terms without our consent. Reflo Hub may assign these Terms at its discretion.</li>
-          <li><strong>Force Majeure:</strong> Reflo Hub is not liable for delays or failures due to events beyond its reasonable control (e.g., natural disasters, Internet outages, government actions).</li>
-          <li><strong>No Waiver:</strong> A party’s failure to enforce a provision does not constitute a waiver of future enforcement.</li>
-        </ul>
-      `,
-    },
-    {
-      title: 'Contact',
-      content: `
-        <p>Questions about these Terms? Please contact:</p>
-        <p><strong>Legal Department</strong></p>
+        <p class="mb-3">Legal Department</p>
         <p>Reflo Hub FZ LLC</p>
-        <p>IFZA Business Park, DDP</p>
-        <p>PO Box 342001, Dubai, United Arab Emirates</p>
-        <p><strong>Email:</strong> <a href="mailto:support@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">support@reflohub.com</a></p>
+        <p>IFZA Business Park, (DDP), PO Box 342001, Dubai, United Arab Emirates</p>
+        <p class="mb-3"><strong>Email:</strong> <a href="mailto:support@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">support@reflohub.com</a> | <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a></p>
         <p><strong>Tel:</strong> 1-855-220-0505</p>
       `,
     },
@@ -453,9 +587,21 @@ const TermsAndConditions = () => {
           </p>
         </motion.div>
 
+        {/* Company Details Header */}
+        <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto mb-8">
+          <div className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-lg border border-gray-200 dark:border-orange-300/40 rounded-lg p-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Effective Date:</strong> [Insert Date]</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Company:</strong> Reflo Hub FZ LLC</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Address:</strong> IFZA Business Park, (DDP), PO Box 342001, Dubai, United Arab Emirates</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Email:</strong> <a href="mailto:privacy@reflohub.com" className="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a> | <strong>Support:</strong> <a href="mailto:support@reflohub.com" className="text-orange-400 dark:text-orange-300 hover:underline">support@reflohub.com</a></p>
+            <p className="text-gray-600 dark:text-gray-300 mb-4"><strong>Tel:</strong> 1-855-220-0505</p>
+            <p className="text-gray-600 dark:text-gray-300">Reflo Hub is incorporated as a private limited company under the Dubai Integrated Economic Zones Implementing Regulations 2023. We do not maintain an establishment or appointed representative in the EU/EEA, Canada, or the United States.</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-4">These Terms & Conditions ("Terms") govern your access to and use of Reflo Hub's website, applications, and related services (collectively, the "Services"). By creating an account or using the Services, you agree to be bound by these Terms.</p>
+          </div>
+        </motion.div>
+
         {/* Terms Sections */}
         <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto">
-          <p className="text-gray-500 dark:text-gray-400 mb-6">Effective Date: 2025-07-07 | Last Updated: 2025-07-07</p>
           {termsSections.map((section, index) => (
             <div
               key={index}

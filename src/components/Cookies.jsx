@@ -7,147 +7,141 @@ const Cookies = () => {
 
   const cookieSections = [
     {
-      title: 'What Are Cookies?',
+      title: '1. What Are Cookies and Similar Technologies?',
       content: `
-        <p>Cookies are small text files placed on your device when you visit a website. They enable the site to recognise your browser, remember preferences, and perform certain functions. Cookies may be "session" (deleted when you close your browser) or "persistent" (stored until they expire or you delete them).</p>
-        <p class="mt-4">We also use:</p>
+        <p>Cookies are small text files stored on your device (computer, tablet, or mobile phone) when you visit a website. They allow the site to recognize your browser, remember your preferences, and enable key functions.</p>
+        <p class="mt-4">We also use related technologies, including:</p>
         <ul class="list-disc pl-5 space-y-2">
-          <li><strong>Local Storage:</strong> Browser-based storage for larger data items (e.g., user settings).</li>
-          <li><strong>Pixels & SDKs:</strong> Tiny graphics or code snippets that track interactions (e.g., marketing emails, mobile web wrappers).</li>
+          <li><strong>Local Storage:</strong> Browser-based storage that keeps user settings, preferences, and session data for smoother performance.</li>
+          <li><strong>Pixels & SDKs:</strong> Tiny code snippets that track interactions (e.g., email opens, link clicks, or marketing campaign performance).</li>
+          <li><strong>Device Fingerprinting (limited use):</strong> Used only for fraud detection and bot prevention in high-risk scenarios.</li>
+        </ul>
+        <p class="mt-4">Cookies can be:</p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>Session cookies</strong> – deleted when you close your browser, or</li>
+          <li><strong>Persistent cookies</strong> – remain until they expire or you manually delete them.</li>
         </ul>
       `,
     },
     {
-      title: 'Why We Use Cookies',
+      title: '2. Why We Use Cookies',
       content: `
+        <p class="mb-4">We use cookies for the following purposes:</p>
+        <h5 class="font-semibold mt-4 mb-2">2.1 Strictly Necessary Cookies (Required)</h5>
+        <p>These cookies are essential for the platform to function properly. Without them, you may not be able to log in, submit leads, or use secure features.</p>
+        <p class="mt-2"><strong>Examples:</strong></p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>reflo_session</li>
+          <li>csrf_token</li>
+          <li>stripe_sid</li>
+          <li>authentication tokens</li>
+          <li>security and anti-bot cookies</li>
+        </ul>
+        <p class="mt-2">These cookies cannot be disabled because they are required for core platform security and functionality.</p>
+        <h5 class="font-semibold mt-6 mb-2">2.2 Preferences & Functionality Cookies</h5>
+        <p>These cookies remember your choices and improve your experience.</p>
+        <p class="mt-2">They may store:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Language preference</li>
+          <li>Dark/light mode setting</li>
+          <li>Cookie consent choice</li>
+          <li>Saved dashboard layout</li>
+        </ul>
+        <p class="mt-2"><strong>Examples:</strong></p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>locale</li>
+          <li>theme_pref</li>
+          <li>cookie_consent</li>
+        </ul>
+        <h5 class="font-semibold mt-6 mb-2">2.3 Analytics & Performance Cookies</h5>
+        <p>These cookies help us understand how users interact with Reflo Hub so we can improve performance, detect issues, and optimize features.</p>
+        <p class="mt-2">We collect pseudonymized data, meaning it is not directly linked to your real identity.</p>
+        <p class="mt-2"><strong>Examples:</strong></p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>_ga, _gid (Google Analytics)</li>
+          <li>mixpanel_id (product analytics)</li>
+        </ul>
+        <p class="mt-2">You may opt out of analytics cookies through our Cookie Settings panel.</p>
+        <h5 class="font-semibold mt-6 mb-2">2.4 Advertising & Marketing Cookies (Opt-In Only)</h5>
+        <p>These cookies are used to:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>track campaign performance</li>
+          <li>measure marketing effectiveness</li>
+          <li>understand referral sources</li>
+        </ul>
+        <p class="mt-2">We do NOT use third-party behavioral retargeting across unrelated websites.</p>
+        <p class="mt-2">Marketing cookies are disabled by default and only activated with your consent.</p>
+        <p class="mt-2"><strong>Examples:</strong></p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>utm_source</li>
+          <li>fbp (Facebook Pixel — disabled until consent)</li>
+        </ul>
+        <h5 class="font-semibold mt-6 mb-2">2.5 Fraud Prevention & Security Cookies</h5>
+        <p>These cookies help detect suspicious activity, bots, and fraud attempts.</p>
+        <p class="mt-2">They are critical for protecting:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>user accounts</li>
+          <li>lead integrity</li>
+          <li>security wallet usage</li>
+          <li>payment safety</li>
+        </ul>
+        <p class="mt-2"><strong>Examples:</strong></p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>h_captcha_session</li>
+          <li>hashed IP identifiers</li>
+          <li>anomaly detection tokens</li>
+        </ul>
+      `,
+    },
+    {
+      title: '3. Third-Party Cookies & Services',
+      content: `
+        <p class="mb-4">Reflo Hub integrates with trusted third-party providers. When their tools are loaded, they may set cookies subject to their own policies.</p>
         <div class="overflow-x-auto">
-          <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+          <table class="w-full border-collapse border border-gray-300 dark:border-gray-600">
             <thead>
-              <tr class="bg-gradient-to-r from-orange-100 to-sky-100 dark:from-orange-900/30 dark:to-sky-900/30">
-                <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Purpose</th>
-                <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Description</th>
-                <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Cookie Examples</th>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="border border-gray-300 dark:border-gray-600 p-2">Provider</th>
+                <th class="border border-gray-300 dark:border-gray-600 p-2">Purpose</th>
+                <th class="border border-gray-300 dark:border-gray-600 p-2">Opt-Out</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium text-red-600 dark:text-red-400">Strictly Necessary</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">Enable core platform functions such as authentication, security, and payment processing. Without these cookies, the site would not function.</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3 text-sm font-mono bg-gray-100 dark:bg-gray-800 rounded px-2 py-1">reflo_session, csrf_token, stripe_sid</td>
+              <tr>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Stripe</td>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Secure payment processing</td>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Essential (cannot be disabled)</td>
               </tr>
-              <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium text-blue-600 dark:text-blue-400">Preferences & Functionality</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">Remember user choices (e.g., language, dark mode, dismissed banners) and enhance user experience.</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3 text-sm font-mono bg-gray-100 dark:bg-gray-800 rounded px-2 py-1">locale, theme_pref, cookie_consent</td>
+              <tr>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Google Analytics</td>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Site analytics and performance</td>
+                <td class="border border-gray-300 dark:border-gray-600 p-2"><a href="https://tools.google.com/dlpage/gaoptout" class="text-orange-400 dark:text-orange-300 hover:underline" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out</a></td>
               </tr>
-              <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium text-green-600 dark:text-green-400">Analytics & Performance</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">Collect pseudonymised data on site usage to improve features and debug issues.</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3 text-sm font-mono bg-gray-100 dark:bg-gray-800 rounded px-2 py-1">_ga, _gid (Google Analytics), mixpanel_id</td>
+              <tr>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Mixpanel</td>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Product analytics & user behavior</td>
+                <td class="border border-gray-300 dark:border-gray-600 p-2"><a href="https://mixpanel.com/optout/" class="text-orange-400 dark:text-orange-300 hover:underline" target="_blank" rel="noopener noreferrer">Mixpanel Opt-out</a></td>
               </tr>
-              <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium text-purple-600 dark:text-purple-400">Advertising & Marketing</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">Track referrals, measure campaign performance, and (with consent) display contextual ads about Reflo Hub. We do not use third-party retargeting or cross-context behavioural ads.</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3 text-sm font-mono bg-gray-100 dark:bg-gray-800 rounded px-2 py-1">utm_source, fbp (Facebook pixel – disabled by default until consent)</td>
-              </tr>
-              <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium text-orange-600 dark:text-orange-400">Fraud Prevention</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">Detect suspicious activity and protect against bot attacks.</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3 text-sm font-mono bg-gray-100 dark:bg-gray-800 rounded px-2 py-1">h_captcha_session, ip_hash</td>
+              <tr>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">SendGrid/Mailchimp</td>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Transactional and marketing emails</td>
+                <td class="border border-gray-300 dark:border-gray-600 p-2">Manage via your email preferences</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="mt-4">We require all third-party providers to comply with GDPR, CCPA, PIPEDA, and standard contractual clauses where applicable.</p>
       `,
     },
     {
-      title: 'Third-Party Cookies & SDKs',
-      content: `
-        <p class="mb-4">Reflo Hub integrates with trusted third parties. When their services are loaded, they may set cookies or use SDKs subject to their own policies.</p>
-        
-        <div class="overflow-x-auto">
-          <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
-            <thead>
-              <tr class="bg-gradient-to-r from-sky-100 to-orange-100 dark:from-sky-900/30 dark:to-orange-900/30">
-                <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Provider</th>
-                <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Purpose</th>
-                <th class="border border-gray-300 dark:border-gray-600 p-3 text-left font-semibold text-gray-800 dark:text-gray-200">Opt-Out Resource</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium text-blue-600 dark:text-blue-400">Stripe</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">Secure payment processing and transaction management</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">
-                  <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded p-2 text-sm">
-                    <strong>Essential:</strong> Managed by Reflo Hub and cannot be disabled
-                  </div>
-                </td>
-              </tr>
-              <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium text-green-600 dark:text-green-400">Google Analytics</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">Site analytics, performance monitoring, and user behavior insights</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">
-                  <a href="https://tools.google.com/dlpage/gaoptout" class="text-orange-400 dark:text-orange-300 hover:underline font-semibold" target="_blank" rel="noopener noreferrer">
-                    Google Analytics Opt-out
-                  </a>
-                </td>
-              </tr>
-              <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium text-purple-600 dark:text-purple-400">Mixpanel</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">Product analytics, event tracking, and user journey analysis</td>
-                <td class="border border-gray-300 dark:border-gray-600 p-3">
-                  <a href="https://mixpanel.com/optout/" class="text-orange-400 dark:text-orange-300 hover:underline font-semibold" target="_blank" rel="noopener noreferrer">
-                    Mixpanel Opt-out
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Mobile-friendly card view for small screens -->
-        <div class="block md:hidden mt-6 space-y-4">
-          <h6 class="font-semibold text-sky-400 mb-3">Third-Party Providers</h6>
-          <div class="space-y-3">
-            <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-              <div class="font-medium text-blue-600 dark:text-blue-400 mb-2">Stripe</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">Secure payment processing</div>
-              <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded p-2 text-xs">
-                <strong>Essential:</strong> Cannot be disabled
-              </div>
-            </div>
-            <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-              <div class="font-medium text-green-600 dark:text-green-400 mb-2">Google Analytics</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">Site analytics and performance</div>
-              <a href="https://tools.google.com/dlpage/gaoptout" class="text-orange-400 dark:text-orange-300 hover:underline text-sm font-semibold" target="_blank" rel="noopener noreferrer">
-                Opt-out Link
-              </a>
-            </div>
-            <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-              <div class="font-medium text-purple-600 dark:text-purple-400 mb-2">Mixpanel</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">Product analytics & event tracking</div>
-              <a href="https://mixpanel.com/optout/" class="text-orange-400 dark:text-orange-300 hover:underline text-sm font-semibold" target="_blank" rel="noopener noreferrer">
-                Opt-out Link
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mt-6">
-          <p class="text-sm"><strong>Compliance:</strong> We require all third-party vendors to process data in compliance with applicable privacy laws (GDPR, CCPA, PIPEDA) and standard contractual clauses.</p>
-        </div>
-      `,
-    },
-    {
-      title: 'Cookie Consent & Management',
+      title: '4. Cookie Consent & User Control',
       content: `
         <ul class="list-decimal pl-5 space-y-2">
           <li><strong>Banner & Preference Centre:</strong> On first visit from the EEA, UK, or any jurisdiction requiring consent, you will see a banner that allows you to:
             <ul class="list-disc pl-5 mt-2 space-y-1">
               <li>Accept all cookies</li>
               <li>Reject all optional cookies</li>
-              <li>Customise categories (toggle Analytics, Advertising, etc.)</li>
+              <li>Customize your preferences (Analytics, Marketing, etc.)</li>
             </ul>
           </li>
           <li><strong>Continued Browsing:</strong> In regions where implied consent is permitted (e.g., Canada), continued use signifies agreement to our cookie practices, subject to browser controls.</li>
@@ -157,13 +151,13 @@ const Cookies = () => {
       `,
     },
     {
-      title: 'Duration & Retention',
+      title: '5. Cookie Retention Periods',
       content: `
         <table class="w-full border-collapse border border-gray-300 dark:border-gray-600">
           <thead>
             <tr class="bg-gray-100 dark:bg-gray-800">
               <th class="border border-gray-300 dark:border-gray-600 p-2">Cookie Type</th>
-              <th class="border border-gray-300 dark:border-gray-600 p-2">Default Lifetime</th>
+              <th class="border border-gray-300 dark:border-gray-600 p-2">Default Duration</th>
             </tr>
           </thead>
           <tbody>
@@ -185,29 +179,37 @@ const Cookies = () => {
             </tr>
           </tbody>
         </table>
-        <p class="mt-4">Persistent cookies automatically expire after the periods above or sooner if you delete them.</p>
+        <p class="mt-4">Persistent cookies automatically expire after these periods unless deleted earlier.</p>
       `,
     },
     {
-      title: 'Do Not Track (DNT)',
+      title: '6. Do Not Track (DNT) Signals',
       content: `
-        <p>Reflo Hub honours browser DNT signals by disabling analytics and marketing cookies unless you explicitly override the preference in the Cookie Settings centre.</p>
+        <p>If your browser sends a "Do Not Track" (DNT) signal, Reflo Hub will disable analytics and marketing cookies by default, unless you manually enable them in the Cookie Settings panel.</p>
       `,
     },
     {
-      title: 'Children’s Privacy',
+      title: "7. Children's Privacy",
       content: `
-        <p>We do not knowingly place cookies on devices belonging to users under 16. If you believe this has occurred, contact us at <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a>.</p>
+        <p>Reflo Hub is not intended for users under 18 years old.</p>
+        <p class="mt-2">We do not knowingly place cookies on devices used by minors. If you believe this has occurred, please contact us immediately at <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a>.</p>
       `,
     },
     {
-      title: 'Updates to This Cookie Policy',
+      title: '8. Updates to This Cookie Policy',
       content: `
-        <p>We may update this policy to reflect changes in technology or regulations. Material changes will be announced via the cookie banner or in-app notice. Check the “Last updated” date to see when the policy was last revised.</p>
+        <p>We may update this policy from time to time to reflect:</p>
+        <ul class="list-disc pl-5 mt-2 space-y-1">
+          <li>new technology</li>
+          <li>regulatory changes</li>
+          <li>product updates</li>
+        </ul>
+        <p class="mt-2">Material changes will be communicated via the cookie banner or in-app notification.</p>
+        <p class="mt-2">Please check the "Last Updated" date above for the latest version.</p>
       `,
     },
     {
-      title: 'Contact Us',
+      title: '9. Contact Us',
       content: `
         <p>For questions about our cookie practices or this policy, please reach out to:</p>
         <p><strong>Privacy Team – Cookies</strong></p>
@@ -279,20 +281,11 @@ const Cookies = () => {
           </p>
         </motion.div>
 
-        {/* Company Details */}
-        <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto mb-16">
-          <p className="text-gray-600 dark:text-gray-300">
-            <strong>Head Office:</strong><br />
-            IFZA Business Park, Dubai Digital Park (DDP)<br />
-            PO Box 342001, Dubai, United Arab Emirates<br />
-            <strong>Email:</strong> <a href="mailto:privacy@reflohub.com" className="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a><br />
-            Reflo Hub does not maintain a representative for cookie-related regulations in the EU/EEA or elsewhere; we manage all compliance obligations directly.
-          </p>
-        </motion.div>
-
         {/* Cookie Sections */}
         <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto">
-          <p className="text-gray-500 dark:text-gray-400 mb-6">Last Updated: 2025-07-07</p>
+          <p className="text-gray-500 dark:text-gray-400 mb-6">Last Updated: [Insert Date]</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">This Cookie Policy explains how Reflo Hub FZ LLC ("Reflo Hub," "we," "us," or "our") uses cookies, pixels, local storage, and similar technologies when you visit or use our website and platform ("Services").</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">By using Reflo Hub, you agree to our use of cookies as described in this policy, subject to your consent preferences and applicable law.</p>
           {cookieSections.map((section, index) => (
             <div
               key={index}
