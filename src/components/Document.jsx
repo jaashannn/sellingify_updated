@@ -9,7 +9,7 @@ const Document = () => {
     {
       title: 'PIPEDA Compliance Statement',
       content: `
-        <p className="text-gray-600 dark:text-gray-300 mb-4"><strong>Last updated: [Insert new date]</strong></p>
+        <p className="text-gray-600 dark:text-gray-300 mb-4"><strong>Last updated: January 21, 2026</strong></p>
         <p className="text-gray-600 dark:text-gray-300">Reflo Hub FZ LLC ("Reflo Hub", "we", "our" or "us") is committed to safeguarding the privacy of individuals whose personal information we process in the course of commercial activities involving Canada. Although Reflo Hub is headquartered outside Canada, we voluntarily adhere to the Personal Information Protection and Electronic Documents Act (S.C. 2000, c. 5) ("PIPEDA") as a standard for responsible data governance.</p>
         <p className="text-gray-600 dark:text-gray-300 mt-4"><strong>Head Office (Global):</strong><br />
         IFZA Business Park, (DDP)<br />
@@ -172,7 +172,7 @@ const Document = () => {
     {
       title: 'CCPA & CPRA Notice',
       content: `
-        <p className="text-gray-600 dark:text-gray-300 mb-4"><strong>Last updated: [Insert new date]</strong></p>
+        <p className="text-gray-600 dark:text-gray-300 mb-4"><strong>Last updated: January 21, 2026</strong></p>
         <p className="text-gray-600 dark:text-gray-300">This California Consumer Privacy Act and California Privacy Rights Act Notice (the "CCPA Notice") supplements the Reflo Hub Privacy Policy and applies solely to California residents ("Consumers" or "you"). It describes how Reflo Hub FZ LLC ("Reflo Hub," "we," "our," or "us") collects, uses, discloses, and retains Personal Information ("PI") subject to the CCPA as amended by the CPRA (Cal. Civ. Code § 1798.100 et seq.).</p>
         <p className="text-gray-600 dark:text-gray-300 mt-4"><strong>Headquarters:</strong><br />
         Reflo Hub FZ LLC<br />
@@ -304,7 +304,7 @@ const Document = () => {
     {
       title: 'GDPR Compliance Statement',
       content: `
-        <p className="text-gray-600 dark:text-gray-300 mb-4"><strong>Last updated: [Insert new date]</strong></p>
+        <p className="text-gray-600 dark:text-gray-300 mb-4"><strong>Last updated: January 21, 2026</strong></p>
         <p className="text-gray-600 dark:text-gray-300">Reflo Hub FZ LLC ("Reflo Hub", "we", "our" or "us") is committed to protecting the privacy and security of personal data entrusted to us. Although our headquarters are located outside the European Economic Area (EEA), we process personal data relating to users in the EEA and therefore comply with Regulation (EU) 2016/679 (the "GDPR").</p>
         <h4 className="font-semibold mt-6">1. Controller Details</h4>
         <p className="text-gray-600 dark:text-gray-300">

@@ -283,7 +283,7 @@ const Cookies = () => {
 
         {/* Cookie Sections */}
         <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto">
-          <p className="text-gray-500 dark:text-gray-400 mb-6">Last Updated: [Insert Date]</p>
+          <p className="text-gray-500 dark:text-gray-400 mb-6">Last Updated: January 21, 2026</p>
           <p className="text-gray-600 dark:text-gray-300 mb-6">This Cookie Policy explains how Reflo Hub FZ LLC ("Reflo Hub," "we," "us," or "our") uses cookies, pixels, local storage, and similar technologies when you visit or use our website and platform ("Services").</p>
           <p className="text-gray-600 dark:text-gray-300 mb-6">By using Reflo Hub, you agree to our use of cookies as described in this policy, subject to your consent preferences and applicable law.</p>
           {cookieSections.map((section, index) => (

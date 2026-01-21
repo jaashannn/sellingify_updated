@@ -590,7 +590,7 @@ const TermsAndConditions = () => {
         {/* Company Details Header */}
         <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto mb-8">
           <div className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-lg border border-gray-200 dark:border-orange-300/40 rounded-lg p-6">
-            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Effective Date:</strong> [Insert Date]</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Effective Date:</strong> January 21, 2026</p>
             <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Company:</strong> Reflo Hub FZ LLC</p>
             <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Address:</strong> IFZA Business Park, (DDP), PO Box 342001, Dubai, United Arab Emirates</p>
             <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Email:</strong> <a href="mailto:privacy@reflohub.com" className="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a> | <strong>Support:</strong> <a href="mailto:support@reflohub.com" className="text-orange-400 dark:text-orange-300 hover:underline">support@reflohub.com</a></p>
