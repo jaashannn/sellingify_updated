@@ -349,6 +349,7 @@ const FreelancerRegistrationConsent = () => {
 
         {/* Consent Sections */}
         <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 mb-6">Last Updated: January 21, 2026</p>
           {consentSections.map((section, index) => (
             <div
               key={index}
