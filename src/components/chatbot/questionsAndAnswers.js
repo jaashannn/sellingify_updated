@@ -18,7 +18,7 @@ export const questionsAndAnswers = [
   },
   {
     question: "Is Reflo Hub free?",
-    answer: "Reflo Hub operates on a subscription model. Freelancers (global): no setup fee, 5 months FREE, then $9.99/month. Freelancers (India): ₹499 setup, then 5 months FREE, then ₹699/month. Businesses pay a one-time setup fee and get 12 months FREE. No commission fees ever!",
+    answer: "Reflo Hub operates on a subscription model. Freelancers: no setup fee worldwide, 5 months FREE, then $9.99/month (global) or ₹699/month (India). Businesses pay a one-time setup fee and get 12 months FREE. No commission fees ever!",
     keywords: ["free", "cost", "price", "charge", "fee"]
   },
   {
@@ -84,12 +84,12 @@ export const questionsAndAnswers = [
   // Pricing - Freelancers
   {
     question: "How much does it cost for freelancers?",
-    answer: "Global (USD): No setup fee — 5 months FREE, then $9.99/month. India (INR): One-time setup fee ₹499, then 5 months FREE, then ₹699/month. Both include dashboard access and 3 lead submission credits per month. Students get an additional 30% discount!",
+    answer: "No setup fee worldwide. Global (USD): 5 months FREE, then $9.99/month. India (INR): 5 months FREE, then ₹699/month. Both include dashboard access and 3 lead submission credits per month. Students get an additional 30% discount!",
     keywords: ["cost", "price", "freelancer", "subscription", "fee", "how much", "pricing"]
   },
   {
     question: "What is the freelancer setup fee?",
-    answer: "Global (USD): No setup fee — you get 5 months FREE subscription. India (INR): One-time setup fee ₹499, then 5 months FREE. Incredible value either way!",
+    answer: "No setup fee worldwide — you get 5 months FREE subscription everywhere. Then $9.99/month (global) or ₹699/month (India). Incredible value!",
     keywords: ["setup", "fee", "freelancer", "one-time", "cost"]
   },
   {
@@ -114,7 +114,7 @@ export const questionsAndAnswers = [
   },
   {
     question: "Is there a free trial for freelancers?",
-    answer: "Yes! Global freelancers get 5 months FREE with no setup fee. India freelancers pay ₹499 setup then get 5 months FREE. That's 5 months to earn without monthly charges!",
+    answer: "Yes! Freelancers get 5 months FREE with no setup fee worldwide. That's 5 months to earn without any monthly charges!",
     keywords: ["free", "trial", "freelancer", "promotion", "offer"]
   },
 

@@ -320,9 +320,6 @@ const Pricing = () => {
           <div className="grid md:grid-cols-1 gap-6">
             {pricing.freelancerPlans.map((plan, index) => {
               // numeric-aware formatting
-              const setupFeeStr = typeof plan.setupFee === 'number'
-                ? (plan.setupFee === 0 ? 'Free' : formatPrice(plan.setupFee))
-                : (plan.setupFee || plan.setup || '—');
               const freeMonths = plan.freeMonths || '';
               const monthlyStr = typeof plan.monthlyPrice === 'number' ? `${formatPrice(plan.monthlyPrice)}` : (plan.monthlyPrice || plan.price || '');
               const discountLabel = plan.discount || '';
@@ -343,18 +340,7 @@ const Pricing = () => {
                       <div className="w-full bg-white dark:bg-gray-900/60 rounded-2xl border-2 border-orange-300/50 p-8 md:p-10 shadow-xl">
                         {/* highlight FREE first (bigger, green, bold) */}
                         <div className="text-xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-3">{freeMonths}</div>
-
-
-                        <div className="mt-2">
-                          <div className="text-xl lg:text-2xl text-orange-500 font-normal mt-1">One-time setup</div>
-                          <div className="text-xl md:text-xl text-orange-400 font-normal leading-tight">{setupFeeStr}</div>
-                          
-                          <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-3">
-                          {typeof plan.setupFee === 'number' && plan.setupFee === 0
-                            ? 'No setup fee — enjoy 5 months free subscription'
-                            : 'Pay the setup fee now and enjoy the FREE subscription for 5 Months'}
-                          </div>
-                        </div>
+                        <div className="text-sm md:text-base text-gray-700 dark:text-gray-300">Enjoy 5 months free subscription — no setup fee.</div>
                       </div>
 
                       <div className="mt-4">

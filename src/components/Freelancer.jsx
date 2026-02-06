@@ -528,7 +528,8 @@ const Freelancer = () => {
                         <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-1">{pricing.meta.launchOffer.freelancer.subtitle}</p>
                         {pricing.meta.launchOffer.freelancer.note && <p className="text-sm text-gray-500 dark:text-gray-400">{pricing.meta.launchOffer.freelancer.note}</p>}
 
-                        <div className="mt-4 flex justify-center">
+                        <div className="mt-4 flex flex-wrap justify-center gap-3">
+                          <a href="/pricing#freelancers" className="inline-flex items-center px-6 py-3 rounded-xl font-semibold text-base border-2 border-orange-400 text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors">View pricing</a>
                           <motion.a
                             href={getSaaSWebsite() ? `${getSaaSWebsite()}/register` : '/get-started'}
                             whileHover={{
@@ -549,22 +550,6 @@ const Freelancer = () => {
                     </div>
                   </motion.div>
                 )}
-
-                {/* Freelancer summary card (subscription) */}
-                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-orange-300/50 rounded-xl p-8 text-center relative">
-                  <h3 className="text-2xl font-bold mb-2">🌟 {pricing.freelancerPlans?.[0]?.name || 'Freelancer Subscription'}</h3>
-                  <div className="flex flex-col items-center mb-4">
-                    <div className="text-lg md:text-3xl font-bold text-green-700 dark:text-green-300">{pricing.freelancerPlans?.[0]?.freeMonths || '—'}</div>
-                    <div className="text-xl md:text-xl text-orange-500 font-normal mt-3">One-time setup</div>
-                    <div className="text-2xl md:text-xl text-orange-500 font-normal mt-1">
-                      {typeof pricing.freelancerPlans?.[0]?.setupFee === 'number' ? (pricing.currency === 'INR' ? `₹${pricing.freelancerPlans[0].setupFee}` : `$${pricing.freelancerPlans[0].setupFee.toFixed(2)}`) : (pricing.freelancerPlans?.[0]?.setupFee || '-')}
-                    </div>
-                  </div>
-
-                  <div className="mt-6">
-                    <a href="/pricing#freelancers" className="inline-block bg-orange-400 text-white px-6 py-2 rounded-full font-semibold">View full pricing</a>
-                  </div>
-                </motion.div>
               </>
             ) : (
               <div className="text-center py-12">Loading pricing…</div>
