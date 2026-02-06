@@ -29,8 +29,8 @@ const FreelancerRegistrationConsent = () => {
         <h4 class="font-semibold text-lg mb-3 text-orange-400">2.1 Setup Fee + Free Period</h4>
         <p class="mb-3">You agree to:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
-          <li>Pay a one-time setup fee of $6.99 USD (or ₹499 INR)</li>
-          <li>Receive 5 months FREE subscription after paying the setup fee</li>
+          <li><strong>Global (USD):</strong> No setup fee — 5 months FREE subscription</li>
+          <li><strong>India (INR):</strong> One-time setup fee ₹499, then 5 months FREE</li>
         </ul>
         <p class="mb-4">Setup fees are non-refundable, except as required by law.</p>
         

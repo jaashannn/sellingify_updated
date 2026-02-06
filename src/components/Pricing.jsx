@@ -320,7 +320,9 @@ const Pricing = () => {
           <div className="grid md:grid-cols-1 gap-6">
             {pricing.freelancerPlans.map((plan, index) => {
               // numeric-aware formatting
-              const setupFeeStr = typeof plan.setupFee === 'number' ? formatPrice(plan.setupFee) : (plan.setupFee || plan.setup || '—');
+              const setupFeeStr = typeof plan.setupFee === 'number'
+                ? (plan.setupFee === 0 ? 'Free' : formatPrice(plan.setupFee))
+                : (plan.setupFee || plan.setup || '—');
               const freeMonths = plan.freeMonths || '';
               const monthlyStr = typeof plan.monthlyPrice === 'number' ? `${formatPrice(plan.monthlyPrice)}` : (plan.monthlyPrice || plan.price || '');
               const discountLabel = plan.discount || '';
@@ -348,7 +350,9 @@ const Pricing = () => {
                           <div className="text-xl md:text-xl text-orange-400 font-normal leading-tight">{setupFeeStr}</div>
                           
                           <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-3">
-                          Pay the setup fee now and enjoy the FREE subscription for 5 Months
+                          {typeof plan.setupFee === 'number' && plan.setupFee === 0
+                            ? 'No setup fee — enjoy 5 months free subscription'
+                            : 'Pay the setup fee now and enjoy the FREE subscription for 5 Months'}
                           </div>
                         </div>
                       </div>

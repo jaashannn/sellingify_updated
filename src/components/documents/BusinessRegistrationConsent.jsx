@@ -29,7 +29,7 @@ const BusinessRegistrationConsent = () => {
         <h4 class="font-semibold text-lg mb-3 text-orange-400">2.1 One-Time Setup Fee (Paid at Registration)</h4>
         <p class="mb-3">You agree to pay the one-time setup fee based on your selected plan:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
-          <li><strong>Global (USD):</strong> Basic $79 | Standard $149 | Premium $399</li>
+          <li><strong>Global (USD):</strong> Basic $99 | Standard $249 | Premium $399</li>
           <li><strong>India (INR):</strong> Basic ₹2,999 | Standard ₹3,999 | Premium ₹9,999</li>
         </ul>
         <p class="mb-4">Setup fees are non-refundable, except as required by law.</p>

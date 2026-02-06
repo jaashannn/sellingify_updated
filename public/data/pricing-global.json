@@ -9,7 +9,7 @@
       },
       "freelancer": {
         "title": "Launch Offer — 5 months Subscription FREE!!!",
-        "subtitle": "Receive a full 5 months subscription free - Just Pay the One-Time Setup Fee",
+        "subtitle": "Receive 5 months subscription free worldwide — no setup fee",
         "note": ""
       }
     },
@@ -30,7 +30,7 @@
         "Special partner opportunities"
       ],
       "limitedTime": "Limited Time Offer",
-      "setupFee": 6.99,
+      "setupFee": 0,
       "studentDiscountMsg": "Additional 30% discount on subscription fees with valid ID",
       "monthlyPrice": 9.99,
       "monthlyPriceForStudents": 6.99,
@@ -49,7 +49,7 @@
     {
       "key": "basic",
       "name": "Basic",
-      "oneTimeSetup": 79,
+      "oneTimeSetup": 99,
       "verifiedBadge": {
         "monthly": 15,
         "annual": 180
@@ -69,7 +69,7 @@
     {
       "key": "standard",
       "name": "Standard",
-      "oneTimeSetup": 149,
+      "oneTimeSetup": 249,
       "verifiedBadge": {
         "monthly": 15,
         "annual": 180

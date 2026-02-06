@@ -65,9 +65,9 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Pro Referrer</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time setup fee $6.99, then 5 months FREE. After free period: $9.99/month with 3 lead submission credits per month</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">No setup fee; 5 months FREE. After free period: $9.99/month with 3 lead submission credits per month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">
-                    <span class="text-green-600 dark:text-green-400 font-semibold">$6.99 setup + 5 months FREE</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">No setup fee; 5 months FREE</span>
                     <span class="text-sm text-gray-500 dark:text-gray-400 block">Then $9.99/month (was $19.98)</span>
                   </td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
@@ -130,13 +130,13 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Basic</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$79 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$99 USD</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">$29 USD/month</td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Standard</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$149 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$249 USD</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">$49 USD/month</td>
                 </tr>
