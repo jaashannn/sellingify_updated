@@ -18,7 +18,7 @@ export const questionsAndAnswers = [
   },
   {
     question: "Is Reflo Hub free?",
-    answer: "Reflo Hub operates on a subscription model. Freelancers pay $6.99 setup fee and get 5 months FREE, then $9.99/month. Businesses pay a one-time setup fee and get 12 months FREE subscription. No commission fees ever!",
+    answer: "Reflo Hub operates on a subscription model. Freelancers (global): no setup fee, 5 months FREE, then $9.99/month. Freelancers (India): ₹499 setup, then 5 months FREE, then ₹699/month. Businesses pay a one-time setup fee and get 12 months FREE. No commission fees ever!",
     keywords: ["free", "cost", "price", "charge", "fee"]
   },
   {
@@ -84,12 +84,12 @@ export const questionsAndAnswers = [
   // Pricing - Freelancers
   {
     question: "How much does it cost for freelancers?",
-    answer: "Freelancers pay a one-time setup fee of $6.99 USD (₹499 INR) and receive 5 months FREE subscription. After the free period, the monthly subscription is $9.99 USD (₹699 INR), which includes dashboard access and 3 lead submission credits each month. Students get an additional 30% discount!",
+    answer: "Global (USD): No setup fee — 5 months FREE, then $9.99/month. India (INR): One-time setup fee ₹499, then 5 months FREE, then ₹699/month. Both include dashboard access and 3 lead submission credits per month. Students get an additional 30% discount!",
     keywords: ["cost", "price", "freelancer", "subscription", "fee", "how much", "pricing"]
   },
   {
     question: "What is the freelancer setup fee?",
-    answer: "The one-time setup fee for freelancers is $6.99 USD (₹499 INR). After payment, you get 5 months of FREE subscription - that's incredible value!",
+    answer: "Global (USD): No setup fee — you get 5 months FREE subscription. India (INR): One-time setup fee ₹499, then 5 months FREE. Incredible value either way!",
     keywords: ["setup", "fee", "freelancer", "one-time", "cost"]
   },
   {
@@ -114,24 +114,24 @@ export const questionsAndAnswers = [
   },
   {
     question: "Is there a free trial for freelancers?",
-    answer: "Yes! Freelancers get 5 months FREE subscription after paying the one-time setup fee of $6.99. That's 5 months to earn without any monthly charges!",
+    answer: "Yes! Global freelancers get 5 months FREE with no setup fee. India freelancers pay ₹499 setup then get 5 months FREE. That's 5 months to earn without monthly charges!",
     keywords: ["free", "trial", "freelancer", "promotion", "offer"]
   },
 
   // Pricing - Businesses
   {
     question: "What are the business membership plans?",
-    answer: "We offer three plans with 12 months FREE subscription (just pay one-time setup fee): Business Basic ($79 USD / ₹2,999 INR setup, 10 leads/month, 0 ads/month), Business Standard ($149 USD / ₹3,999 INR setup, unlimited leads, 2 ads/month), and Business Premium ($399 USD / ₹9,999 INR setup, unlimited leads, 5 ads/month). After the first year, monthly fees apply.",
+    answer: "We offer three plans with 12 months FREE (pay one-time setup): Business Basic ($99 USD / ₹2,999 INR setup, 10 leads/month, 0 ads/month), Business Standard ($249 USD / ₹3,999 INR setup, unlimited leads, 2 ads/month), and Business Premium ($399 USD / ₹9,999 INR setup, unlimited leads, 5 ads/month). After the first year, monthly fees apply.",
     keywords: ["business", "plan", "membership", "pricing", "cost", "subscription", "plans"]
   },
   {
     question: "How much does Business Basic cost?",
-    answer: "Business Basic costs $79 USD (₹2,999 INR) one-time setup fee with 12 months FREE subscription. It includes 10 leads per month and 0 ads per month. Perfect for small businesses getting started!",
+    answer: "Business Basic costs $99 USD (₹2,999 INR) one-time setup with 12 months FREE. It includes 10 leads per month and 0 ads per month. Perfect for small businesses getting started!",
     keywords: ["business", "basic", "plan", "cost", "price", "pricing"]
   },
   {
     question: "What is included in Business Standard?",
-    answer: "Business Standard costs $149 USD (₹3,999 INR) one-time setup with 12 months FREE. It includes unlimited leads per month and 2 ads per month. Great for growing businesses!",
+    answer: "Business Standard costs $249 USD (₹3,999 INR) one-time setup with 12 months FREE. It includes unlimited leads per month and 2 ads per month. Great for growing businesses!",
     keywords: ["business", "standard", "plan", "includes", "features"]
   },
   {

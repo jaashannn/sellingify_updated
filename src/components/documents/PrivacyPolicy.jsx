@@ -7,245 +7,312 @@ const PrivacyPolicy = () => {
 
   const policySections = [
     {
-      title: 'Information We Collect',
+      title: '1. INFORMATION WE COLLECT',
       content: `
-        <h4 class="font-semibold text-lg mb-3 text-orange-400">Personal Data</h4>
-        <p class="mb-3">When you register with Reflo Hub, we collect the following personal information:</p>
-        <ul class="list-disc pl-6 space-y-2 mb-4">
-          <li>Full name and display name</li>
-          <li>Email address and phone number</li>
-          <li>Country and city of residence</li>
-          <li>Identification documents (for verification purposes)</li>
-          <li>Live photo captured through our platform for KYC verification</li>
-        </ul>
+        <p class="mb-4">We collect information that you voluntarily provide, information generated through your use of the platform, and information collected automatically through technical means.</p>
         
-        <h4 class="font-semibold text-lg mb-3 text-orange-400">Account and Payment Information</h4>
-        <p class="mb-3">To process your Reflo Hub subscription, we collect billing information:</p>
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">1.1 Personal Data (All Users)</h4>
+        <p class="mb-3">When you register or use Reflo Hub, we may collect:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
-          <li>Credit/debit card information (securely processed by Stripe and other certified payment gateways)</li>
-          <li>Billing address and contact information</li>
+          <li>Full legal name and display name</li>
+          <li>Email address and phone number</li>
+          <li>Country, city, and time zone</li>
+          <li>Government-issued identification documents (for verification)</li>
+          <li>Live photo or selfie captured via our KYC tool</li>
+          <li>Business name, registration details, and supporting documents (for Businesses)</li>
+          <li>Professional details (for Freelancers), including referral activity</li>
+        </ul>
+        <p class="mb-4">This information is used for identity verification, fraud prevention, compliance, and account management.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">1.2 Account and Payment Information</h4>
+        <p class="mb-3">To process your subscription or wallet top-ups, we collect:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Billing name and address</li>
+          <li>Payment transaction records</li>
+          <li>Invoice history</li>
         </ul>
         <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
-          <p class="text-sm"><strong>Important:</strong> We do not store sensitive credit card information on our systems. All payment data is securely handled and encrypted by certified third-party payment processors.</p>
+          <p class="text-sm"><strong>Important:</strong> We do not store full credit card details. All payment data is securely processed and encrypted by certified third-party providers such as Stripe, PayPal, or other authorized gateways.</p>
         </div>
         
-        <h4 class="font-semibold text-lg mb-3 text-orange-400">Lead Data (from Freelancers)</h4>
-        <p class="mb-3">When freelancers submit leads, we collect:</p>
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">1.3 Lead Data (Submitted by Freelancers)</h4>
+        <p class="mb-3">When Freelancers submit leads, we collect and store:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
-          <li>Client contact information (name, phone, email, city)</li>
+          <li>Client name, phone, email, and city</li>
           <li>Service requirements and details</li>
+          <li>Timeline and budget indicators (if provided)</li>
+          <li>Lead notes and attachments</li>
         </ul>
-        <p class="mb-4">This information is securely stored to facilitate effective matching between businesses and freelancers.</p>
+        <p class="mb-4">This data is used strictly to facilitate matching between Freelancers and Businesses, risk analysis, and dispute resolution when required.</p>
+        <p class="mb-4">Lead data is encrypted at rest and in transit and access is restricted based on role and risk state (e.g., blurred or restricted access when necessary).</p>
         
-        <h4 class="font-semibold text-lg mb-3 text-orange-400">Automatically Collected Information</h4>
-        <p class="mb-3">We may automatically collect non-personal information including:</p>
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">1.4 Security Wallet & Risk Data (Businesses)</h4>
+        <p class="mb-3">For Businesses, we may collect and process additional data related to:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Security Wallet balance and transaction history</li>
+          <li>Risk score and risk tier</li>
+          <li>Lead acceptance patterns</li>
+          <li>Conversion performance</li>
+          <li>Dispute history</li>
+          <li>Payment proof submissions</li>
+          <li>Fraud flags or platform violations</li>
+        </ul>
+        <p class="mb-4">This data is used to dynamically adjust wallet requirements, control lead visibility, and protect freelancer payments.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">1.5 Ratings, Flags, and Behavioral Data</h4>
+        <p class="mb-3">We collect:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Business ratings of Freelancer lead quality</li>
+          <li>Freelancer ratings of Business payment behavior</li>
+          <li>Red flags raised by either party</li>
+          <li>Dispute records, evidence files, and timestamps</li>
+        </ul>
+        <p class="mb-4">These are used to calculate risk scores, enforce safety rules, and improve platform trust.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">1.6 Automatically Collected Information</h4>
+        <p class="mb-3">We may automatically collect technical and usage data including:</p>
         <ul class="list-disc pl-6 space-y-2">
-          <li>IP address and device information</li>
+          <li>IP address</li>
+          <li>Device type and operating system</li>
           <li>Browser type and version</li>
-          <li>Page interactions and navigation history</li>
-          <li>Usage patterns and platform analytics</li>
+          <li>Log-in times and session duration</li>
+          <li>Pages visited and actions taken</li>
+          <li>Platform analytics and performance metrics</li>
         </ul>
-        <p class="mt-3">Cookies help us optimize our website functionality and enhance your user experience.</p>
+        <p class="mt-3">This helps us improve security, detect abuse, and optimize user experience.</p>
       `,
     },
     {
-      title: 'How We Use Your Information',
+      title: '2. HOW WE USE YOUR INFORMATION',
       content: `
-        <p class="mb-4">We use your personal information to deliver and enhance Reflo Hub services. Specifically, we utilize your data to:</p>
-        <ul class="list-disc pl-6 space-y-3">
-          <li><strong>Account Management:</strong> Create and maintain your user account and profile</li>
-          <li><strong>Identity Verification:</strong> Use live photos to confirm your identity and prevent fraud</li>
-          <li><strong>Lead Matching:</strong> Connect businesses with qualified freelancers for lead generation</li>
-          <li><strong>Payment Processing:</strong> Securely handle subscription fees and transactions</li>
-          <li><strong>Platform Improvement:</strong> Analyze usage patterns to enhance platform performance</li>
-          <li><strong>Communication:</strong> Send important updates, special offers, and service notifications</li>
-          <li><strong>Customer Support:</strong> Provide timely assistance and resolve your inquiries</li>
+        <p class="mb-4">We use your data for the following purposes:</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.1 Account Management</h4>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Create, verify, and maintain your account</li>
+          <li>Enable login, authentication, and access control</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.2 Identity & Fraud Prevention</h4>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Verify identity via live photo and documents</li>
+          <li>Detect fake accounts, fraud, or platform abuse</li>
+          <li>Monitor suspicious activity and enforce bans</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.3 Lead Matching & Marketplace Operations</h4>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Connect Freelancers and Businesses</li>
+          <li>Facilitate lead sharing, acceptance, and communication</li>
+          <li>Apply blurred or restricted lead access when necessary</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.4 Security Wallet & Risk Controls</h4>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Calculate dynamic wallet requirements</li>
+          <li>Restrict or unlock leads based on risk status</li>
+          <li>Use wallet funds in disputes where applicable</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.5 Payments & Billing</h4>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Process setup fees, subscriptions, and wallet top-ups</li>
+          <li>Maintain billing records and invoices</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.6 Dispute Resolution</h4>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Review evidence in disputes</li>
+          <li>Investigate fraud or misconduct</li>
+          <li>Apply penalties, payouts, or bans</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.7 Platform Improvement</h4>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Analyze usage trends</li>
+          <li>Improve AI risk models</li>
+          <li>Enhance safety systems and lead quality checks</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.8 Communication</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Send transactional emails (receipts, alerts, disputes)</li>
+          <li>Notify users of policy changes</li>
+          <li>Send marketing updates (opt-out available)</li>
         </ul>
       `,
     },
     {
-      title: 'How We Share Your Information',
+      title: '3. HOW WE SHARE YOUR INFORMATION',
       content: `
-        <p class="mb-4">We maintain strict confidentiality and limit data sharing. Your personal information is only shared in the following circumstances:</p>
-        <ul class="list-disc pl-6 space-y-3">
-          <li><strong>Lead Exchange:</strong> When facilitating connections between businesses and freelancers, we share only essential information (name, city, contact details) to enable lead exchange and direct payments</li>
-          <li><strong>Service Providers:</strong> We work with trusted third-party providers including:
-            <ul class="list-disc pl-4 mt-2 space-y-1">
-              <li>Cloud hosting services (AWS, Google Cloud)</li>
-              <li>Analytics services (Google Analytics)</li>
-              <li>Payment processors (Stripe, PayPal)</li>
-              <li>Communication tools (SendGrid, MailChimp)</li>
-            </ul>
-          </li>
-          <li><strong>Legal Compliance:</strong> We may share information when required by law, legal process, or to protect our rights and the safety of our users</li>
+        <p class="mb-4">We do not sell your personal data. We share information only when necessary for platform operations, legal compliance, or safety enforcement.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">3.1 Lead Exchange Between Users</h4>
+        <p class="mb-3">When a Business accepts a lead (subject to visibility rules), we may share:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Client name and contact details</li>
+          <li>Service requirements</li>
+          <li>Relevant lead notes</li>
         </ul>
-        <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mt-4">
-          <p class="text-sm"><strong>Important:</strong> Reflo Hub does not manage or mediate financial transactions between businesses and freelancers. We do not store or process any financial information related to these transactions.</p>
-        </div>
+        <p class="mb-4">If access is restricted, this data may remain blurred until conditions are met.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">3.2 Third-Party Service Providers</h4>
+        <p class="mb-3">We work with trusted providers such as:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Cloud hosting services (AWS, Google Cloud, or equivalents)</li>
+          <li>Payment processors (Stripe, PayPal)</li>
+          <li>Email and communication tools (SendGrid, Mailchimp)</li>
+          <li>Analytics providers (Google Analytics or alternatives)</li>
+        </ul>
+        <p class="mb-4">These providers are contractually obligated to protect your data and use it only for specified purposes.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">3.3 Legal and Compliance Sharing</h4>
+        <p class="mb-3">We may disclose data if required by law, court order, or regulatory authority, or to:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Prevent fraud or illegal activity</li>
+          <li>Protect Reflo Hub's rights</li>
+          <li>Protect users from harm</li>
+          <li>Defend against legal claims</li>
+        </ul>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">3.4 Dispute & Enforcement Sharing</h4>
+        <p class="mb-3">In disputes, we may share relevant evidence with:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>The other party in the dispute</li>
+          <li>Internal Reflo Hub dispute team</li>
+          <li>Legal counsel or investigators if necessary</li>
+        </ul>
       `,
     },
     {
-      title: 'Security of Data',
+      title: '4. DATA SECURITY',
       content: `
-        <p class="mb-4">We prioritize the security of your data and implement industry-standard security measures including:</p>
+        <p class="mb-4">We implement industry-standard security measures including:</p>
         <ul class="list-disc pl-6 space-y-3">
-          <li><strong>Encryption:</strong> SSL/TLS encryption to protect data during transmission</li>
-          <li><strong>Secure Storage:</strong> Data stored using AWS and other trusted cloud providers with enterprise-grade security</li>
-          <li><strong>Regular Updates:</strong> Frequent software updates and comprehensive security audits</li>
-          <li><strong>Access Controls:</strong> Strict access restrictions and role-based permissions for sensitive information</li>
-          <li><strong>Monitoring:</strong> Continuous monitoring and threat detection systems</li>
+          <li>SSL/TLS encryption for data transmission</li>
+          <li>Encrypted storage on secure cloud infrastructure</li>
+          <li>Role-based access controls</li>
+          <li>Regular security audits</li>
+          <li>Continuous monitoring for threats</li>
         </ul>
         <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mt-4">
-          <p class="text-sm"><strong>Security Notice:</strong> While we implement strong security measures, no data transmission method is 100% secure. Please report any security concerns immediately to <a href="mailto:support@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline font-semibold">support@reflohub.com</a></p>
+          <p class="text-sm"><strong>Security Notice:</strong> While we take strong precautions, no system is 100% secure. If you suspect a breach, contact us immediately at <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline font-semibold">privacy@reflohub.com</a>.</p>
         </div>
       `,
     },
     {
-      title: 'International Transfers of Data',
+      title: '5. INTERNATIONAL DATA TRANSFERS',
       content: `
-        <p class="mb-4">As part of Reflo Hub's global operations, your data may be processed and stored in various countries including the United States, Canada, and other international locations.</p>
-        <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
-          <p class="text-sm"><strong>Compliance:</strong> We ensure adherence to relevant international data transfer regulations and implement appropriate safeguards, including GDPR-compliant data processors and standard contractual clauses where required.</p>
-        </div>
+        <p class="mb-4">As a global platform, your data may be processed in:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>United Arab Emirates</li>
+          <li>United States</li>
+          <li>Canada</li>
+          <li>Other jurisdictions where our service providers operate</li>
+        </ul>
+        <p class="mb-4">We apply appropriate safeguards, including contractual protections and data transfer mechanisms where required.</p>
       `,
     },
     {
-      title: 'Your Rights to Data Privacy',
+      title: '6. YOUR DATA RIGHTS',
       content: `
-        <p class="mb-4">You have complete control over your personal data and the following rights:</p>
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">Right of Access</h5>
-            <p class="text-sm">Request copies of all personal information we have about you</p>
-          </div>
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">Right of Correction</h5>
-            <p class="text-sm">Update or modify your account information through your profile page</p>
-          </div>
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">Right to Deletion</h5>
-            <p class="text-sm">Request complete deletion of your account and all associated data</p>
-          </div>
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">Right to Withdraw Consent</h5>
-            <p class="text-sm">Unsubscribe from marketing communications or close your account at any time</p>
-          </div>
-        </div>
+        <p class="mb-4">You have the following rights (subject to applicable law):</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">6.1 Right of Access</h4>
+        <p class="mb-4">Request a copy of your personal data.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">6.2 Right of Correction</h4>
+        <p class="mb-4">Update inaccurate or incomplete information via your dashboard or by contacting us.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">6.3 Right of Deletion</h4>
+        <p class="mb-4">Request account deletion and removal of personal data (subject to legal retention requirements).</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">6.4 Right to Withdraw Consent</h4>
+        <p class="mb-4">Opt out of marketing communications or request account closure.</p>
+        
         <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-          <p class="text-sm"><strong>Exercise Your Rights:</strong> Contact us at <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline font-semibold">privacy@reflohub.com</a> to exercise any of these rights.</p>
+          <p class="text-sm"><strong>To exercise your rights, email:</strong> <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline font-semibold">privacy@reflohub.com</a></p>
         </div>
       `,
     },
     {
-      title: 'Compliance with Global Privacy Regulations',
+      title: '7. GLOBAL PRIVACY COMPLIANCE',
       content: `
-        <p class="mb-4">Reflo Hub complies with the following global data protection frameworks and legislation:</p>
-        <div class="space-y-4">
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">GDPR (Europe)</h5>
-            <p class="text-sm mb-2">Reflo Hub is incorporated as a private limited company under the Dubai Integrated Economic Zones Implementing Regulations 2023. We do not maintain an establishment within the EU/EEA and, pursuant to Art. 27 GDPR, we have elected not to appoint an EU representative.</p>
-            <p class="text-sm"><strong>GDPR Inquiries:</strong> All GDPR-related inquiries should be directed to:</p>
-            <div class="bg-white dark:bg-gray-900 rounded p-3 mt-2 text-sm">
-              <p><strong>Reflo Hub FZ LLC</strong><br />
-              IFZA Business Park, (DDP)<br />
-              PO Box 342001, Dubai, United Arab Emirates</p>
-            </div>
-          </div>
-          
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">CCPA (California, USA)</h5>
-            <p class="text-sm">California residents may request access, deletion, and opt-out of data sales. <strong>Note:</strong> We do not sell your personal data to third parties.</p>
-          </div>
-          
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">PIPEDA (Canada)</h5>
-            <p class="text-sm">We closely follow Canadian privacy laws and standards that regulate the collection, use, and disclosure of personal information.</p>
-          </div>
-        </div>
-      `,
-    },
-    {
-      title: 'Cookies and Analytics',
-      content: `
-        <p class="mb-4">We use cookies and analytics to enhance your experience and improve our platform:</p>
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">Personalization</h5>
-            <p class="text-sm">Customize your Reflo Hub experience and remember your preferences</p>
-          </div>
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">Analytics</h5>
-            <p class="text-sm">Analyze platform trends and performance to improve our services</p>
-          </div>
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">Security</h5>
-            <p class="text-sm">Enhance user verification and maintain platform security</p>
-          </div>
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-            <h5 class="font-semibold text-orange-400 mb-2">Marketing</h5>
-            <p class="text-sm">Manage advertising and promotional campaigns effectively</p>
-          </div>
-        </div>
-        <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-          <p class="text-sm"><strong>Cookie Notice:</strong> Disabling cookies in your browser settings may limit your Reflo Hub experience and certain features may not function properly.</p>
-        </div>
-      `,
-    },
-    {
-      title: 'Third-Party Links',
-      content: `
-        <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
-          <p class="text-sm"><strong>Third-Party Links:</strong> Reflo Hub may contain links to external websites (payment gateways, listed businesses, etc.). We are not responsible for the content or privacy practices of these third-party websites. Please review their privacy policies before providing any personal information.</p>
-        </div>
-      `,
-    },
-    {
-      title: "Children's Privacy",
-      content: `
-        <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
-          <p class="text-sm"><strong>Age Restriction:</strong> Reflo Hub services are not intended for individuals under the age of 18. We do not knowingly collect or use personal information from children. If we discover that we have collected personal information from a minor, we will promptly delete such information from our systems.</p>
-        </div>
-      `,
-    },
-    {
-      title: 'Updates to the Privacy Policy',
-      content: `
-        <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-          <p class="text-sm"><strong>Policy Updates:</strong> This privacy policy is regularly updated to reflect changes in our practices or applicable legal requirements. We will notify you of significant changes via email or by prominently displaying the updated policy on our website. We encourage you to review this policy periodically to stay informed about how we protect your information.</p>
-        </div>
-      `,
-    },
-    {
-      title: 'Contact Us',
-      content: `
-        <div class="text-center mb-6">
-          <h3 class="text-2xl font-bold text-orange-400 mb-2">Questions or Concerns?</h3>
-          <p class="text-gray-600 dark:text-gray-300">We're here to help with any privacy-related inquiries.</p>
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.1 GDPR (European Union)</h4>
+        <p class="mb-3">Reflo Hub is incorporated under Dubai Integrated Economic Zones Implementing Regulations 2023 and does not maintain an establishment in the EU/EEA. We have elected not to appoint an EU representative under Article 27 GDPR.</p>
+        <p class="mb-3"><strong>GDPR inquiries should be directed to:</strong></p>
+        <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 mb-4">
+          <p class="text-sm">Reflo Hub FZ LLC<br />
+          IFZA Business Park (DDP)<br />
+          PO Box 342001, Dubai, UAE</p>
         </div>
         
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6">
-            <h4 class="font-semibold text-lg mb-4 text-orange-400">Reflo Hub Privacy Team</h4>
-            <div class="space-y-3">
-              <div>
-                <p class="font-semibold text-sm text-gray-700 dark:text-gray-300">Email</p>
-                <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline font-semibold">privacy@reflohub.com</a>
-              </div>
-              <div>
-                <p class="font-semibold text-sm text-gray-700 dark:text-gray-300">Phone</p>
-                <p class="text-gray-600 dark:text-gray-300">1-855-220-0505</p>
-              </div>
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.2 CCPA (California, USA)</h4>
+        <p class="mb-4">California residents may request access or deletion of their data.</p>
+        <p class="mb-4">We do not sell personal data to third parties.</p>
+        
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">7.3 PIPEDA (Canada)</h4>
+        <p class="mb-4">We comply with Canadian privacy standards governing collection, use, and disclosure of personal information.</p>
+      `,
+    },
+    {
+      title: '8. COOKIES & ANALYTICS',
+      content: `
+        <p class="mb-4">We use cookies for:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Personalization (remember preferences)</li>
+          <li>Security (prevent fraud and abuse)</li>
+          <li>Analytics (improve platform performance)</li>
+          <li>Marketing (measure campaign effectiveness)</li>
+        </ul>
+        <p class="mb-4">You may disable cookies in your browser, but some features may not function properly.</p>
+      `,
+    },
+    {
+      title: '9. THIRD-PARTY LINKS',
+      content: `
+        <p class="mb-4">Reflo Hub may contain links to third-party websites (payment gateways, partner sites, or listed businesses). We are not responsible for their privacy practices. Please review their policies before sharing personal information.</p>
+      `,
+    },
+    {
+      title: "10. CHILDREN'S PRIVACY",
+      content: `
+        <p class="mb-4">Reflo Hub is not intended for individuals under 18.</p>
+        <p class="mb-4">We do not knowingly collect data from minors. If we discover such data, we will delete it promptly.</p>
+      `,
+    },
+    {
+      title: '11. CHANGES TO THIS POLICY',
+      content: `
+        <p class="mb-4">We may update this Privacy Policy from time to time. Material changes will be communicated via email or in-app notice at least 14 days in advance.</p>
+        <p class="mb-4">Continued use after updates constitutes acceptance.</p>
+      `,
+    },
+    {
+      title: '12. CONTACT US',
+      content: `
+        <p class="mb-4">For privacy questions or concerns, contact:</p>
+        <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 mb-4">
+          <h4 class="font-semibold text-lg mb-4 text-orange-400">Reflo Hub Privacy Team</h4>
+          <div class="space-y-3">
+            <div>
+              <p class="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Email</p>
+              <a href="mailto:privacy@reflohub.com" class="text-orange-400 dark:text-orange-300 hover:underline font-semibold">privacy@reflohub.com</a>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Phone</p>
+              <p class="text-gray-600 dark:text-gray-300">1-855-220-0505</p>
             </div>
           </div>
-          
-          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6">
-            <h4 class="font-semibold text-lg mb-4 text-orange-400">Mailing Address</h4>
-            <div class="text-sm text-gray-600 dark:text-gray-300">
-              <p><strong>Reflo Hub FZ LLC</strong></p>
-              <p>IFZA Business Park, DDP</p>
-              <p>PO Box 342001</p>
-              <p>Dubai, United Arab Emirates</p>
-            </div>
+        </div>
+        
+        <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6">
+          <h4 class="font-semibold text-lg mb-4 text-orange-400">Mailing Address</h4>
+          <div class="text-sm text-gray-600 dark:text-gray-300">
+            <p><strong>Reflo Hub FZ LLC</strong></p>
+            <p>IFZA Business Park, DDP</p>
+            <p>PO Box 342001</p>
+            <p>Dubai, United Arab Emirates</p>
           </div>
         </div>
       `,
@@ -311,9 +378,21 @@ const PrivacyPolicy = () => {
           </p>
         </motion.div>
 
+        {/* Company Details */}
+        <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto mb-8">
+          <div className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-lg border border-gray-200 dark:border-orange-300/40 rounded-lg p-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Effective Date:</strong> January 21, 2026</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Company:</strong> Reflo Hub FZ LLC</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Address:</strong> IFZA Business Park (DDP), PO Box 342001, Dubai, United Arab Emirates</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-2"><strong>Email:</strong> <a href="mailto:privacy@reflohub.com" className="text-orange-400 dark:text-orange-300 hover:underline">privacy@reflohub.com</a></p>
+            <p className="text-gray-600 dark:text-gray-300"><strong>Phone:</strong> 1-855-220-0505</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-4">Reflo Hub ("we," "us," or "our") operates a SaaS-based referral and lead-sharing platform connecting Businesses and Freelancers ("Users"). This Privacy Policy explains how we collect, use, store, and protect your personal data when you use the Reflo Hub platform, website, or related services ("Services").</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">By using Reflo Hub, you consent to the practices described in this Privacy Policy.</p>
+          </div>
+        </motion.div>
+
         {/* Policy Sections */}
         <motion.div variants={sectionVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto">
-          <p className="text-gray-500 dark:text-gray-400 mb-6">Last Updated: 2025-07-01</p>
           {policySections.map((section, index) => (
             <div
               key={index}

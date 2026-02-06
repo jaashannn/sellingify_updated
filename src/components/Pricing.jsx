@@ -320,7 +320,9 @@ const Pricing = () => {
           <div className="grid md:grid-cols-1 gap-6">
             {pricing.freelancerPlans.map((plan, index) => {
               // numeric-aware formatting
-              const setupFeeStr = typeof plan.setupFee === 'number' ? formatPrice(plan.setupFee) : (plan.setupFee || plan.setup || '—');
+              const setupFeeStr = typeof plan.setupFee === 'number'
+                ? (plan.setupFee === 0 ? 'Free' : formatPrice(plan.setupFee))
+                : (plan.setupFee || plan.setup || '—');
               const freeMonths = plan.freeMonths || '';
               const monthlyStr = typeof plan.monthlyPrice === 'number' ? `${formatPrice(plan.monthlyPrice)}` : (plan.monthlyPrice || plan.price || '');
               const discountLabel = plan.discount || '';
@@ -348,7 +350,9 @@ const Pricing = () => {
                           <div className="text-xl md:text-xl text-orange-400 font-normal leading-tight">{setupFeeStr}</div>
                           
                           <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-3">
-                          Pay the setup fee now and enjoy the FREE subscription for 5 Months
+                          {typeof plan.setupFee === 'number' && plan.setupFee === 0
+                            ? 'No setup fee — enjoy 5 months free subscription'
+                            : 'Pay the setup fee now and enjoy the FREE subscription for 5 Months'}
                           </div>
                         </div>
                       </div>
@@ -582,6 +586,52 @@ const Pricing = () => {
                       </tr>
                     </thead>
                     <tbody>
+                      {/* One Time Setup Fee row */}
+                      <tr className="border-t border-gray-100 dark:border-white/5 bg-orange-50/30 dark:bg-orange-900/10">
+                        <td className="p-3 border border-gray-200 dark:border-white/10 text-base font-semibold text-gray-700 dark:text-gray-100">One Time Setup Fee</td>
+                        {pkgs.map((p, j) => {
+                          const setupFee = p.oneTimeSetup;
+                          return (
+                            <td key={j} className="p-3 border border-gray-200 dark:border-white/10 text-center">
+                              {setupFee != null ? (
+                                <span className="text-orange-500 font-semibold">{formatPrice(setupFee)}</span>
+                              ) : (
+                                '—'
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                      {/* Verified Badge row */}
+                      <tr className="border-t border-gray-100 dark:border-white/5 bg-sky-50/30 dark:bg-sky-900/10">
+                        <td className="p-3 border border-gray-200 dark:border-white/10 text-base font-semibold text-gray-700 dark:text-gray-100">Verified Badge</td>
+                        {pkgs.map((p, j) => {
+                          const verifiedBadge = p.verifiedBadge;
+                          return (
+                            <td key={j} className="p-3 border border-gray-200 dark:border-white/10 text-center">
+                              {verifiedBadge?.inclusive ? (
+                                <span className="text-sky-400 font-semibold">✔ Included</span>
+                              ) : verifiedBadge?.monthly || verifiedBadge?.annual ? (
+                                <div className="flex flex-col gap-0.5">
+                                  {verifiedBadge.monthly && (
+                                    <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                      {formatPrice(verifiedBadge.monthly)}/mo
+                                    </span>
+                                  )}
+                                  {verifiedBadge.annual && (
+                                    <span className="text-gray-600 dark:text-gray-400 text-xs">
+                                      or {formatPrice(verifiedBadge.annual)}/yr
+                                    </span>
+                                  )}
+                                </div>
+                              ) : (
+                                '—'
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                      {/* Other feature rows */}
                       {featureKeys.map((fk) => (
                         <tr key={fk} className="border-t border-gray-100 dark:border-white/5">
                           <td className="p-3 border border-gray-200 dark:border-white/10 capitalize text-base text-gray-700 dark:text-gray-100">{startCase(fk)}</td>
