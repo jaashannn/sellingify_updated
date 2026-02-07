@@ -41,7 +41,7 @@ const FAQ = () => {
       questions: [
         {
           q: 'How much does Reflo Hub charge freelancers?',
-          a: 'No setup fee worldwide. Global (USD): 5 months FREE, then $9.99/month. India (INR): 5 months FREE, then ₹699/month. All include dashboard access and 3 lead submission credits per month. Students get an additional 30% discount on subscription fees.',
+          a: 'Global (USD): 5 months FREE, then $9.99/month. India (INR): 5 months FREE, then ₹699/month. All include dashboard access and 3 lead submission credits per month. Students get an additional 30% discount on subscription fees.',
         },
         {
           q: 'Describe the Reflo Hub Credits.',

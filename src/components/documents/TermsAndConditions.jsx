@@ -65,9 +65,9 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Pro Referrer</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">No setup fee; 5 months FREE. After free period: $9.99/month with 3 lead submission credits per month</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">5 months FREE. After free period: $9.99/month with 3 lead submission credits per month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">
-                    <span class="text-green-600 dark:text-green-400 font-semibold">No setup fee; 5 months FREE</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">5 months FREE</span>
                     <span class="text-sm text-gray-500 dark:text-gray-400 block">Then $9.99/month (was $19.98)</span>
                   </td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
@@ -169,9 +169,9 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Pro Referrer</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">No setup fee; 5 months FREE. After free period: ₹699/month with 3 lead submission credits per month</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">5 months FREE. After free period: ₹699/month with 3 lead submission credits per month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">
-                    <span class="text-green-600 dark:text-green-400 font-semibold">No setup fee; 5 months FREE</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">5 months FREE</span>
                     <span class="text-sm text-gray-500 dark:text-gray-400 block">Then ₹699/month (was ₹1,398)</span>
                   </td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
