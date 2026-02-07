@@ -9,7 +9,7 @@
       },
       "freelancer": {
         "title": "Launch Offer — 5 months FREE Subscription !!!",
-        "subtitle": "Receive a full 5 months FREE subscription - Just Pay the One-Time Setup Fee",
+        "subtitle": "Receive 5 months subscription free — no setup fee",
         "note": ""
       }
     },
@@ -30,7 +30,7 @@
         "Special partner opportunities"
       ],
       "limitedTime": "Limited Time Offer",
-      "setupFee": 499,
+      "setupFee": 0,
       "studentDiscountMsg": "Additional 30% discount on subscription fees with valid ID",
       "monthlyPrice": 699,
       "monthlyPriceForStudents": 489,
