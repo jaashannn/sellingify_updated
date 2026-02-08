@@ -18,7 +18,7 @@ export const questionsAndAnswers = [
   },
   {
     question: "Is Reflo Hub free?",
-    answer: "Reflo Hub operates on a subscription model. Freelancers: no setup fee worldwide, 5 months FREE, then $9.99/month (global) or ₹699/month (India). Businesses pay a one-time setup fee and get 12 months FREE. No commission fees ever!",
+    answer: "Reflo Hub operates on a subscription model. Freelancers: 5 months FREE, then $9.99/month (global) or ₹699/month (India). Businesses pay a one-time setup fee and get 12 months FREE. No commission fees ever!",
     keywords: ["free", "cost", "price", "charge", "fee"]
   },
   {
@@ -84,12 +84,12 @@ export const questionsAndAnswers = [
   // Pricing - Freelancers
   {
     question: "How much does it cost for freelancers?",
-    answer: "No setup fee worldwide. Global (USD): 5 months FREE, then $9.99/month. India (INR): 5 months FREE, then ₹699/month. Both include dashboard access and 3 lead submission credits per month. Students get an additional 30% discount!",
+    answer: "Global (USD): 5 months FREE, then $9.99/month. India (INR): 5 months FREE, then ₹699/month. Both include dashboard access and 3 lead submission credits per month. Students get an additional 30% discount!",
     keywords: ["cost", "price", "freelancer", "subscription", "fee", "how much", "pricing"]
   },
   {
     question: "What is the freelancer setup fee?",
-    answer: "No setup fee worldwide — you get 5 months FREE subscription everywhere. Then $9.99/month (global) or ₹699/month (India). Incredible value!",
+    answer: "you get 5 months FREE subscription everywhere. Then $9.99/month (global) or ₹699/month (India). Incredible value!",
     keywords: ["setup", "fee", "freelancer", "one-time", "cost"]
   },
   {
@@ -114,7 +114,7 @@ export const questionsAndAnswers = [
   },
   {
     question: "Is there a free trial for freelancers?",
-    answer: "Yes! Freelancers get 5 months FREE with no setup fee worldwide. That's 5 months to earn without any monthly charges!",
+    answer: "Yes! Freelancers get 5 months FREE. That's 5 months to earn without any monthly charges!",
     keywords: ["free", "trial", "freelancer", "promotion", "offer"]
   },
 

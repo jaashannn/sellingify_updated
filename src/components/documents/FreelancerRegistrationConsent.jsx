@@ -29,7 +29,7 @@ const FreelancerRegistrationConsent = () => {
         <h4 class="font-semibold text-lg mb-3 text-orange-400">2.1 Free Period (No Setup Fee)</h4>
         <p class="mb-3">You agree to:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
-          <li>No setup fee worldwide — 5 months FREE subscription</li>
+          <li>5 months FREE subscription</li>
         </ul>
         
         <h4 class="font-semibold text-lg mb-3 text-orange-400">2.2 Monthly Subscription (After Free Period)</h4>

@@ -338,7 +338,7 @@ const Pricing = () => {
                       <div className="w-full bg-white dark:bg-gray-900/60 rounded-2xl border-2 border-orange-300/50 p-8 md:p-10 shadow-xl text-center">
                         {/* highlight FREE first (bigger, green, bold) */}
                         <div className="text-xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-3">{freeMonths}</div>
-                        <div className="text-sm md:text-base text-gray-700 dark:text-gray-300">Enjoy 5 months free subscription — no setup fee.</div>
+                        <div className="text-sm md:text-base text-gray-700 dark:text-gray-300">Enjoy 5 months free subscription.</div>
                       </div>
 
                       <div className="mt-4">

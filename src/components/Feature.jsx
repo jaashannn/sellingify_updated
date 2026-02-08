@@ -94,14 +94,14 @@ const Feature = () => {
               <li>This remains your biggest promise.</li>
               <li>Reflo Hub does not take a percentage from your earnings.</li>
               <li>Businesses pay you directly.</li>
-              <li>Your only cost: no setup fee, 5 months free, then a small monthly subscription.</li>
+              <li>5 months free, then a small monthly subscription.</li>
               <li>No commission cuts. Period.</li>
             </ul>
           </li>
           <li>
             <h4 class="font-semibold">2. 5 Months Free + Monthly After</h4>
             <ul class="list-disc pl-5 space-y-2">
-              <li>You pay: no setup fee, 5 months FREE, then monthly subscription.</li>
+              <li>5 months FREE, then monthly subscription.</li>
               <li>This stays exactly as before.</li>
               <li>No hidden charges. No surprise deductions.</li>
             </ul>
