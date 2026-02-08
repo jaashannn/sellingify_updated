@@ -525,7 +525,7 @@ const Freelancer = () => {
                       <div className="flex-shrink-0"><Sparkles className="w-8 h-8 text-orange-400" /></div>
                       <div>
                         <h3 className="text-xl md:text-2xl font-extrabold text-orange-600 mb-1">{pricing.meta.launchOffer.freelancer.title}</h3>
-                        <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-1">{pricing.meta.launchOffer.freelancer.subtitle}</p>
+                        <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-1 text-center">{pricing.meta.launchOffer.freelancer.subtitle}</p>
                         {pricing.meta.launchOffer.freelancer.note && <p className="text-sm text-gray-500 dark:text-gray-400">{pricing.meta.launchOffer.freelancer.note}</p>}
 
                         <div className="mt-4 flex flex-wrap justify-center gap-3">

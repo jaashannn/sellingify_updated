@@ -65,12 +65,12 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Pro Referrer</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">No setup fee; 5 months FREE. After free period: $9.99/month with 3 lead submission credits per month</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">5 months FREE, then $9.99/month with 3 lead submission credits per month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">
-                    <span class="text-green-600 dark:text-green-400 font-semibold">No setup fee; 5 months FREE</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">5 months FREE</span>
                     <span class="text-sm text-gray-500 dark:text-gray-400 block">Then $9.99/month (was $19.98)</span>
                   </td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">Monthly</td>
                 </tr>
               </tbody>
             </table>
@@ -169,12 +169,12 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Pro Referrer</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">No setup fee; 5 months FREE. After free period: ₹699/month with 3 lead submission credits per month</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">5 months FREE, then ₹699/month with 3 lead submission credits per month</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">
-                    <span class="text-green-600 dark:text-green-400 font-semibold">No setup fee; 5 months FREE</span>
+                    <span class="text-green-600 dark:text-green-400 font-semibold">5 months FREE</span>
                     <span class="text-sm text-gray-500 dark:text-gray-400 block">Then ₹699/month (was ₹1,398)</span>
                   </td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3">One-time + Monthly</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3">Monthly</td>
                 </tr>
               </tbody>
             </table>
@@ -261,7 +261,7 @@ const TermsAndConditions = () => {
         <p class="mb-4">Subscriptions renew automatically unless cancelled before renewal. You authorize Reflo Hub to charge your payment method on file. Failed payments may result in suspension or restricted access.</p>
 
         <h4 class="font-semibold text-lg mb-4 text-orange-400">4.4 Upgrades, Downgrades & Cancellations</h4>
-        <p class="mb-4">Upgrades apply immediately with pro-rated charges; downgrades apply at the next billing cycle. Setup fees are non-refundable. Monthly fees are non-refundable once charged, except as required by law.</p>
+        <p class="mb-4">Upgrades apply immediately with pro-rated charges; downgrades apply at the next billing cycle. Where a one-time setup fee applies (e.g. for business plans), it is non-refundable. Monthly fees are non-refundable once charged, except as required by law.</p>
       `,
     },
     {

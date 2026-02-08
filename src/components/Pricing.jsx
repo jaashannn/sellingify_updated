@@ -295,23 +295,21 @@ const Pricing = () => {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0">
+              <div className="flex flex-col items-center justify-center text-center">
+                <div className="flex-shrink-0 mb-4">
                   <Sparkles className="w-12 h-12 text-orange-400" />
                 </div>
-                <div>
-                  <h3 className="text-2xl md:text-2xl lg:text-2xl font-extrabold text-orange-600 mb-2">
-                    {freelancerLaunch.title || 'Launch Offer — 5 months FREE'}
-                  </h3>
-                  <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-snug mb-2 max-w-3xl">
-                    {freelancerLaunch.subtitle || 'Receive a full 5 months subscription free - Just pay the one-time setup fee.'}
-                  </p>
-                  {freelancerLaunch.note && <p className="mt-1 text-sm md:text-base text-gray-500 dark:text-gray-400">{freelancerLaunch.note}</p>}
+                <h3 className="text-2xl md:text-2xl lg:text-2xl font-extrabold text-orange-600 mb-2">
+                  {freelancerLaunch.title || 'Launch Offer — 5 months FREE'}
+                </h3>
+                <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-snug mb-2 max-w-3xl">
+                  {freelancerLaunch.subtitle || 'Receive a full 5 months subscription free - Just pay the one-time setup fee.'}
+                </p>
+                {freelancerLaunch.note && <p className="mt-1 text-sm md:text-base text-gray-500 dark:text-gray-400">{freelancerLaunch.note}</p>}
 
-                  {/* Register CTA for launch banner */}
-                  <div className="mt-4">
-                    <a href="/get-started" className="text-orange-400 font-semibold hover:underline">Register Now</a>
-                  </div>
+                {/* Register CTA for launch banner */}
+                <div className="mt-4 flex justify-center">
+                  <a href="/get-started" className="text-orange-400 font-semibold hover:underline">Register Now</a>
                 </div>
               </div>
             </motion.div>
@@ -335,9 +333,9 @@ const Pricing = () => {
                 >
                   <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                     <div className="flex-1">
-                      <h3 className="text-2xl font-extrabold mb-3">{plan.name}</h3>
+                      <h3 className="text-2xl font-extrabold mb-3 text-center">{plan.name}</h3>
 
-                      <div className="w-full bg-white dark:bg-gray-900/60 rounded-2xl border-2 border-orange-300/50 p-8 md:p-10 shadow-xl">
+                      <div className="w-full bg-white dark:bg-gray-900/60 rounded-2xl border-2 border-orange-300/50 p-8 md:p-10 shadow-xl text-center">
                         {/* highlight FREE first (bigger, green, bold) */}
                         <div className="text-xl md:text-3xl font-bold text-green-700 dark:text-green-300 mb-3">{freeMonths}</div>
                         <div className="text-sm md:text-base text-gray-700 dark:text-gray-300">Enjoy 5 months free subscription — no setup fee.</div>
@@ -442,7 +440,7 @@ const Pricing = () => {
                   {businessLaunch.note && <p className="mt-1 text-sm md:text-base text-gray-500 dark:text-gray-400">{businessLaunch.note}</p>}
 
                   {/* Register CTA for launch banner */}
-                  <div className="mt-4">
+                  <div className="mt-4 flex justify-center">
                     <a href="/get-started" className="text-orange-400 font-semibold hover:underline">Register Now</a>
                   </div>
                 </div>
