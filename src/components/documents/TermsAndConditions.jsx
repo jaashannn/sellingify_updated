@@ -40,7 +40,7 @@ const TermsAndConditions = () => {
       `,
     },
     {
-      title: 'Subscription Fees, Credit Packs & Payment Terms',
+      title: '4. Subscription Fees, Credit Packs & Payment Terms',
       content: `
         <div class="bg-orange-100 dark:bg-orange-900/30 border-l-4 border-orange-400 dark:border-orange-300 p-4 my-4 rounded-r">
           <p class="font-semibold text-orange-800 dark:text-orange-200 mb-2">⚠️ Pricing Currency Note:</p>
