@@ -65,7 +65,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Keep 100% Of Your Earning.
+            {/* Keep 100% Of Your Earning. */}
+            Monopoly for Businesses. 100% Earnings for Freelancers.
           </motion.h2>
 
           <motion.p
@@ -74,10 +75,13 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Revolutionizing Referrals: Empowering Freelancers to Fuel Business Growth.
-            <br />
-            Turn connections into cash. Share leads, earn instantly, and help businesses thrive — no cuts, no middlemen. Keep everything you make.
-
+            {/* Revolutionizing Referrals: Empowering Freelancers to Fuel Business Growth. */}
+            Only 2 businesses per category per city & Premium = only 1 Business per city. <br />
+            Freelancers keep every rupee, dollar, or pound they earn globally.<br />
+            No middlemen. No commission cuts. <br />
+            Just Connect. Refer. Close. Earn. <br /> <br />
+            <p className='font-bold text-lg text-grey dark:text-grey'>Register before your city fills up.</p>
+            {/* Turn connections into cash. Share leads, earn instantly, and help businesses thrive — no cuts, no middlemen. Keep everything you make. */}
           </motion.p>
 
           <motion.div

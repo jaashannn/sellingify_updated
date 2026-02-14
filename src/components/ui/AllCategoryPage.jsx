@@ -116,6 +116,8 @@ const AllCategoryPage = () => {
     'Smartphone Repair Stores',
     'Language Courses (English, French, Spanish, etc.)',
     'Laundry & Dry Cleaning Pickup Apps',
+    'Fitness Coach',
+    'Dieticians'
   ];
  
   
