@@ -26,7 +26,7 @@ const FreelancerRegistrationConsent = () => {
           <p class="text-orange-700 dark:text-orange-300"><strong>INR pricing is only available for Indian users.</strong> <strong>USD pricing applies to all global users outside of India.</strong></p>
         </div>
         
-        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.1 Free Period (No Setup Fee)</h4>
+        <h4 class="font-semibold text-lg mb-3 text-orange-400">2.1 Free Period</h4>
         <p class="mb-3">You agree to:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
           <li>5 months FREE subscription</li>

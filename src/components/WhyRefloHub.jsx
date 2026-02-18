@@ -113,7 +113,12 @@ const WhyRefloHub = () => {
             Why Reflo Hub Stands Out
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Reflo Hub is a commission-free platform offering unparalleled value, global exposure, and exclusive listings to drive business growth through targeted lead generation.
+            We don't believe in overcrowded directories or commission-heavy marketplaces. <br />
+            Reflo Hub limits competition per city and removes platform cuts entirely. <br />
+            Built on transparency, limited competition, and zero commission cuts. <br />
+            Businesses secure exclusive city-category slots. <br />
+            While freelancers keep 100% of their earnings. <br /> <br />
+            <p className='font-bold text-lg text-grey dark:text-grey'>Clear rules. Real accountability. No hidden deductions.</p>
           </p>
         </motion.div>
 
