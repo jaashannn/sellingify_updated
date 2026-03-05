@@ -90,7 +90,7 @@ const About = () => {
             About Reflo Hub
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Connecting Freelancers and Operators Worldwide—Fair and Transparently
+            Reflo Hub started with a simple realization.
           </p>
 
           <motion.div
@@ -137,58 +137,67 @@ const About = () => {
 
         <motion.section className="mb-20" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <h2 className="text-3xl font-bold text-center mb-8">🚀 Our Story</h2>
-          <div className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-8">
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              Reflo Hub was founded on a single, potent principle: referrals have to be straightforward,
-              universal, and equitable. We were founded in UAE with the goal of transforming the lead
-              generation sector by providing a transparent, commission-free SaaS platform that equitably
-              enables enterprises and independent contractors.
-
+          <div className="bg-gray-100/60 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 sm:p-8 space-y-6">
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              Business owners everywhere are fighting the same exhausting battle — running ads, increasing marketing budgets, and competing with hundreds of other businesses just to get a few clients. Some months sales come in. Other months… nothing. The unpredictability becomes stressful, expensive, and time-consuming.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              We created Reflo Hub as a software solution since we were fed up with commission-heavy
-              models and limited global reach. This technology enables businesses to expand without risk
-              and freelancers to make money without selling.
-              Today, we are pleased to assist customers across a variety of industries, offering businesses a
-              consistent flow of validated, high-quality leads and assisting freelancers in making money off of
-              their networks
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              At the same time, millions of people already have something extremely valuable — their network. Friends, family, colleagues, and community connections who are constantly looking for services, products, and solutions.
             </p>
-
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              But there was never a simple global system that connected these two worlds.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed font-semibold">
+              That's why Reflo Hub was created.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              Reflo Hub was founded in the UAE with a clear mission: to build a powerful global platform where businesses can connect with ready-to-buy clients, and individuals can earn by simply introducing the right people to the right businesses.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              No complicated sales skills required.<br />
+              No middlemen taking a percentage of earnings.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              Unlike traditional systems where platforms take a cut from every deal, Reflo Hub operates differently. Businesses gain access to a network of verified client connectors, and freelancers keep 100% of the commission they earn directly from businesses.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              No hidden cuts.<br />
+              No complex structures.<br />
+              Just a smarter way for businesses to grow.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              Businesses get access to high-intent, ready-to-buy clients.<br />
+              Freelancers get a simple way to earn from the relationships and trust they already have.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              Today, Reflo Hub supports businesses across multiple industries and helps individuals around the world turn everyday connections into real income opportunities.
+            </p>
           </div>
         </motion.section>
 
         <motion.section className="mb-20" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              className="bg-gradient-to-br from-sky-200/30 dark:from-sky-500/10 to-orange-200/30 dark:to-orange-400/10 border border-gray-200 dark:border-white/10 rounded-xl p-8"
-              variants={cardVariants}
-              whileHover="hover"
-            >
-              <h3 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-                <Globe className="w-6 h-6 text-orange-400" /> Our Mission
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300">
-
-To provide the most transparent, globally scalable referral lead exchange platform that creates genuine value for freelancers and businesses—without commission or geographic limits. Reflo Hub aims to revolutionise lead generation through fairness, simplicity, and trust. We help companies grow their clientele and freelancers turn relationships into steady income.
-
-              </p>
-            </motion.div>
-            <motion.div
-              className="bg-gradient-to-br from-orange-200/30 dark:from-orange-400/10 to-sky-200/30 dark:to-sky-500/10 border border-gray-200 dark:border-white/10 rounded-xl p-8"
-              variants={cardVariants}
-              whileHover="hover"
-            >
+          <div className="space-y-8">
+            <div className="bg-gradient-to-br from-sky-200/30 dark:from-sky-500/10 to-orange-200/30 dark:to-orange-400/10 border border-gray-200 dark:border-white/10 rounded-xl p-6 sm:p-8">
               <h3 className="text-2xl font-semibold mb-4 flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-sky-400" /> Our Vision
               </h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                Become the world's leading SaaS referral ecosystem—where everyone benefits, everyone
-                earns, and everyone trusts.
-                Our goal is to make Reflo Hub the go-to worldwide platform for freelancing referrals,
-                establishing new benchmarks for openness, safety, and cooperation.
-
+              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                Our vision is simple: To create a global ecosystem where businesses grow through genuine connections and people everywhere have the opportunity to earn by helping the right clients find the right solutions.
               </p>
-            </motion.div>
+            </div>
+            <div className="bg-gradient-to-br from-orange-200/30 dark:from-orange-400/10 to-sky-200/30 dark:to-sky-500/10 border border-gray-200 dark:border-white/10 rounded-xl p-6 sm:p-8">
+              <h3 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+                <Globe className="w-6 h-6 text-orange-400" /> Our Mission
+              </h3>
+              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                Our mission is simple: to make business growth more predictable and fair by connecting businesses with ready-to-buy clients through real human networks. Reflo Hub aims to give businesses a reliable way to access genuine client opportunities while empowering individuals around the world to earn by connecting the right people to the right solutions — creating a global ecosystem where growth happens through trust, relationships, and real value.
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent">
+                And this is just the beginning.
+              </p>
+            </div>
           </div>
         </motion.section>
 

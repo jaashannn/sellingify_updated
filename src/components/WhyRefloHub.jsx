@@ -95,47 +95,49 @@ const WhyRefloHub = () => {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30, rotateX: -15 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-gray-100/60 dark:bg-white/5 backdrop-blur-lg border border-sky-500/40 dark:border-sky-400/40 rounded-full px-6 py-2 mb-6 shadow-[0_0_30px_rgba(14,165,233,0.4)]"
+            className="inline-flex items-center gap-2 bg-gray-100/60 dark:bg-white/5 backdrop-blur-lg border border-sky-500/40 dark:border-sky-400/40 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 mb-4 sm:mb-6 shadow-[0_0_30px_rgba(14,165,233,0.4)]"
             whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(14,165,233,0.5)' }}
           >
-            <CheckCircle className="w-5 h-5 text-sky-500" />
+            <CheckCircle className="w-5 h-5 text-sky-500 shrink-0" />
             <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Why Choose Reflo Hub</span>
           </motion.div>
-          <h1 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent mb-4 drop-shadow-[0_0_30px_rgba(14,165,233,0.7)] animate-[pulse_3s_ease_infinite]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent mb-4 drop-shadow-[0_0_30px_rgba(14,165,233,0.7)] animate-[pulse_3s_ease_infinite] leading-tight">
             Why Reflo Hub Stands Out
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We don't believe in overcrowded directories or commission-heavy marketplaces. <br />
-            Reflo Hub limits competition per city and removes platform cuts entirely. <br />
-            Built on transparency, limited competition, and zero commission cuts. <br />
-            Businesses secure exclusive city-category slots. <br />
-            While freelancers keep 100% of their earnings. <br /> <br />
-            <p className='font-bold text-lg text-grey dark:text-grey'>Clear rules. Real accountability. No hidden deductions.</p>
-          </p>
+          <div className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto space-y-3 leading-relaxed">
+            <p>We don't believe in overcrowded directories or commission-heavy marketplaces.</p>
+            <p>Reflo Hub limits competition per city and removes platform cuts entirely.</p>
+            <p>Built on transparency, limited competition, and zero commission cuts.</p>
+            <p>Businesses secure exclusive city-category slots.</p>
+            <p>While freelancers keep 100% of their earnings.</p>
+            <p className="font-bold text-base sm:text-lg text-gray-900 dark:text-white mt-4">
+              Clear rules. Real accountability. No hidden deductions.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
           variants={sectionVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto bg-gradient-to-b from-gray-100/60 dark:from-white/5 to-gray-200/60 dark:to-white/3 backdrop-blur-lg border border-sky-500/40 dark:border-sky-400/40 rounded-2xl p-8 shadow-[0_0_50px_rgba(14,165,233,0.3)]"
+          className="max-w-5xl mx-auto bg-gradient-to-b from-gray-100/60 dark:from-white/5 to-gray-200/60 dark:to-white/3 backdrop-blur-lg border border-sky-500/40 dark:border-sky-400/40 rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_0_50px_rgba(14,165,233,0.3)]"
         >
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Reflo Hub vs Traditional Platforms</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 text-center">Reflo Hub vs Traditional Platforms</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
                 <tr className="bg-gradient-to-r from-sky-500/20 to-orange-400/20">
-                  <th className="p-4 text-gray-900 dark:text-white font-semibold rounded-tl-2xl">Feature</th>
-                  <th className="p-4 text-gray-900 dark:text-white font-semibold">Reflo Hub</th>
-                  <th className="p-4 text-gray-900 dark:text-white font-semibold rounded-tr-2xl">Traditional Platforms</th>
+                  <th className="p-2 sm:p-4 text-sm sm:text-base text-gray-900 dark:text-white font-semibold rounded-tl-2xl">Feature</th>
+                  <th className="p-2 sm:p-4 text-sm sm:text-base text-gray-900 dark:text-white font-semibold">Reflo Hub</th>
+                  <th className="p-2 sm:p-4 text-sm sm:text-base text-gray-900 dark:text-white font-semibold rounded-tr-2xl">Traditional Platforms</th>
                 </tr>
               </thead>
               <tbody>
@@ -148,12 +150,12 @@ const WhyRefloHub = () => {
                     transition={{ delay: index * 0.1 }}
                     className="border-b border-sky-500/20 dark:border-sky-400/20 hover:bg-gray-200/30 dark:hover:bg-gray-800/30 transition-all duration-300"
                   >
-                    <td className="p-4 flex items-center gap-3">
+                    <td className="p-2 sm:p-4 flex items-center gap-2 sm:gap-3">
                       {feature.icon}
-                      <span className="text-gray-900 dark:text-white font-medium">{feature.name}</span>
+                      <span className="text-sm sm:text-base text-gray-900 dark:text-white font-medium">{feature.name}</span>
                     </td>
-                    <td className="p-4 text-gray-800 dark:text-gray-200">{feature.refloHub}</td>
-                    <td className="p-4 text-gray-600 dark:text-gray-400">{feature.traditional}</td>
+                    <td className="p-2 sm:p-4 text-sm sm:text-base text-gray-800 dark:text-gray-200">{feature.refloHub}</td>
+                    <td className="p-2 sm:p-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">{feature.traditional}</td>
                   </motion.tr>
                 ))}
               </tbody>
@@ -165,18 +167,18 @@ const WhyRefloHub = () => {
           variants={sectionVariants}
           initial="hidden"
           animate="visible"
-          className="mt-12 max-w-5xl mx-auto bg-gradient-to-b from-gray-100/60 dark:from-white/5 to-gray-200/60 dark:to-white/3 backdrop-blur-lg border border-sky-500/40 dark:border-sky-400/40 rounded-2xl p-8 shadow-[0_0_50px_rgba(14,165,233,0.3)]"
+          className="mt-8 sm:mt-12 max-w-5xl mx-auto bg-gradient-to-b from-gray-100/60 dark:from-white/5 to-gray-200/60 dark:to-white/3 backdrop-blur-lg border border-sky-500/40 dark:border-sky-400/40 rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_0_50px_rgba(14,165,233,0.3)]"
         >
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Quality Equals Exclusivity</h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-6 text-center">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 text-center">Quality Equals Exclusivity</h2>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-center leading-relaxed">
             We limit each city to just 2-3 businesses per category to maximize lead quality and quantity. This ensures freelancers deliver targeted, high-value leads to your business.
           </p>
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 text-center">Available Categories</h3>
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 text-center">Available Categories</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {categories.map((category, index) => (
               <motion.div
                 key={category}
-                className="p-4 bg-gray-100/60 dark:bg-gray-800/50 rounded-lg flex items-center gap-3 border border-sky-500/20 dark:border-sky-400/20"
+                className="p-3 sm:p-4 bg-gray-100/60 dark:bg-gray-800/50 rounded-lg flex items-center gap-2 sm:gap-3 border border-sky-500/20 dark:border-sky-400/20 text-sm sm:text-base"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -199,7 +201,7 @@ const WhyRefloHub = () => {
           <div className="text-center mt-8">
             <motion.a
               href="/get-started"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-sky-500 to-orange-400 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-sky-500 to-orange-400 text-white rounded-xl font-semibold text-base sm:text-lg hover:shadow-2xl transition-all duration-300"
               whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(14,165,233,0.5)' }}
               whileTap={{ scale: 0.95 }}
             >
