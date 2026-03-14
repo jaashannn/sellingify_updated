@@ -187,10 +187,12 @@ const Business = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <span className="block mb-2">🏆 Dominate Your City.</span>
+                <span className="block mb-2">🏆                   <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Dominate</span> Your City.</span>
+                <span> Create                   <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Monopoly</span> for your business</span>
                 <span className="block mb-4">
                   <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Lock Out</span> your Competitors.
                 </span>
+                
             </motion.h1>
 
             <motion.p
@@ -210,7 +212,7 @@ const Business = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 font-medium mb-2">
-                  <span className="font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent">Only 2-3 businesses</span> per category per city
+                  <span className="font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent">Only 2 businesses</span> per category per city
                 </p>
                 <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 font-medium">
                   <span className="font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent">Premium plan = ONLY 1 business</span> per city
@@ -336,13 +338,13 @@ const Business = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Reflo Hub limits listings to 2-3 businesses per category per city to ensure top lead quality.
+            Reflo Hub limits listings to 2 businesses per category per city to ensure top lead quality.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
               { icon: BarChart, title: 'Better Quality Leads', description: 'Exclusive listings ensure high-quality referrals.' },
-              { icon: Globe, title: 'Less Competition', description: 'Only 2-3 businesses per category per city.' },
+              { icon: Globe, title: 'Less Competition', description: 'Only 2 businesses per category per city.' },
               { icon: Star, title: 'Improved Conversion Rates', description: 'Targeted leads boost your closing success.' },
               { icon: Check, title: 'Enhanced Visibility', description: 'Stand out in your category and location.' },
             ].map((item, index) => (
@@ -646,7 +648,7 @@ const Business = () => {
             {[
               { title: 'No Portal Commission', description: 'Clear subscription-only model with no commission fees.' },
               { title: 'Direct Payments to Freelancers', description: 'Complete transparency, no intermediary costs.' },
-              { title: 'Exclusive Listings', description: 'Only 2-3 businesses per city or category.' },
+              { title: 'Exclusive Listings', description: 'Only 2 businesses per city or category.' },
               { title: 'Ensured High-Quality Leads', description: 'Motivated, pre-screened recommendations.' },
               { title: 'Maximum ROI', description: 'Lower advertising costs with predictable monthly fees.' },
               { title: 'Lock in your territory', description: 'secure city-wide exclusivity and be the only business in your niche to receive leads from Reflo Hub.' },
@@ -748,7 +750,7 @@ const Business = () => {
           <meta name="title" content="Reflo Hub – Business Lead Generation" />
           <meta
             name="description"
-            content="Join Reflo Hub to access high-quality referral leads from freelancers worldwide. Limited to 2-3 businesses per category per city for maximum ROI. No commission fees."
+            content="Join Reflo Hub to access high-quality referral leads from freelancers worldwide. Limited to 2 businesses per category per city for maximum ROI. No commission fees."
           />
           <meta
             name="keywords"

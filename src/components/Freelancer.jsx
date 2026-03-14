@@ -257,7 +257,7 @@ const Freelancer = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Earn Monthly Passive Income</span> — Without Projects, Bidding, or Bosses
+              <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Freelancing 2.0</span> — The New Way to Earn Without Skills, Projects Or Bosses
             </motion.h1>
 
             <motion.p
@@ -266,9 +266,15 @@ const Freelancer = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Simply refer leads from your network to earn money! No selling, no cold calling, no closing deals. Choose from 100+ high commision  categories like real estate, education, finance, healthcare, and more.
+              Forget bidding wars and client hunting.
               <br />
-            No middlemen. No cuts. Freelancers keep 100% of what they earn.
+              No competing with thousands of freelancers.
+              <br />
+              Simply connect ready-to-buy people from your network to verified businesses and start earning from 150+ industries.
+              <br />
+              No selling. No cold calls.
+              <br />
+              Keep 100% of your earnings.
             </motion.p>
 
             <motion.div
@@ -352,7 +358,7 @@ const Freelancer = () => {
             {[
               {
                 title: '✅ Simple, Stress-Free Income',
-                description: 'No cold calling, no selling, no closing. Choose from 100+ high commision income categories—businesses take care of the rest; you just supply the leads.',
+                description: 'No cold calling, no selling, no closing. Choose from 150+ high commision income categories—businesses take care of the rest; you just supply the leads.',
               },
               {
                 title: '🌎 Local Simplicity, Global Opportunity',
@@ -383,7 +389,7 @@ const Freelancer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
               { icon: UserCheck, title: '1. Sign Up & Verify', description: 'Fast registration with live photo verification for secure profiles.' },
-              { icon: Coins, title: '2. Submit Leads', description: 'Select from 100+ business sectors and submit confirmed leads using your monthly credits.' },
+              { icon: Coins, title: '2. Submit Leads', description: 'Select from 150+ business sectors and submit confirmed leads using your monthly credits.' },
               { icon: MessageSquare, title: '3. Track & Communicate', description: 'Monitor lead status and discuss commissions directly with businesses.' },
               { icon: CreditCard, title: '4. Get Paid Directly', description: 'Receive payments via PayPal, Wise, or bank transfer for successful conversions.' },
             ].map((item, index) => (
@@ -566,7 +572,7 @@ const Freelancer = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            🏅 100+ Top <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Niches</span> for Higher Income
+            🏅 150+ Top <span className="bg-gradient-to-r from-sky-500 to-orange-300 bg-clip-text text-transparent">Niches</span> for Higher Income
           </motion.h2>
 
            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -745,7 +751,7 @@ const Freelancer = () => {
           <meta name="title" content="Reflo Hub – Freelancer Opportunities" />
           <meta
             name="description"
-            content="Join Reflo Hub as a freelancer to earn passive income by referring leads in 100+ categories like real estate, finance, and travel. No selling required."
+            content="Join Reflo Hub as a freelancer to earn passive income by referring leads in 150+ categories like real estate, finance, and travel. No selling required."
           />
           <meta
             name="keywords"

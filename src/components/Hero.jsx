@@ -65,7 +65,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Monopoly for Businesses. 100% Earnings for Freelancers.
+            Monopoly for Businesses.
+            <br />
+            100% Earnings for Freelancers.
           </motion.h2>
 
           <motion.div
@@ -77,7 +79,7 @@ const Hero = () => {
             <p>Only 2 businesses per category per city & Premium = only 1 Business per city.</p>
             <p>Freelancers keep every rupee, dollar, or pound they earn globally.</p>
             <p>No middlemen. No commission cuts.</p>
-            <p>Just Connect. Refer. Close. Earn.</p>
+            <p>Just Connect. Close. Earn.</p>
             <p className="font-bold text-base sm:text-lg text-gray-900 dark:text-white mt-6">
               Register before your city fills up.
             </p>
