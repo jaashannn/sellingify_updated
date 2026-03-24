@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/new_loogo.png';
 import { useTheme } from '../../ThemeContext.jsx';
@@ -15,13 +15,11 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Freelancer', path: '/freelancer' },
     { name: 'Business', path: '/business' },
-    { name: 'Webinar', path: '/webinar' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'About', path: '/about' },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMobileMenu = () => setIsOpen(false);
 
   return (
     <motion.nav
@@ -64,7 +62,7 @@ const Navbar = () => {
 
               </motion.div>
             ))}
-
+            
             {/* Login Button */}
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -135,14 +133,14 @@ const Navbar = () => {
               >
                 <Link
                   to={item.path}
-                  onClick={closeMobileMenu}
+                  onClick={toggleMenu}
                   className="block px-3 py-2 text-base font-medium text-gray-900 dark:text-white hover:text-cyan-400 hover:bg-gray-200/60 dark:hover:bg-white/5 rounded-lg transition-colors duration-300"
                 >
                   {item.name}
                 </Link>
               </motion.div>
             ))}
-
+            
             {/* Mobile Login Button */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
@@ -151,7 +149,7 @@ const Navbar = () => {
             >
               <a
                 href={saasWebsite ? `${saasWebsite}/login` : '/login'}
-                onClick={closeMobileMenu}
+                onClick={toggleMenu}
                 className="block px-3 py-2 text-base font-medium bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-lg transition-colors duration-300"
               >
                 Login
@@ -166,7 +164,7 @@ const Navbar = () => {
             >
               <a
                 href={saasWebsite ? `${saasWebsite}/register` : '/get-started'}
-                onClick={closeMobileMenu}
+                onClick={toggleMenu}
                 className="block px-3 py-2 text-base font-medium bg-gradient-to-r from-sky-500 to-orange-300 text-white rounded-lg transition-colors duration-300"
               >
                 Register

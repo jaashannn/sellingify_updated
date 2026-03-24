@@ -35,9 +35,6 @@ import Pricing from './components/Pricing';
 import ScrollToTop from './components/ui/ScrollToTop';
 import Login from './components/Login';
 import ChatBot from './components/chatbot/ChatBot';
-import Webinar from './components/Webinar';
-import WebinarFreelancer from './components/WebinarFreelancer';
-import WebinarBusiness from './components/WebinarBusiness';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -301,36 +298,6 @@ function App() {
                 element={
                   <main>
                     <Login />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/webinar"
-                element={
-                  <main>
-                    <Webinar />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/webinar/freelancer"
-                element={
-                  <main>
-                    <WebinarFreelancer />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/webinar/business"
-                element={
-                  <main>
-                    <WebinarBusiness />
                     <Footer />
                     <BackToTop />
                   </main>
