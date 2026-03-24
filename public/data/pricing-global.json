@@ -49,7 +49,7 @@
     {
       "key": "basic",
       "name": "Basic",
-      "oneTimeSetup": 99,
+      "oneTimeSetup": 199,
       "verifiedBadge": {
         "monthly": 15,
         "annual": 180

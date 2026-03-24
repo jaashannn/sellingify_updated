@@ -121,12 +121,12 @@ export const questionsAndAnswers = [
   // Pricing - Businesses
   {
     question: "What are the business membership plans?",
-    answer: "We offer three plans with 12 months FREE (pay one-time setup): Business Basic ($99 USD / ₹2,999 INR setup, 10 leads/month, 0 ads/month), Business Standard ($249 USD / ₹3,999 INR setup, unlimited leads, 2 ads/month), and Business Premium ($399 USD / ₹9,999 INR setup, unlimited leads, 5 ads/month). After the first year, monthly fees apply.",
+    answer: "We offer three plans with 12 months FREE (pay one-time setup): Business Basic ($199 USD / ₹2,999 INR setup, 10 leads/month, 0 ads/month), Business Standard ($249 USD / ₹3,999 INR setup, unlimited leads, 2 ads/month), and Business Premium ($399 USD / ₹9,999 INR setup, unlimited leads, 5 ads/month). After the first year, monthly fees apply.",
     keywords: ["business", "plan", "membership", "pricing", "cost", "subscription", "plans"]
   },
   {
     question: "How much does Business Basic cost?",
-    answer: "Business Basic costs $99 USD (₹2,999 INR) one-time setup with 12 months FREE. It includes 10 leads per month and 0 ads per month. Perfect for small businesses getting started!",
+    answer: "Business Basic costs $199 USD (₹2,999 INR) one-time setup with 12 months FREE. It includes 10 leads per month and 0 ads per month. Perfect for small businesses getting started!",
     keywords: ["business", "basic", "plan", "cost", "price", "pricing"]
   },
   {

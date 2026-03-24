@@ -130,7 +130,7 @@ const TermsAndConditions = () => {
               <tbody>
                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
                   <td class="border border-gray-300 dark:border-gray-600 p-3 font-medium">Basic</td>
-                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$99 USD</td>
+                  <td class="border border-gray-300 dark:border-gray-600 p-3 text-orange-600 dark:text-orange-400 font-semibold">$199 USD</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3 text-green-600 dark:text-green-400 font-semibold">12 months FREE</td>
                   <td class="border border-gray-300 dark:border-gray-600 p-3">$29 USD/month</td>
                 </tr>
