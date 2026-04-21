@@ -1,49 +1,34 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/ui/Navbar';
-import Hero from './components/Hero';
-import HowItWorks from './components/HowItWorks';
-import Countries from './components/Countries';
-import Testimonials from './components/Testimonials';
-import JoinCTA from './components/ui/JoinCTA';
+import Hero from './components/leadgen/LeadHero';
+import HowItWorks from './components/leadgen/LeadHowItWorks';
+import Countries from './components/leadgen/LeadCoverage';
+import Testimonials from './components/leadgen/LeadTestimonials';
+import JoinCTA from './components/leadgen/LeadCTA';
 import Footer from './components/ui/Footer';
 import BackToTop from './components/ui/BackToTop';
 import Preloader from './components/ui/Preloader';
-import About from './components/About';
-import Contact from './components/Contact';
-import Blog from './components/Blog';
-import GetStarted from './components/GetStarted';
-import PrivacyPolicy from './components/documents/PrivacyPolicy';
-import TermsAndConditions from './components/documents/TermsAndConditions';
-import BusinessRegistrationConsent from './components/documents/BusinessRegistrationConsent';
-import FreelancerRegistrationConsent from './components/documents/FreelancerRegistrationConsent';
-import DataProcessingAgreement from './components/documents/DataProcessingAgreement';
-import NondiscriminationStatement from './components/documents/NondiscriminationStatement';
-import Freelancer from './components/Freelancer';
-import Business from './components/Business';
-import Copyright from './components/documents/Copyright';
-import FAQ from './components/FAQ';
-import WhyRefloHub from './components/WhyRefloHub';
+import About from './components/leadgen/LeadAbout';
+import Contact from './components/leadgen/LeadContact';
+import GetStarted from './components/leadgen/LeadGetStarted';
+import PrivacyPolicy from './components/leadgen/LeadPrivacyPolicy';
+import TermsAndConditions from './components/leadgen/LeadTermsAndConditions';
+import Business from './components/leadgen/LeadBusiness';
+import FAQ from './components/leadgen/LeadFAQ';
+import WhySellingify from './components/leadgen/LeadWhySellingify';
 import NotFound from './components/ui/NotFound';
-import Cookies from './components/Cookies';
-import Document from './components/Document';
-import Career from './components/Career';
-import Feature from './components/Feature';
-import AllCategoryPage from './components/ui/AllCategoryPage';
-import Pricing from './components/Pricing';
+import Cookies from './components/leadgen/LeadCookies';
 import ScrollToTop from './components/ui/ScrollToTop';
-import Login from './components/Login';
 import ChatBot from './components/chatbot/ChatBot';
-import Webinar from './components/Webinar';
-import WebinarFreelancer from './components/WebinarFreelancer';
-import WebinarBusiness from './components/WebinarBusiness';
+import Feature from './components/leadgen/LeadFeatures';
+import AmbientBubbles from './components/ui/AmbientBubbles';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -52,7 +37,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Smooth scrolling for anchor links on Home page
     const handleSmoothScroll = (e) => {
       const target = e.target.closest('a[href^="#"]');
       if (target) {
@@ -75,10 +59,11 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="bg-dark-bg text-dark-text min-h-screen">
+      <div className="relative isolate min-h-screen bg-white text-black dark:bg-dark-bg dark:text-dark-text">
+        <AmbientBubbles />
         <Preloader isLoading={isLoading} />
         {!isLoading && (
-          <>
+          <div className="relative z-10 min-h-screen">
             <Navbar />
             <Routes>
               <Route
@@ -86,7 +71,7 @@ function App() {
                 element={
                   <main>
                     <Hero />
-                    <WhyRefloHub />
+                    <WhySellingify />
                     <HowItWorks />
                     <Countries />
                     <Testimonials />
@@ -117,16 +102,6 @@ function App() {
                 }
               />
               <Route
-                path="/blog"
-                element={
-                  <main>
-                    <Blog />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
                 path="/get-started"
                 element={
                   <main>
@@ -136,26 +111,7 @@ function App() {
                   </main>
                 }
               />
-              <Route
-                path="/all-categories"
-                element={
-                  <main>
-                    <AllCategoryPage />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route 
-                path="/pricing"
-                element={
-                  <main>
-                    <Pricing />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
+              <Route path="/pricing" element={<Navigate to="/contact" replace />} />
               <Route
                 path="/privacy-policy"
                 element={
@@ -176,71 +132,12 @@ function App() {
                   </main>
                 }
               />
-              <Route
-                path="/business-registration-consent"
-                element={
-                  <main>
-                    <BusinessRegistrationConsent />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/freelancer-registration-consent"
-                element={
-                  <main>
-                    <FreelancerRegistrationConsent />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/data-processing-agreement"
-                element={
-                  <main>
-                    <DataProcessingAgreement />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/nondiscrimination-statement"
-                element={
-                  <main>
-                    <NondiscriminationStatement />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/freelancer"
-                element={
-                  <main>
-                    <Freelancer />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
+              <Route path="/freelancer" element={<Navigate to="/business" replace />} />
               <Route
                 path="/business"
                 element={
                   <main>
                     <Business />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/copyright"
-                element={
-                  <main>
-                    <Copyright />
                     <Footer />
                     <BackToTop />
                   </main>
@@ -267,26 +164,6 @@ function App() {
                 }
               />
               <Route
-                path="/data-policies"
-                element={
-                  <main>
-                    <Document />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/career"
-                element={
-                  <main>
-                    <Career />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
                 path="/features"
                 element={
                   <main>
@@ -296,46 +173,7 @@ function App() {
                   </main>
                 }
               />
-              <Route
-                path="/login"
-                element={
-                  <main>
-                    <Login />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/webinar"
-                element={
-                  <main>
-                    <Webinar />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/webinar/freelancer"
-                element={
-                  <main>
-                    <WebinarFreelancer />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
-              <Route
-                path="/webinar/business"
-                element={
-                  <main>
-                    <WebinarBusiness />
-                    <Footer />
-                    <BackToTop />
-                  </main>
-                }
-              />
+              <Route path="/login" element={<Navigate to="/contact" replace />} />
               <Route
                 path="*"
                 element={
@@ -347,16 +185,16 @@ function App() {
                 }
               />
             </Routes>
-          </>
+          </div>
         )}
         <Toaster
           position="top-right"
           toastOptions={{
             duration: 4000,
             style: {
-              background: '#1A1A1A',
+              background: '#0a0a0a',
               color: '#EDEDED',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(139, 92, 246, 0.25)',
               borderRadius: '12px',
             },
           }}

@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import logo from '../../assets/new_loogo.png';
+﻿import { motion } from 'framer-motion';
 
 const Preloader = ({ isLoading }) => {
   return (
@@ -7,68 +6,58 @@ const Preloader = ({ isLoading }) => {
       initial={{ opacity: 1 }}
       animate={{ opacity: isLoading ? 1 : 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed inset-0 z-50 bg-gray-950 flex items-center justify-center ${
+      className={`fixed inset-0 z-50 bg-zinc-950 flex items-center justify-center ${
         isLoading ? 'pointer-events-auto' : 'pointer-events-none'
       }`}
     >
-      <div className="text-center">
+      <div className="text-center px-6">
         <motion.div
-          animate={{
-            rotate: 360,
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            rotate: { duration: 2, repeat: Infinity, ease: 'linear' },
-            scale: { duration: 1, repeat: Infinity, ease: 'easeInOut' }
-          }}
-          className="w-16 h-16 bg-gradient-to-r from-sky-500 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
+          className="w-20 h-20 rounded-full mx-auto mb-6 border-2 border-transparent border-t-violet-500 border-r-fuchsia-500 border-b-purple-700 border-l-violet-400"
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+          className="mb-2 flex justify-center"
         >
-          <motion.img 
-            src={logo} 
-            alt="Reflo Hub Logo" 
-            className="w-10 h-10 object-contain"
-            animate={{
-              rotate: -360,
-            }}
-            transition={{
-              rotate: { duration: 2, repeat: Infinity, ease: 'linear' }
-            }}
+          <img
+            src="/logo.png"
+            alt="Sellingify"
+            className="h-16 sm:h-20 w-auto max-w-[min(100%,280px)] object-contain"
+            width={280}
+            height={80}
+            decoding="async"
           />
         </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-2xl font-bold text-white mb-2"
-        >
-          RefloHub
-        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-gray-400"
+          transition={{ delay: 0.35 }}
+          className="text-black text-sm"
         >
-          Loading your experience...
+          Lead generation, loading…
         </motion.p>
 
         <motion.div
-          className="mt-6 flex space-x-1 justify-center"
+          className="mt-8 flex space-x-2 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.5 }}
         >
-          {[0, 1, 2].map((i) => (
+          {[0, 1, 2, 3].map((i) => (
             <motion.div
               key={i}
-              className="w-2 h-2 bg-sky-400 rounded-full"
-              animate={{ scale: [1, 1.5, 1] }}
+              className="w-2 h-2 rounded-full bg-violet-500"
+              animate={{ y: [0, -10, 0], opacity: [0.4, 1, 0.4] }}
               transition={{
-                duration: 0.8,
+                duration: 0.9,
                 repeat: Infinity,
-                delay: i * 0.2,
+                delay: i * 0.12,
+                ease: 'easeInOut',
               }}
             />
           ))}

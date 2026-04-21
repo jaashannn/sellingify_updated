@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          document.documentElement.classList.remove('light', 'dark');
+          document.documentElement.classList.add(t === 'dark' ? 'dark' : 'light');
+        } catch (e) {
+          document.documentElement.classList.add('light');
+        }
+      })();
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -10,24 +21,25 @@
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/new_loogo.ico" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RefloHub - Lead Generation Reimagined</title>
-    <meta name="description" content="Connect freelancers with businesses in a revolutionary lead-sharing ecosystem. Submit leads, earn commissions, and scale your business like never before." />
-    <meta name="keywords" content="lead generation, freelancer, business, commission, SaaS, RefloHub" />
-    <meta name="author" content="RefloHub" />
+    <title>Sellingify — B2B lead generation</title>
+    <meta name="description" content="Sellingify helps teams book qualified B2B conversations with intent-led outbound, nurture, and reporting built around your pipeline." />
+    <meta name="keywords" content="lead generation, B2B, outbound, pipeline, Sellingify, sales development" />
+    <meta name="author" content="Sellingify" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://reflohub.com/" />
-    <meta property="og:title" content="RefloHub - Lead Generation Reimagined" />
-    <meta property="og:description" content="Connect freelancers with businesses in a revolutionary lead-sharing ecosystem." />
+    <meta property="og:url" content="https://sellingify.com/" />
+    <meta property="og:title" content="Sellingify — B2B lead generation" />
+    <meta property="og:description" content="Qualified conversations, clear reporting, and campaigns aligned to how you sell." />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://reflohub.com/" />
-    <meta property="twitter:title" content="Reflohub - Lead Generation Reimagined" />
-    <meta property="twitter:description" content="Connect freelancers with businesses in a revolutionary lead-sharing ecosystem." />
+    <meta property="twitter:url" content="https://sellingify.com/" />
+    <meta property="twitter:title" content="Sellingify — B2B lead generation" />
+    <meta property="twitter:description" content="Qualified conversations, clear reporting, and campaigns aligned to how you sell." />
     
     <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

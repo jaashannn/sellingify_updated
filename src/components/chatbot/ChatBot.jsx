@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot, User, Minimize2 } from 'lucide-react';
-import { questionsAndAnswers, welcomeMessage, quickQuestions } from './questionsAndAnswers';
+import { questionsAndAnswers, welcomeMessage, quickQuestions } from './leadgenQuestions';
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -189,7 +189,7 @@ const ChatBot = () => {
     }
 
     // Default response with helpful suggestions
-    return "I'm not sure I understand that question. Could you try rephrasing it? Here are some topics I can help with:\n\n• Pricing and costs\n• Registration process\n• How the platform works\n• Features and benefits\n• Payment methods\n• Categories and industries\n• Support and help\n\nOr try one of the quick questions below!";
+    return "I may have missed that. Try asking about our services, process, results, or how to get started.";
   };
 
   // Calculate similarity between two strings (simple Levenshtein-based)
@@ -295,7 +295,7 @@ const ChatBot = () => {
             <div className="relative">
               {/* Bot Avatar with Realistic Face */}
               <motion.div
-                className="w-24 h-24 bg-gradient-to-br from-sky-400 via-sky-500 to-orange-400 rounded-full flex items-center justify-center shadow-2xl border-4 border-white dark:border-gray-800"
+                className="w-24 h-24 bg-gradient-to-br from-violet-500 via-purple-600 to-fuchsia-600 rounded-full flex items-center justify-center shadow-2xl border-4 border-white dark:border-gray-800"
                 animate={{
                   scale: [1, 1.05, 1],
                 }}
@@ -378,7 +378,7 @@ const ChatBot = () => {
                 }}
               >
                 <motion.div
-                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl text-3xl border-2 border-orange-300"
+                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl text-3xl border-2 border-violet-500"
                   whileHover={{ scale: 1.15 }}
                   animate={{
                     scale: [1, 1.1, 1],
@@ -398,12 +398,12 @@ const ChatBot = () => {
                 initial={{ opacity: 0, x: -10, scale: 0.8 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
-                className="absolute bottom-full right-0 mb-3 bg-white dark:bg-gray-800 rounded-2xl px-5 py-3 shadow-2xl border-2 border-sky-200 dark:border-sky-700 max-w-xs"
+                className="absolute bottom-full right-0 mb-3 bg-white dark:bg-gray-800 rounded-2xl px-5 py-3 shadow-2xl border-2 border-violet-200 dark:border-violet-700 max-w-xs"
               >
                 <p className="text-sm font-medium text-gray-900 dark:text-gray-100 leading-relaxed">
-                  👋 <span className="font-semibold text-sky-600 dark:text-sky-400">Hi there!</span> I'm your <span className="font-bold bg-gradient-to-r from-sky-500 to-orange-400 bg-clip-text text-transparent">RefloHub Assistant</span>! Ask me anything about our platform, pricing, or how it works! 😊
+                  👋 <span className="font-semibold text-violet-600 dark:text-violet-400">Hi there!</span> I'm your <span className="font-bold bg-gradient-to-r from-purple-600 to-violet-400 bg-clip-text text-transparent">Sellingify Assistant</span>! Ask me anything about our services and how we work! 😊
                 </p>
-                <div className="absolute bottom-0 right-6 transform translate-y-1/2 rotate-45 w-3 h-3 bg-white dark:bg-gray-800 border-r-2 border-b-2 border-sky-200 dark:border-sky-700"></div>
+                <div className="absolute bottom-0 right-6 transform translate-y-1/2 rotate-45 w-3 h-3 bg-white dark:bg-gray-800 border-r-2 border-b-2 border-violet-200 dark:border-violet-700"></div>
               </motion.div>
             </div>
           </motion.div>
@@ -416,7 +416,7 @@ const ChatBot = () => {
         className={`fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 ${
           isOpen 
             ? 'bg-red-500 hover:bg-red-600' 
-            : 'bg-gradient-to-r from-sky-500 to-orange-400 hover:from-sky-600 hover:to-orange-500'
+            : 'bg-gradient-to-r from-purple-600 to-violet-400 hover:from-purple-700 hover:to-fuchsia-600'
         }`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -467,7 +467,7 @@ const ChatBot = () => {
             className="fixed bottom-24 right-6 z-40 w-[90vw] sm:w-96 h-[500px] max-h-[calc(100vh-176px)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden"
           >
             {/* Header with Realistic Bot Avatar */}
-            <div className="bg-gradient-to-r from-sky-500 to-orange-400 p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-purple-600 to-violet-400 p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <motion.div 
                   className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border-2 border-white/30 relative overflow-hidden"
@@ -529,7 +529,7 @@ const ChatBot = () => {
                 </motion.div>
                 <div>
                   <h3 className="text-white font-bold text-lg flex items-center gap-2">
-                    <span>RefloHub Assistant</span>
+                    <span>Sellingify Assistant</span>
                     <motion.span
                       animate={{ rotate: [0, 10, -10, 0] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 1 }}
@@ -553,9 +553,9 @@ const ChatBot = () => {
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-950">
               {messages.length === 0 && !isTyping && (
                 <div className="text-center py-8">
-                  <Bot className="w-12 h-12 text-sky-500 mx-auto mb-3 opacity-50" />
+                  <Bot className="w-12 h-12 text-violet-500 mx-auto mb-3 opacity-50" />
                   <p className="text-gray-500 dark:text-gray-400 text-sm">
-                    Ask me anything about Reflo Hub!
+                    Ask me anything about Sellingify!
                   </p>
                 </div>
               )}
@@ -576,7 +576,7 @@ const ChatBot = () => {
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                         message.type === 'user'
-                          ? 'bg-gradient-to-r from-sky-500 to-orange-400'
+                          ? 'bg-gradient-to-r from-purple-600 to-violet-400'
                           : 'bg-gray-200 dark:bg-gray-700'
                       }`}
                     >
@@ -589,7 +589,7 @@ const ChatBot = () => {
                     <div
                       className={`rounded-2xl px-4 py-2 ${
                         message.type === 'user'
-                          ? 'bg-gradient-to-r from-sky-500 to-orange-400 text-white'
+                          ? 'bg-gradient-to-r from-purple-600 to-violet-400 text-white'
                           : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700'
                       }`}
                     >
@@ -651,7 +651,7 @@ const ChatBot = () => {
                       <button
                         key={idx}
                         onClick={() => handleQuickQuestion(q)}
-                        className="px-3 py-1.5 text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-sky-50 dark:hover:bg-gray-700 hover:border-sky-300 dark:hover:border-sky-600 transition-colors text-gray-700 dark:text-gray-300"
+                        className="px-3 py-1.5 text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-violet-50 dark:hover:bg-gray-700 hover:border-violet-300 dark:hover:border-violet-600 transition-colors text-gray-700 dark:text-gray-300"
                       >
                         {q}
                       </button>
@@ -672,12 +672,12 @@ const ChatBot = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Type your question..."
-                  className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 dark:focus:ring-sky-400 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
+                  className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                 />
                 <button
                   type="submit"
                   disabled={!inputValue.trim()}
-                  className="w-11 h-11 bg-gradient-to-r from-sky-500 to-orange-400 hover:from-sky-600 hover:to-orange-500 rounded-xl flex items-center justify-center transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                  className="w-11 h-11 bg-gradient-to-r from-purple-600 to-violet-400 hover:from-purple-700 hover:to-fuchsia-600 rounded-xl flex items-center justify-center transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
                 >
                   <Send className="w-5 h-5 text-white" />
                 </button>
@@ -691,7 +691,7 @@ const ChatBot = () => {
                         key={idx}
                         type="button"
                         onClick={() => handleQuickQuestion(q)}
-                        className="px-3 py-1.5 text-xs bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-sky-50 dark:hover:bg-gray-700 hover:border-sky-300 dark:hover:border-sky-600 transition-colors text-gray-700 dark:text-gray-300"
+                        className="px-3 py-1.5 text-xs bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-violet-50 dark:hover:bg-gray-700 hover:border-violet-300 dark:hover:border-violet-600 transition-colors text-gray-700 dark:text-gray-300"
                       >
                         {q}
                       </button>

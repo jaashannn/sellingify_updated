@@ -1,71 +1,64 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Twitter, Linkedin, Github, ArrowRight } from 'lucide-react';
+﻿import { motion } from 'framer-motion';
+import { Mail, ArrowRight } from 'lucide-react';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
-import logo from '../../assets/new_loogo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const companyLinks = [
-    { label: 'About' },
-    { label: 'Career' },
-    { label: 'Contact' },
-    { label: 'Blog' },
+    { label: 'About', path: '/about' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   const productLinks = [
-    { label: 'Features' },
-    { label: 'Pricing' },
-
+    { label: 'Features', path: '/features' },
+    { label: 'Get Started', path: '/get-started' },
+    { label: 'FAQ', path: '/faq' },
   ];
 
   const legalLinks = [
-    { label: 'Business Registration Consent' },
-    { label: 'Freelancer Registration Consent' },
-    { label: 'Nondiscrimination Statement' },
-    { label: 'Privacy Policy' },
-    { label: 'Terms and Conditions' },
-    { label: 'Cookies' },
-    { label: 'Data-Policies' },
+    { label: 'Privacy Policy', path: '/privacy-policy' },
+    { label: 'Terms and Conditions', path: '/terms-and-conditions' },
+    { label: 'Cookies', path: '/cookies' },
   ];
 
   const socialLinks = [
-    { icon: Instagram, label: 'Instagram', url: 'https://www.instagram.com/reflo_hub?igsh=eW1ldm5mdzV3dTE4' },
-    { icon: Facebook, label: 'Facebook', url: 'https://www.facebook.com/officialreflohub' },
-    { icon: MessageCircle, label: 'TikTok', url: 'https://www.tiktok.com/@reflo_hub?is_from_webapp=1&sender_device=pc' },
+    { icon: Instagram, label: 'Instagram', url: 'https://www.instagram.com/' },
+    { icon: Facebook, label: 'Facebook', url: 'https://www.facebook.com/' },
+    { icon: MessageCircle, label: 'Social', url: 'https://www.linkedin.com/' },
   ];
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-950 border-t border-gray-200 dark:border-white/10 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-200/50 dark:from-gray-900/50 to-transparent"></div>
+    <footer className="bg-zinc-100 dark:bg-zinc-950 border-t border-zinc-200 dark:border-white/10 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-violet-950/20 dark:from-purple-950/30 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="py-12 border-b border-gray-200 dark:border-white/10"
+          className="py-12 border-b border-zinc-200 dark:border-white/10"
         >
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Stay Updated
+            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
+              Stay in the loop
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Get the latest updates, tips, and exclusive offers delivered to your inbox.
+            <p className="text-black dark:text-gray-300 mb-6">
+              Pipeline tips and product updates from Sellingify.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <motion.input
                 whileFocus={{ scale: 1.02 }}
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-sky-500 transition-colors duration-200"
+                className="flex-1 px-4 py-3 bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-zinc-200 dark:border-white/10 rounded-lg text-black dark:text-white placeholder-zinc-500 dark:placeholder-gray-400 focus:outline-none focus:border-violet-500 transition-colors duration-200"
               />
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: '0 0 30px rgba(255, 165, 0, 0.5)'
+                  boxShadow: '0 0 28px rgba(139, 92, 246, 0.35)',
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-gradient-to-r from-sky-500 to-orange-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center"
+                className="px-6 py-3 bg-gradient-to-r from-purple-700 to-violet-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center"
               >
                 Subscribe
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -81,12 +74,18 @@ const Footer = () => {
             transition={{ duration: 0.8 }}
             className="md:col-span-1"
           >
-            <div className="flex items-center space-x-2 mb-6">
-              <img src={logo} alt="Reflo Hub Logo" className="w-8 h-8 object-contain" />
-              <span className="text-xl font-bold text-gray-900 dark:text-white">RefloHub</span>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Leading the future of lead generation with innovative solutions for freelancers and businesses worldwide.
+            <Link to="/" className="inline-block mb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 rounded-md">
+              <img
+                src="/logo.png"
+                alt="Sellingify"
+                className="h-10 w-auto object-contain object-left"
+                width={200}
+                height={40}
+                decoding="async"
+              />
+            </Link>
+            <p className="text-black dark:text-gray-300 mb-6">
+              B2B lead generation: qualified conversations, clear reporting, and campaigns built around your revenue goals.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -95,11 +94,8 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{
-                    scale: 1.1,
-                    color: '#38BDF8'
-                  }}
-                  className="w-10 h-10 bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-300 hover:border-sky-500 transition-all duration-200"
+                  whileHover={{ scale: 1.1, color: '#a78bfa' }}
+                  className="w-10 h-10 bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-zinc-200 dark:border-white/10 rounded-lg flex items-center justify-center text-black dark:text-gray-300 hover:border-violet-500 transition-all duration-200"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -113,17 +109,18 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Company</h4>
+            <h4 className="text-lg font-semibold text-black dark:text-white mb-4">Company</h4>
             <ul className="space-y-3">
-              {companyLinks.map((link, index) => (
-                <li key={index}>
-                  <motion.a
-                    href={`/${link.label.toLowerCase().replace(/\s+/g, '-')}`}
-                    whileHover={{ x: 5, color: '#38BDF8' }}
-                    className="text-gray-600 dark:text-gray-300 hover:text-sky-500 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </motion.a>
+              {companyLinks.map((link) => (
+                <li key={link.path}>
+                  <motion.div whileHover={{ x: 5 }}>
+                    <Link
+                      to={link.path}
+                      className="text-black dark:text-gray-300 hover:text-violet-500 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
@@ -134,17 +131,18 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Product</h4>
+            <h4 className="text-lg font-semibold text-black dark:text-white mb-4">Product</h4>
             <ul className="space-y-3">
-              {productLinks.map((link, index) => (
-                <li key={index}>
-                  <motion.a
-                    href={`/${link.label.toLowerCase().replace(/\s+/g, '-')}`}
-                    whileHover={{ x: 5, color: '#38BDF8' }}
-                    className="text-gray-600 dark:text-gray-300 hover:text-sky-500 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </motion.a>
+              {productLinks.map((link) => (
+                <li key={link.path}>
+                  <motion.div whileHover={{ x: 5 }}>
+                    <Link
+                      to={link.path}
+                      className="text-black dark:text-gray-300 hover:text-violet-500 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
@@ -155,61 +153,43 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Legal</h4>
+            <h4 className="text-lg font-semibold text-black dark:text-white mb-4">Legal</h4>
             <ul className="space-y-3">
-              {legalLinks.map((link, index) => (
-                <li key={index}>
-                  <motion.a
-                    href={`/${link.label.toLowerCase().replace(/\s+/g, '-')}`}
-                    whileHover={{ x: 5, color: '#38BDF8' }}
-                    className="text-gray-600 dark:text-gray-300 hover:text-sky-500 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </motion.a>
+              {legalLinks.map((link) => (
+                <li key={link.path}>
+                  <motion.div whileHover={{ x: 5 }}>
+                    <Link
+                      to={link.path}
+                      className="text-black dark:text-gray-300 hover:text-violet-500 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="py-8 text-center"
-        >
-          <motion.a
-            href="/blog"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: '0 0 30px rgba(255, 165, 0, 0.5)'
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-gradient-to-r from-sky-500 to-orange-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center mx-auto"
-          >
-            Visit Our Blog
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </motion.a>
-        </motion.div>
-
-        <div className="py-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <motion.a
-            href="/copyright"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-gray-600 dark:text-gray-300 text-center md:text-left mb-4 md:mb-0 hover:text-sky-500 transition-colors duration-200"
-          >
-            Copyright © 2026 RefloHub. All rights reserved.
-          </motion.a>
+        <div className="py-8 border-t border-zinc-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gray-600 dark:text-gray-300 text-center md:text-right"
+            transition={{ duration: 0.8 }}
+            className="text-black dark:text-gray-300 text-center md:text-left"
           >
-            Made with ❤️ for the future of lead generation
+            Copyright © 2026 Sellingify. All rights reserved.
           </motion.p>
+          <motion.a
+            href="mailto:hello@sellingify.com"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="inline-flex items-center gap-2 text-black dark:text-gray-300 hover:text-violet-500 transition-colors"
+          >
+            <Mail className="w-4 h-4" />
+            hello@sellingify.com
+          </motion.a>
         </div>
       </div>
     </footer>

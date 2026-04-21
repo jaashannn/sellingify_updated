@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronUp } from 'lucide-react';
 
@@ -35,7 +35,7 @@ const BackToTop = () => {
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
           className="fixed bottom-8 left-8 z-50 w-12 h-12 
-            bg-gradient-to-r from-sky-500 to-orange-400 
+            bg-gradient-to-r from-purple-600 to-violet-400 
             text-white dark:text-white 
             rounded-full flex items-center justify-center 
             hover:shadow-lg transition-all duration-200 animate-glow
